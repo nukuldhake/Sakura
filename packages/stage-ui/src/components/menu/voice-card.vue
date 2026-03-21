@@ -89,7 +89,7 @@ function togglePlayback() {
 <template>
   <label
     border="2px solid"
-    class="scroll-snap-align-start form_voice-card relative flex flex-col overflow-hidden rounded-xl"
+    class="scroll-snap-align-start form_voice-card relative flex flex-col cursor-pointer overflow-hidden rounded-xl"
     transition="all duration-200 ease-in-out"
     :class="[
       voiceId === props.voice.id
@@ -99,6 +99,7 @@ function togglePlayback() {
         ? 'form_voice-card-active'
         : '',
     ]"
+    @click.stop.prevent="voiceId = props.voice.id"
   >
     <!-- Voice info section -->
     <div class="p-3">

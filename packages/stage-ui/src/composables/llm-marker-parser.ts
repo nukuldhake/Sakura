@@ -80,7 +80,7 @@ function createLlmMarkerParser(options?: MarkerParserOptions) {
       buffer += textPart
       buffer = buffer
         // Heuristic fallback: wrap naked ACT: or DELAY: tags that are missing <| |> markers
-        .replace(/(?<!<\|)((?:ACT|DELAY)\s*:\s*(?:\{.*?\}|"[^"]+":\{.*?\}|[^ \n|]+))(?!\|>)/gi, (match) => `${TAG_OPEN}${match}${TAG_CLOSE}`)
+        .replace(/(?<!<\|)((?:ACT(?:\s+JSON)?|DELAY)\s*:\s*(?:\{.*?\}|"[^"]+":\{.*?\}|[^ \n|]+))(?!\|>)/gi, match => `${TAG_OPEN}${match}${TAG_CLOSE}`)
         .replaceAll(ESCAPED_TAG_OPEN, TAG_OPEN)
         .replaceAll(ESCAPED_TAG_CLOSE, TAG_CLOSE)
 

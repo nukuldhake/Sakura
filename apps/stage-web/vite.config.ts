@@ -60,6 +60,17 @@ export default defineConfig({
     },
   },
   server: {
+    proxy: {
+      '/api/elevenlabs': {
+        target: 'https://api.elevenlabs.io/v1',
+        changeOrigin: true,
+        rewrite: (path) => {
+          // Removes /api/elevenlabs/api or /api/elevenlabs and replaces with empty string
+          // This ensures the final URL becomes https://api.elevenlabs.io/v1/voices
+          return path.replace(/^\/api\/elevenlabs(\/api)?/, '')
+        },
+      },
+    },
     warmup: {
       clientFiles: [
         `${resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src'))}/*.vue`,
@@ -118,7 +129,6 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     Unocss(),
-
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
     VueI18n({

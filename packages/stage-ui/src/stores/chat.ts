@@ -40,93 +40,83 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
   // Most ACT metadata payloads are under 200 characters.
   const MAX_BUFFER = 300
 
-  /**
-   * Strips metadata from the buffered text and returns the speech portion.
-   */
-  function stripMetadata(text: string): string {
-    // Strip ACT: prefix if present
-    let cleaned = text.replace(/^(?:<\|)?ACT\s*:[^A-Z]*/i, '')
-    
-    // Aggressive cleanup for smaller models that invent pseudo-formats like "(Param: idle)" or "Neutral: "
-    cleaned = cleaned.replace(/^\s*\([^)]*\)\s*/g, '') // Strip leading parenthetical metadata
-    cleaned = cleaned.replace(/^[A-Z][a-z]+(?:\s+\([^)]+\))?:\s*/g, '') // Strip leading "Emotion: " or "Neutral (Param: idle): "
-    cleaned = cleaned.replace(/^\s*[|$!].*?[|}>]\s*/g, '') // Strip pipe, exclamation, or dollar based metadata: | motion | Think | ! emotion | Curious | } | $action>
-    cleaned = cleaned.replace(/<(?:action|think|thought|reasoning)>.*?<\/(?:action|think|thought|reasoning)>/gi, '') // Strip XML-like tags correctly
-    cleaned = cleaned.replace(/<(?:action|think|thought|reasoning)>.*?>/gi, '') // Strip unclosed tags too
-    cleaned = cleaned.replace(/^(?:Reasoning|Think|Thought|Emotion)\b\s*/gi, '') // Strip standalone headers like "Reasoning"
-    
-    // Look for the primary boundary (double newline) or explicit end tags
-    const doubleNewlineIndex = cleaned.indexOf('\n\n')
-    if (doubleNewlineIndex !== -1) {
-      return cleaned.slice(doubleNewlineIndex + 2).trimStart()
-    }
-    // Fallback: look for the last closing brace, quote, or angle bracket before what looks like a sentence start
-    const match = /["}>]\s+[A-Z]/i.exec(cleaned)
-    if (match && match.index !== undefined) {
-      return cleaned.slice(match.index + match[0].length - 1).trimStart()
-    }
-    return cleaned.trimStart()
-  }
-
+  let speechStarted = false
   // Buffer for accumulating partial inline JSON across chunk boundaries
   let inlineBuffer = ''
 
   /**
-   * Strips inline JSON metadata objects (containing "emotion" or "motion") from text.
-   * Uses brace-depth counting to find complete JSON objects, then removes them.
+   * Technical cleanup for speech text.
+   * Strips artifacts left by smaller models like leading symbols (?, !, *),
+   * pseudo-headers (Emotion:), and mid-sentence metadata.
    */
-  function stripInlineMetadata(text: string): string {
-    // Combine any leftover buffer from previous chunks with the new text
-    const combined = inlineBuffer + text
-    let result = ''
-    let i = 0
+  function cleanupSpeech(text: string, isStartOfSpeech: boolean): string {
+    let cleaned = text
 
-    while (i < combined.length) {
-      if (combined[i] === '{') {
-        // Try to find the matching closing brace
+    if (isStartOfSpeech) {
+      // 1. Strip technical prefixes (ACT:, ACT JSON:, etc.)
+      cleaned = cleaned.replace(/^(?:<\|)?ACT(?:\s*JSON)?\s*:\s*/i, '')
+
+      // 2. Strip leading formatting artifacts that models sometimes hallucinate after metadata
+      // This includes things like stand-alone symbols (?, !, *, >), bullet points, or "AIRI:" labels
+      cleaned = cleaned.replace(/^\s*[?!=*#>-]+\s*/, '')
+
+      // 3. Strip leading parenthetical or bracketed metadata: (Emotion), [Action]
+      cleaned = cleaned.replace(/^\s*[([].*?[)\]]\s*/g, '')
+
+      // 4. Strip leading pseudo-headers: "Emotion: Happy", "Neutral: "
+      cleaned = cleaned.replace(/^[A-Z][a-z]+(?:\s+\([^)]+\))?:\s*/g, '')
+
+      // 5. Strip leading stand-alone headers like "Reasoning" or "Thought"
+      cleaned = cleaned.replace(/^(?:Reasoning|Think|Thought|Emotion)\b\s*/gi, '')
+    }
+
+    // 6. Strip XML-like tags correctly (both complete and unclosed)
+    cleaned = cleaned.replace(/<(?:action|think|thought|reasoning)>.*?<\/(?:action|think|thought|reasoning)>/gi, '')
+    cleaned = cleaned.replace(/<(?:action|think|thought|reasoning)>.*?>/gi, '')
+
+    // 7. Strip pipe/exclamation/dollar based markers: | motion | ! emotion |
+    cleaned = cleaned.replace(/[|$!].*?[|}>]/g, '')
+
+    // 8. Strip inline JSON metadata objects (contains "emotion" or "motion")
+    const combined = inlineBuffer + cleaned
+    let result = ''
+    let idx = 0
+
+    while (idx < combined.length) {
+      if (combined[idx] === '{') {
         let depth = 0
         let end = -1
-        for (let j = i; j < combined.length; j++) {
+        for (let j = idx; j < combined.length; j++) {
           if (combined[j] === '{')
             depth++
           else if (combined[j] === '}')
             depth--
-
-          if (depth === 0) {
-            end = j
-            break
-          }
+          if (depth === 0) { end = j; break }
         }
 
         if (end === -1) {
-          // Incomplete JSON — buffer remainder for next chunk
-          inlineBuffer = combined.slice(i)
+          inlineBuffer = combined.slice(idx)
           return result
         }
 
-        const candidate = combined.slice(i, end + 1)
+        const candidate = combined.slice(idx, end + 1)
         if (candidate.includes('"emotion"') || candidate.includes('"motion"')) {
-          // This is metadata JSON — strip it and emit via callback
           onMetadata?.(candidate)
-          i = end + 1
-          // Skip trailing whitespace after the JSON
-          while (i < combined.length && (combined[i] === ' ' || combined[i] === '\n'))
-            i++
+          idx = end + 1
+          while (idx < combined.length && (combined[idx] === ' ' || combined[idx] === '\n')) idx++
           continue
         }
-
-        // Not metadata JSON, keep it
-        result += candidate
-        i = end + 1
-        continue
+        result += candidate; idx = end + 1; continue
       }
-
-      result += combined[i]
-      i++
+      result += combined[idx]; idx++
     }
-
     inlineBuffer = ''
-    return result
+
+    // 9. Strip mid-sentence asterisk actions: *waves*
+    result = result.replace(/\*.*?\*/g, '')
+
+    // 10. Final whitespace cleanup: trim start only if we are at the very beginning
+    return isStartOfSpeech ? result.trimStart() : result
   }
 
   return {
@@ -137,7 +127,7 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
       // Once metadata has been stripped, still scan for inline JSON metadata
       // that the AI may embed mid-sentence (e.g., `I'm Airi! {"emotion":...} I'm a...`)
       if (metadataStripped) {
-        return stripInlineMetadata(chunk)
+        return cleanupSpeech(chunk, false)
       }
 
       buffer += chunk
@@ -158,18 +148,21 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
       const firstChar = trimmed[0]
       const isLikelyMetadata = startsWithMetadata
         || firstChar === '{'
-        || trimmed.startsWith('ACT:')
+        || /^ACT(?:\s*JSON)?\s*:/i.test(trimmed)
         || trimmed.startsWith('<|ACT')
         || firstChar === '<' // <action>
         || firstChar === '$' // $action>
         || firstChar === '|' // | emotion |
 
       if (!isLikelyMetadata) {
-        // No metadata at all, release everything but still scan for inline JSON
+        // No metadata at all, release everything
         metadataStripped = true
         const result = buffer
         buffer = ''
-        return stripInlineMetadata(result)
+        const cleaned = cleanupSpeech(result, true)
+        if (cleaned)
+          speechStarted = true
+        return cleaned
       }
 
       // Look for boundary: double newline separates metadata from speech.
@@ -180,7 +173,10 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
         const afterMetadata = buffer.slice(doubleNewlineIndex + 2)
         onMetadata?.(metadata)
         buffer = ''
-        return stripInlineMetadata(afterMetadata)
+        const cleaned = cleanupSpeech(afterMetadata, true)
+        if (cleaned)
+          speechStarted = true
+        return cleaned
       }
 
       // Look for boundary: closing quote/brace followed by space and a capital letter
@@ -193,14 +189,16 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
         const lastMotionIdx = buffer.lastIndexOf('motion')
         if (lastMotionIdx !== -1 && speechStartMatch.index > lastMotionIdx) {
           metadataStripped = true
-          // Slice from the start of the matched speech character
           const speechCharMatch = /[A-Z]/i.exec(speechStartMatch[0])
           const offset = speechCharMatch ? speechStartMatch.index + speechCharMatch.index : speechStartMatch.index + speechStartMatch[0].length - 1
           const metadata = buffer.slice(0, offset)
           const result = buffer.slice(offset)
           onMetadata?.(metadata)
           buffer = ''
-          return stripInlineMetadata(result)
+          const cleaned = cleanupSpeech(result, true)
+          if (cleaned)
+            speechStarted = true
+          return cleaned
         }
       }
 
@@ -208,9 +206,11 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
       if (buffer.length >= MAX_BUFFER) {
         metadataStripped = true
         onMetadata?.(buffer)
-        const result = stripMetadata(buffer)
+        const cleaned = cleanupSpeech(buffer, true)
+        if (cleaned)
+          speechStarted = true
         buffer = ''
-        return result
+        return cleaned
       }
 
       // Still buffering, waiting for more text
@@ -228,9 +228,11 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
       }
 
       metadataStripped = true
-      const result = stripMetadata(buffer)
+      const cleaned = cleanupSpeech(buffer, !speechStarted)
+      if (cleaned)
+        speechStarted = true
       buffer = ''
-      return result
+      return cleaned
     },
   }
 }

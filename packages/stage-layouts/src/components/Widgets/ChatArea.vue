@@ -16,9 +16,11 @@ import { storeToRefs } from 'pinia'
 import { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger } from 'reka-ui'
 import { computed, nextTick, onUnmounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 
 import IndicatorMicVolume from './IndicatorMicVolume.vue'
 
+const router = useRouter()
 const messageInput = ref('')
 const hearingTooltipOpen = ref(false)
 const isComposing = ref(false)
@@ -495,6 +497,16 @@ watch(autoSendEnabled, (enabled) => {
             </Transition>
           </TooltipRoot>
         </TooltipProvider>
+
+        <!-- Voice/Speaker Settings Icon button -->
+        <button
+          class="h-8 w-8 flex items-center justify-center rounded-md outline-none transition-all duration-200 active:scale-95 hover:bg-neutral-400/10"
+          text="lg neutral-500 dark:neutral-400"
+          :title="t('settings.pages.modules.speech.title')"
+          @click="router.push('/settings/modules/speech')"
+        >
+          <div i-ph:speaker-high-bold class="h-5 w-5" />
+        </button>
       </div>
     </div>
   </div>

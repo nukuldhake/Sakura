@@ -16,6 +16,7 @@ import {
   ComboboxTrigger,
   ComboboxViewport,
 } from 'reka-ui'
+import { ref } from 'vue'
 
 const props = defineProps<{
   options: { groupLabel: string, children?: { label: string, value: T }[] }[]
@@ -23,6 +24,7 @@ const props = defineProps<{
 }>()
 
 const modelValue = defineModel<T>({ required: false })
+const open = ref(false)
 
 function toDisplayValue(value: T): string {
   const option = props.options.flatMap(group => group.children).find(option => option?.value === value)
@@ -31,7 +33,7 @@ function toDisplayValue(value: T): string {
 </script>
 
 <template>
-  <ComboboxRoot v-model="modelValue" :class="['relative', 'w-full']">
+  <ComboboxRoot v-model="modelValue" v-model:open="open" :class="['relative', 'w-full']">
     <ComboboxAnchor
       :class="[
         'w-full inline-flex items-center justify-between rounded-xl border px-3 leading-none h-10 gap-[5px] outline-none',
@@ -39,8 +41,9 @@ function toDisplayValue(value: T): string {
         'bg-white dark:bg-neutral-900 disabled:bg-neutral-100 hover:bg-neutral-50 dark:disabled:bg-neutral-900 dark:hover:bg-neutral-700',
         'border-neutral-200 dark:border-neutral-800 border-solid border-2 focus:border-primary-300 dark:focus:border-primary-400/50',
         'shadow-sm focus:shadow-[0_0_0_2px] focus:shadow-black',
-        'transition-colors duration-200 ease-in-out',
+        'transition-colors duration-200 ease-in-out cursor-pointer',
       ]"
+      @click="open = true"
     >
       <ComboboxInput
         :class="[

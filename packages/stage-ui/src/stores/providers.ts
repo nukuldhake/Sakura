@@ -882,17 +882,59 @@ export const useProvidersStore = defineStore('providers', () => {
           })
         },
         listVoices: async (config) => {
-          const provider = createUnElevenLabs((config.apiKey as string).trim(), (config.baseUrl as string).trim()) as VoiceProviderWithExtraOptions<UnElevenLabsOptions>
+          const apiKey = (config.apiKey as string).trim()
+          const baseUrl = (config.baseUrl as string).trim()
 
-          const voices = await listVoices({
-            ...provider.voice(),
-          })
+          // We use a direct native fetch instead of the library's listVoices
+          // This ensures the 'xi-api-key' header is sent exactly as ElevenLabs expects.
+          const finalUrl = `${baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`}voices`
 
-          // Find indices of Aria and Bill
+          let voices
+          try {
+            const response = await fetch(finalUrl, {
+              headers: {
+                'xi-api-key': apiKey,
+                'Content-Type': 'application/json',
+              },
+            })
+
+            if (!response.ok) {
+              const errorBody = await response.text()
+              console.error('ElevenLabs direct fetch failed:', response.status, errorBody)
+              throw new Error(`ElevenLabs API returned ${response.status}: ${errorBody}`)
+            }
+
+            // ElevenLabs returns { voices: [...] }, unspeech usually returns an array.
+            // We handle both cases for robustness.
+            const result = await response.json()
+            voices = Array.isArray(result) ? result : result.voices
+          }
+          catch (error) {
+            console.error('Failed to list voices from ElevenLabs direct fetch:', error)
+            throw error
+          }
+
+          if (!voices || !Array.isArray(voices)) {
+            console.warn('ElevenLabs API returned no voices or an invalid response format.')
+            return []
+          }
+
+          // Find indices of Aria and Bill (common default voices to rearrange)
           const ariaIndex = voices.findIndex(voice => voice.name.includes('Aria'))
           const billIndex = voices.findIndex(voice => voice.name.includes('Bill'))
 
           // Determine the range to move (ensure valid indices and proper order)
+          // If neither found, just use the original array
+          if (ariaIndex === -1 && billIndex === -1) {
+            return voices.map(voice => ({
+              id: voice.voice_id || voice.id,
+              name: voice.name,
+              provider: 'elevenlabs',
+              previewURL: voice.preview_audio_url || voice.preview_url,
+              languages: voice.languages,
+            }))
+          }
+
           const startIndex = ariaIndex !== -1 ? ariaIndex : 0
           const endIndex = billIndex !== -1 ? billIndex : voices.length - 1
           const lowerIndex = Math.min(startIndex, endIndex)
@@ -907,10 +949,10 @@ export const useProvidersStore = defineStore('providers', () => {
 
           return rearrangedVoices.map((voice) => {
             return {
-              id: voice.id,
+              id: voice.voice_id || voice.id,
               name: voice.name,
               provider: 'elevenlabs',
-              previewURL: voice.preview_audio_url,
+              previewURL: voice.preview_audio_url || voice.preview_url,
               languages: voice.languages,
             }
           })
