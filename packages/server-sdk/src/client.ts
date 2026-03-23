@@ -158,6 +158,11 @@ export class Client<C = undefined> {
       return this.connectAttempt ?? Promise.resolve()
     }
 
+    if (!this.opts.url) {
+      console.warn('WebSocket client initialized without a URL')
+      return Promise.resolve()
+    }
+
     this.connectAttempt = new Promise((resolve, reject) => {
       this.connecting = true
       let settled = false
@@ -192,12 +197,14 @@ export class Client<C = undefined> {
           return
         }
 
+        const wasConnected = this.connected
         if (this.connected) {
           this.connected = false
           this.stopHeartbeat()
           this.opts.onClose?.()
         }
-        if (this.opts.autoReconnect && !this.shouldClose) {
+
+        if (wasConnected && this.opts.autoReconnect && !this.shouldClose) {
           void this.tryReconnectWithExponentialBackoff()
         }
       }
