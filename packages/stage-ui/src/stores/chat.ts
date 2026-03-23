@@ -40,6 +40,7 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
   // Most ACT metadata payloads are under 200 characters.
   const MAX_BUFFER = 300
 
+
   let speechStarted = false
   // Buffer for accumulating partial inline JSON across chunk boundaries
   let inlineBuffer = ''
@@ -141,17 +142,20 @@ function createActMetadataFilter(onMetadata?: (metadata: string) => void) {
       const trimmed = buffer.trimStart()
       // NOTICE: The marker parser upstream may strip the leading `"` or other chars from `"emotion":`,
       // so we see `emotion":{` instead. We must detect both quoted and bare keyword patterns.
-      const ACT_METADATA_KEYWORDS = ['emotion', 'cognitive', 'intent', 'motion']
-      const startsWithMetadata = ACT_METADATA_KEYWORDS.some(kw =>
-        trimmed.startsWith(kw) || trimmed.startsWith(`"${kw}`),
-      )
+      const ACT_METADATA_KEYWORDS = ['emotion', 'cognitive', 'intent', 'motion', 'action', 'state', 'idle', 'neutral', 'happy', 'sad', 'angry', 'flick', 'tap', 'confused']
+      const lowerTrimmed = trimmed.toLowerCase()
       const firstChar = trimmed[0]
-      const isLikelyMetadata = startsWithMetadata
+      const isLikelyMetadata = ACT_METADATA_KEYWORDS.some(kw =>
+        lowerTrimmed.startsWith(kw) || kw.startsWith(lowerTrimmed) || lowerTrimmed.startsWith(`"${kw}`) || `"${kw}`.startsWith(lowerTrimmed) || (lowerTrimmed.includes(`${kw}:`) && lowerTrimmed.indexOf(`${kw}:`) < 10),
+      )
         || firstChar === '{'
-        || /^ACT(?:\s*JSON)?\s*:/i.test(trimmed)
+        || trimmed.startsWith('ACT:')
         || trimmed.startsWith('<|ACT')
         || firstChar === '<' // <action>
+        || firstChar === '/' // /action>
+        || firstChar === '\\' // \action>
         || firstChar === '$' // $action>
+        || firstChar === '*' // *action*
         || firstChar === '|' // | emotion |
 
       if (!isLikelyMetadata) {
