@@ -77,6 +77,13 @@ export default defineConfig({
         `${resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src'))}/*.vue`,
       ],
     },
+    proxy: {
+      '/api/elevenlabs': {
+        target: 'https://api.elevenlabs.io',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api\/elevenlabs/, ''),
+      },
+    },
   },
   build: {
     sourcemap: true,
