@@ -3,6 +3,8 @@ import { FieldCheckbox, FieldInput } from '@proj-airi/ui'
 import { computed, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import SpeechStreamingPlayground from './speech-streaming-playground.vue'
+
 import { TestDummyMarker } from '../../gadgets'
 
 const props = defineProps<{
