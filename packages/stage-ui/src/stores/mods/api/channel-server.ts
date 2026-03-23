@@ -17,7 +17,7 @@ export const useModsServerChannelStore = defineStore('mods:channels:proj-airi:se
   const listenersInitialized = ref(false)
   const listenerDisposers = ref<Array<() => void>>([])
 
-  const defaultWebSocketUrl = import.meta.env.VITE_AIRI_WS_URL || 'ws://localhost:6121/ws'
+  const defaultWebSocketUrl = import.meta.env.VITE_AIRI_WS_URL || ''
   const websocketUrl = useLocalStorage('settings/connection/websocket-url', defaultWebSocketUrl)
   const websocketEnabled = useLocalStorage('settings/connection/websocket-enabled', false)
 
@@ -38,8 +38,11 @@ export const useModsServerChannelStore = defineStore('mods:channels:proj-airi:se
     'ui:configure',
   ]
 
-  async function initialize(options?: { token?: string, possibleEvents?: Array<keyof WebSocketEvents> }) {
+  async function initialize(options?: { token?: string, url?: string, possibleEvents?: Array<keyof WebSocketEvents> }) {
     if (!websocketEnabled.value)
+      return Promise.resolve()
+    const url = options?.url || websocketUrl.value || defaultWebSocketUrl
+    if (!url)
       return Promise.resolve()
     if (connected.value && client.value)
       return Promise.resolve()
@@ -65,16 +68,12 @@ export const useModsServerChannelStore = defineStore('mods:channels:proj-airi:se
         },
         onError: (error) => {
           connected.value = false
-          initializing.value = null
-          clearListeners()
 
           // eslint-disable-next-line no-console
           console.debug('WebSocket server connection error:', error)
         },
         onClose: () => {
           connected.value = false
-          initializing.value = null
-          clearListeners()
 
           // eslint-disable-next-line no-console
           console.debug('WebSocket server connection closed')
@@ -217,7 +216,7 @@ export const useModsServerChannelStore = defineStore('mods:channels:proj-airi:se
     else {
       dispose()
     }
-  })
+  }, { immediate: true })
 
   return {
     connected,
