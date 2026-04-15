@@ -7,9 +7,9 @@ import {
   ProviderBasicSettings,
   ProviderSettingsContainer,
   ProviderSettingsLayout,
-} from '@proj-airi/stage-ui/components'
-import { useProviderValidation } from '@proj-airi/stage-ui/composables/use-provider-validation'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
+} from '@proj-sakura/stage-ui/components'
+import { useProviderValidation } from '@proj-sakura/stage-ui/composables/use-provider-validation'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 
@@ -94,3 +94,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Progress } from '@proj-airi/ui'
+import { Progress } from '@proj-sakura/ui'
 </script>
 
 <template>
@@ -35,3 +35,4 @@ import { Progress } from '@proj-airi/ui'
     </Variant>
   </Story>
 </template>
+

@@ -5,32 +5,32 @@ date: 2025-04-28
 ---
 
 <script setup>
-import airiMcpArch from './assets/airi-mcp-arch.avif'
+import SAKURAMcpArch from './assets/SAKURA-mcp-arch.avif'
 </script>
 
 Hello everyone, this is [@LemonNeko](https://github.com/LemonNekoGH), and today I'm here to share development stories with you.
 
 ## Day time Daily
 
-A week ago, I wrote an MCP server [AIRI-android](https://github.com/LemonNekoGH/AIRI-android) for AIRI to connect to mobile phones, but this was only the first half of enabling AIRI to operate Android phones—AIRI also needed to be able to interact with MCP servers.
+A week ago, I wrote an MCP server [SAKURA-android](https://github.com/LemonNekoGH/SAKURA-android) for SAKURA to connect to mobile phones, but this was only the first half of enabling SAKURA to operate Android phones—SAKURA also needed to be able to interact with MCP servers.
 
-Over the past two days, I completed the second half by writing a Tauri plugin [#144](https://github.com/moeru-ai/AIRI/pull/144). Now AIRI can interact with MCP servers and work with all existing MCP servers.
+Over the past two days, I completed the second half by writing a Tauri plugin [#144](https://github.com/moeru-ai/SAKURA/pull/144). Now SAKURA can interact with MCP servers and work with all existing MCP servers.
 
-If you're interested, check out these two videos. The first demonstrates AIRI's MCP server setup, and the second shows AIRI interacting with an Android phone.
+If you're interested, check out these two videos. The first demonstrates SAKURA's MCP server setup, and the second shows SAKURA interacting with an Android phone.
 
 <details>
-  <summary>AIRI's MCP Server Setup</summary>
-  <ThemedVideo controls muted src="./assets/airi-mcp-settings.mp4" style="height: 640px;" />
+  <summary>SAKURA's MCP Server Setup</summary>
+  <ThemedVideo controls muted src="./assets/SAKURA-mcp-settings.mp4" style="height: 640px;" />
 </details>
 
 <details>
-  <summary>AIRI Inputting `Hello World` on Phone</summary>
-  <ThemedVideo controls muted src="./assets/airi-mcp-input-text.mp4" />
+  <summary>SAKURA Inputting `Hello World` on Phone</summary>
+  <ThemedVideo controls muted src="./assets/SAKURA-mcp-input-text.mp4" />
 </details>
 
 During development, to clarify my thinking, I drew a diagram showing how LLMs call Android phones:
 
-<img :src="airiMcpArch" alt="AIRI Operating Phone" :style="{ height: '640px', objectFit: 'contain' }" />
+<img :src="SAKURAMcpArch" alt="SAKURA Operating Phone" :style="{ height: '640px', objectFit: 'contain' }" />
 
 Next, let me share my development process.
 
@@ -122,7 +122,7 @@ According to the diagram above, when an LLM calls an MCP tool, the parameters ev
 from mcp.server.fastmcp import FastMCP
 from ppadb.client import Client
 
-mcp = FastMCP("airi-android")
+mcp = FastMCP("SAKURA-android")
 adb_client = Client()
 
 @mcp.tool()
@@ -170,18 +170,19 @@ The remaining content is some questions I'd like to discuss with everyone.
 
 ## Some Questions
 
-1. From the demo videos, you can see that in the conversation, I first had AIRI get the tool list, then had it input text. Could we get the tool list during initialization and directly append it to the system prompt?
+1. From the demo videos, you can see that in the conversation, I first had SAKURA get the tool list, then had it input text. Could we get the tool list during initialization and directly append it to the system prompt?
    - Cursor does it this way. When I was developing the MCP server, every time I modified the tool list, I needed to restart Cursor for it to take effect.
    - This might sacrifice flexibility, but do regular users frequently modify tool lists?
 
-2. Should we allow AIRI to connect to multiple phones simultaneously? Might AIRI want to use multiple phones? ~~Would she want to use them for telecom fraud?~~
-3. As you can see, the AIRI repository now has both Tauri applications and Tauri plugins. How should this be managed? How should CI be configured? How to synchronize version numbers between the Rust and JavaScript sides of Tauri plugins?
+2. Should we allow SAKURA to connect to multiple phones simultaneously? Might SAKURA want to use multiple phones? ~~Would she want to use them for telecom fraud?~~
+3. As you can see, the SAKURA repository now has both Tauri applications and Tauri plugins. How should this be managed? How should CI be configured? How to synchronize version numbers between the Rust and JavaScript sides of Tauri plugins?
 
 ## Future Plans
 
-- Support image return values, so AIRI can see what's on the phone through visual capabilities like Cursor demonstrated in the [previous DevLog](./DevLog-2025.04.22.md), then decide how to interact.
-- Let AIRI learn how to use devices itself? If we have to write separate prompts for each type of device, the workload would be enormous.
-- Multi-MCP server support. After all, MCP provides a universal interface that allows AIRI to do all sorts of things—AIRI probably won't be satisfied with just operating phones.
-- SSE support, so AIRI in the browser can also use MCP servers.
+- Support image return values, so SAKURA can see what's on the phone through visual capabilities like Cursor demonstrated in the [previous DevLog](./DevLog-2025.04.22.md), then decide how to interact.
+- Let SAKURA learn how to use devices itself? If we have to write separate prompts for each type of device, the workload would be enormous.
+- Multi-MCP server support. After all, MCP provides a universal interface that allows SAKURA to do all sorts of things—SAKURA probably won't be satisfied with just operating phones.
+- SSE support, so SAKURA in the browser can also use MCP servers.
 
 That's all for now! I hope this DevLog isn't too dry! Looking forward to bringing you more fun content in the future!
+

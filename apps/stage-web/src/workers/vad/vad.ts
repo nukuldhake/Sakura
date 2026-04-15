@@ -1,5 +1,5 @@
 import type { PreTrainedModel } from '@huggingface/transformers'
-import type { BaseVAD, BaseVADConfig, VADEventCallback, VADEvents } from '@proj-airi/stage-ui/libs/audio/vad'
+import type { BaseVAD, BaseVADConfig, VADEventCallback, VADEvents } from '@proj-sakura/stage-ui/libs/audio/vad'
 
 import { AutoModel, Tensor } from '@huggingface/transformers'
 
@@ -275,3 +275,4 @@ export async function createVAD(config?: Partial<BaseVADConfig>): Promise<VAD> {
   await vad.initialize()
   return vad
 }
+

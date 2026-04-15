@@ -24,51 +24,51 @@ onMounted(async () => {
 })
 ```
 
-先週、私たちの企業デザイナー/アーティストが Project AIRI のロゴの最初のデザイン案を提出してくれました。
+先週、私たちの企業デザイナー/アーティストが Project SAKURA のロゴの最初のデザイン案を提出してくれました。
 ロゴの全体的なスタイルはこんな感じでした：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logos-v1.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logos-v1.avif)
 
 ## 日中の作業
 
 デザインの観点から見ると、これらのロゴはホーム画面のアプリアイコンサイズに縮小したときに、少し複雑すぎて親しみやすさに欠けるように見えました。
 そこで、このバージョンを再デザインしました：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logo-v2.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logo-v2.avif)
 
 そして他のバリエーションも編集しました：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logos-v2.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logos-v2.avif)
 
 しかし、これらのバージョンはダークテーマにしか適していませんでした。「ライトテーマ用のバージョンも必要だ！」と思い、すぐにこれを作成しました：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logo-v2-dark.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logo-v2-dark.avif)
 
 [@kwaa](https://github.com/kwaa) が、2つのテーマの配色を入れ替えてみてはどうかと提案してくれました：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logos-v3.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logos-v3.avif)
 
 確かにこの方が良く見えます。
 
 フォントの配置も更新しました：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logos-v4.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logos-v4.avif)
 
 そして背景色も最適化しました：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logos-v5.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logos-v5.avif)
 
 というわけで、最終的にこうなりました：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-logos-final.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-logos-final.avif)
 
-今日の遅くには、Project AIRI の[ドキュメントサイト](https://airi.build)を正式に公開する予定です。
+今日の遅くには、Project SAKURA の[ドキュメントサイト](https://SAKURA.build)を正式に公開する予定です。
 私自身や他の開発者、アーティストのためのリファレンスやガイドを提供するためです。
 
-ついに完成しました！新しいデザインのロゴと配色はすでに[ドキュメントサイト](https://airi.build)に統合されています：
+ついに完成しました！新しいデザインのロゴと配色はすでに[ドキュメントサイト](https://SAKURA.build)に統合されています：
 
-![](/en/blog/DevLog-2025.03.05/assets/airi-build-light.avif)
-![](/en/blog/DevLog-2025.03.05/assets/airi-build-dark.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-build-light.avif)
+![](/en/blog/DevLog-2025.03.05/assets/SAKURA-build-dark.avif)
 
 現在、サイトには[基本ガイド](../guides/)、
 [貢献ガイド](../references/contributing/guide/)、
@@ -83,15 +83,16 @@ https://www.youtube.com/watch?v=_AIgv0EsOE4
 [yui540](https://github.com/yui540)（個人サイト：[yui540.com](https://yui540.com)）、
 彼/彼女は素晴らしいトランジション効果の実装を紹介する新しいリポジトリを公開したばかりでした。
 
-これらの関連リソースとサイトへのリンクを [https://airi.build](https://airi.build) サイトに追加しましたので、ぜひチェックしてみてください。
+これらの関連リソースとサイトへのリンクを [https://SAKURA.build](https://SAKURA.build) サイトに追加しましたので、ぜひチェックしてみてください。
 
 ## 開発配信
 
 [yui540](https://github.com/yui540) の[リポジトリ](https://github.com/yui540/css-animations)にある
-多くのアニメーション・トランジション効果を [https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/) に移植しました。
+多くのアニメーション・トランジション効果を [https://proj-SAKURA-packages-ui-transitions.netlify.app/#/](https://proj-SAKURA-packages-ui-transitions.netlify.app/#/) に移植しました。
 
 移植後の効果はかなり良い感じです：
 
 ![](/en/blog/DevLog-2025.03.05/assets/animation-transitions.gif)
 
 今日の DevLog はここまでです。DevStream に参加し、最後まで付き合ってくれた皆さんに感謝します。また明日お会いしましょう。
+

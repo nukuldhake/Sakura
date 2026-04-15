@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SelectTab } from '@proj-airi/ui'
+import { SelectTab } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const focusMode = ref<'mode-1' | 'mode-2' | 'mode-3'>('mode-1')
@@ -83,3 +83,4 @@ const lockedOptions = [
     </Variant>
   </Story>
 </template>
+

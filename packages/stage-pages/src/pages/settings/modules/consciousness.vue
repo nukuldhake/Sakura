@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Alert, ErrorContainer, RadioCardManySelect, RadioCardSimple } from '@proj-airi/stage-ui/components'
-import { useAnalytics } from '@proj-airi/stage-ui/composables'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
+import { Alert, ErrorContainer, RadioCardManySelect, RadioCardSimple } from '@proj-sakura/stage-ui/components'
+import { useAnalytics } from '@proj-sakura/stage-ui/composables'
+import { useConsciousnessStore } from '@proj-sakura/stage-ui/stores/modules/consciousness'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
 import { storeToRefs } from 'pinia'
 import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -260,3 +260,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

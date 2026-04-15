@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { OnboardingScreen } from '@proj-airi/stage-ui/components'
-import { useOnboardingStore } from '@proj-airi/stage-ui/stores/onboarding'
+import { OnboardingScreen } from '@proj-sakura/stage-ui/components'
+import { useOnboardingStore } from '@proj-sakura/stage-ui/stores/onboarding'
 
 // const window = useTauriWindow()
 const onboardingStore = useOnboardingStore()
@@ -30,3 +30,4 @@ function handleConfigured() {
 meta:
   layout: plain
 </route>
+

@@ -1,18 +1,18 @@
 {
-  "name": "@proj-airi/pipelines-audio",
+  "name": "@proj-sakura/pipelines-audio",
   "type": "module",
   "version": "0.8.5-beta.3",
   "private": true,
-  "description": "Audio pipeline orchestration for AIRI (capture, VAD, encode, stream)",
+  "description": "Audio pipeline orchestration for SAKURA (capture, VAD, encode, stream)",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/pipelines-audio"
   },
   "exports": {
@@ -39,3 +39,5 @@
   },
   "devDependencies": {}
 }
+
+

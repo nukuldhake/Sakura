@@ -178,7 +178,7 @@ async function installCACertificate(caCert: string) {
     }
     else if (platform === 'linux') {
       const caDir = '/usr/local/share/ca-certificates'
-      const caFileName = 'airi-websocket-ca.crt'
+      const caFileName = 'SAKURA-websocket-ca.crt'
       try {
         writeFileSync(join(caDir, caFileName), caCert)
         await x('update-ca-certificates', [], { nodeOptions: { stdio: 'ignore' } })
@@ -217,7 +217,7 @@ async function generateCertificate() {
   }
   else {
     ca = await createCA({
-      organization: 'AIRI',
+      organization: 'SAKURA',
       countryCode: 'US',
       state: 'Development',
       locality: 'Local',
@@ -308,7 +308,7 @@ export function createServerChannel(initialOptions: ServerChannelOptions = getCh
     const secureEnabled = options?.websocketTlsConfig != null
 
     try {
-      const serverRuntime = await import('@proj-airi/server-runtime')
+      const serverRuntime = await import('@proj-sakura/server-runtime')
       const { plugin: ws } = await import('crossws/server')
       const { serve } = await import('h3')
 
@@ -362,10 +362,10 @@ export function createServerChannel(initialOptions: ServerChannelOptions = getCh
       if (hostname === '0.0.0.0') {
         const ips = getLocalIPs().filter(ip => ip !== '127.0.0.1' && ip !== '::1')
         const targets = ips.length > 0 ? ips.join(', ') : 'localhost'
-        log.log(`@proj-airi/server-runtime started on ${protocol}://0.0.0.0:${port} (reachable via: ${targets})`)
+        log.log(`@proj-sakura/server-runtime started on ${protocol}://0.0.0.0:${port} (reachable via: ${targets})`)
       }
       else {
-        log.log(`@proj-airi/server-runtime started on ${protocol}://${hostname}:${port}`)
+        log.log(`@proj-sakura/server-runtime started on ${protocol}://${hostname}:${port}`)
       }
     }
     catch (error) {
@@ -431,3 +431,4 @@ export async function createServerChannelService(params: { serverChannel: Server
     return next
   })
 }
+

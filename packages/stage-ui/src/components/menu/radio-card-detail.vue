@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Input, TransitionVertical } from '@proj-airi/ui'
+import { Input, TransitionVertical } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 withDefaults(defineProps<{
@@ -186,3 +186,4 @@ function toggleExpansion() {
   opacity: 0.5;
 }
 </style>
+

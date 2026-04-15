@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FieldRange, Radio } from '@proj-airi/ui'
+import { FieldRange, Radio } from '@proj-sakura/ui'
 import { onBeforeUnmount, ref, shallowRef, watch } from 'vue'
 
 import AudioSpectrumVisualizer from './audio-spectrum-visualizer.vue'
@@ -177,3 +177,4 @@ onBeforeUnmount(() => {
     </Variant>
   </Story>
 </template>
+

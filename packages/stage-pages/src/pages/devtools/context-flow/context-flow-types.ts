@@ -1,4 +1,4 @@
-import type { WebSocketEvents } from '@proj-airi/server-sdk'
+import type { WebSocketEvents } from '@proj-sakura/server-sdk'
 
 type Optional<T> = T | undefined
 
@@ -31,3 +31,4 @@ export interface SparkNotifyEntryState {
   endedAt?: number
   error?: Optional<string>
 }
+

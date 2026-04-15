@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from '@proj-airi/ui'
+import { Button } from '@proj-sakura/ui'
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -71,3 +71,4 @@ function handleConfirm() {
     </AlertDialogPortal>
   </AlertDialogRoot>
 </template>
+

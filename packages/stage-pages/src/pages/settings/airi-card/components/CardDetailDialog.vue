@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { AiriCard } from '@proj-airi/stage-ui/stores/modules/airi-card'
+import type { SAKURACard } from '@proj-sakura/stage-ui/stores/modules/SAKURA-card'
 
 import DOMPurify from 'dompurify'
 
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { Button } from '@proj-airi/ui'
+import { useSAKURACardStore } from '@proj-sakura/stage-ui/stores/modules/SAKURA-card'
+import { useConsciousnessStore } from '@proj-sakura/stage-ui/stores/modules/consciousness'
+import { useSpeechStore } from '@proj-sakura/stage-ui/stores/modules/speech'
+import { Button } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import {
   DialogContent,
@@ -31,7 +31,7 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
-const cardStore = useAiriCardStore()
+const cardStore = useSAKURACardStore()
 const consciousnessStore = useConsciousnessStore()
 const speechStore = useSpeechStore()
 const { removeCard } = cardStore
@@ -40,7 +40,7 @@ const { activeProvider: consciousnessProvider, activeModel: defaultConsciousness
 const { activeSpeechProvider: speechProvider, activeSpeechModel: defaultSpeechModel, activeSpeechVoiceId: defaultVoiceId } = storeToRefs(speechStore)
 
 // Get selected card data
-const selectedCard = computed<AiriCard | undefined>(() => {
+const selectedCard = computed<SAKURACard | undefined>(() => {
   if (!props.cardId)
     return undefined
   return cardStore.getCard(props.cardId)
@@ -48,7 +48,7 @@ const selectedCard = computed<AiriCard | undefined>(() => {
 
 // Get module settings
 const moduleSettings = computed(() => {
-  if (!selectedCard.value || !selectedCard.value.extensions?.airi?.modules) {
+  if (!selectedCard.value || !selectedCard.value.extensions?.SAKURA?.modules) {
     return {
       consciousnessProvider: '',
       consciousness: '',
@@ -58,13 +58,13 @@ const moduleSettings = computed(() => {
     }
   }
 
-  const airiExt = selectedCard.value.extensions.airi.modules
+  const SAKURAExt = selectedCard.value.extensions.SAKURA.modules
   return {
-    consciousnessProvider: airiExt.consciousness?.provider || '',
-    consciousness: airiExt.consciousness?.model || '',
-    speechProvider: airiExt.speech?.provider || '',
-    speech: airiExt.speech?.model || '',
-    voice: airiExt.speech?.voice_id || '',
+    consciousnessProvider: SAKURAExt.consciousness?.provider || '',
+    consciousness: SAKURAExt.consciousness?.model || '',
+    speechProvider: SAKURAExt.speech?.provider || '',
+    speech: SAKURAExt.speech?.model || '',
+    voice: SAKURAExt.speech?.voice_id || '',
   }
 })
 
@@ -408,3 +408,4 @@ function getModuleDisplayValue(value: string | undefined, defaultValue: string |
     @cancel="showDeleteConfirm = false"
   />
 </template>
+

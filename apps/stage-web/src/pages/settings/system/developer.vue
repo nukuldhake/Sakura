@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { CheckBar, IconItem } from '@proj-airi/stage-ui/components'
-import { useModsServerChannelStore } from '@proj-airi/stage-ui/stores/mods/api/channel-server'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
+import { CheckBar, IconItem } from '@proj-sakura/stage-ui/components'
+import { useModsServerChannelStore } from '@proj-sakura/stage-ui/stores/mods/api/channel-server'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -198,3 +198,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

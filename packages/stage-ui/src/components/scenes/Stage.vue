@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { Live2DLipSync, Live2DLipSyncOptions } from '@proj-airi/model-driver-lipsync'
-import type { Profile } from '@proj-airi/model-driver-lipsync/shared/wlipsync'
+import type { Live2DLipSync, Live2DLipSyncOptions } from '@proj-sakura/model-driver-lipsync'
+import type { Profile } from '@proj-sakura/model-driver-lipsync/shared/wlipsync'
 import type { SpeechProviderWithExtraOptions } from '@xsai-ext/providers/utils'
 import type { UnElevenLabsOptions } from 'unspeech'
 
 import type { EmotionPayload } from '../../constants/emotions'
 
-import { createLive2DLipSync } from '@proj-airi/model-driver-lipsync'
-import { wlipsyncProfile } from '@proj-airi/model-driver-lipsync/shared/wlipsync'
-import { createPlaybackManager, createSpeechPipeline } from '@proj-airi/pipelines-audio'
-import { Live2DScene, useLive2d } from '@proj-airi/stage-ui-live2d'
-import { ThreeScene, useModelStore } from '@proj-airi/stage-ui-three'
-import { animations } from '@proj-airi/stage-ui-three/assets/vrm'
-import { createQueue } from '@proj-airi/stream-kit'
+import { createLive2DLipSync } from '@proj-sakura/model-driver-lipsync'
+import { wlipsyncProfile } from '@proj-sakura/model-driver-lipsync/shared/wlipsync'
+import { createPlaybackManager, createSpeechPipeline } from '@proj-sakura/pipelines-audio'
+import { Live2DScene, useLive2d } from '@proj-sakura/stage-ui-live2d'
+import { ThreeScene, useModelStore } from '@proj-sakura/stage-ui-three'
+import { animations } from '@proj-sakura/stage-ui-three/assets/vrm'
+import { createQueue } from '@proj-sakura/stream-kit'
 import { useBroadcastChannel } from '@vueuse/core'
 // import { createTransformers } from '@xsai-transformers/embed'
 // import embedWorkerURL from '@xsai-transformers/embed/worker?worker&url'
@@ -26,7 +26,7 @@ import { llmInferenceEndToken } from '../../constants'
 import { Emotion, EMOTION_VRMExpressionName_value } from '../../constants/emotions'
 import { useAudioContext, useSpeakingStore } from '../../stores/audio'
 import { useChatOrchestratorStore } from '../../stores/chat'
-import { useAiriCardStore } from '../../stores/modules'
+import { useSAKURACardStore } from '../../stores/modules'
 import { useSpeechStore } from '../../stores/modules/speech'
 import { useProvidersStore } from '../../stores/providers'
 import { useSettings } from '../../stores/settings'
@@ -84,13 +84,13 @@ const viewUpdateCleanups: Array<() => void> = []
 type CaptionChannelEvent
   = | { type: 'caption-speaker', text: string }
     | { type: 'caption-assistant', text: string }
-const { post: postCaption } = useBroadcastChannel<CaptionChannelEvent, CaptionChannelEvent>({ name: 'airi-caption-overlay' })
+const { post: postCaption } = useBroadcastChannel<CaptionChannelEvent, CaptionChannelEvent>({ name: 'SAKURA-caption-overlay' })
 const assistantCaption = ref('')
 
 type PresentEvent
   = | { type: 'assistant-reset' }
     | { type: 'assistant-append', text: string }
-const { post: postPresent } = useBroadcastChannel<PresentEvent, PresentEvent>({ name: 'airi-chat-present' })
+const { post: postPresent } = useBroadcastChannel<PresentEvent, PresentEvent>({ name: 'SAKURA-chat-present' })
 
 viewUpdateCleanups.push(live2dStore.onShouldUpdateView(async () => {
   showStage.value = false
@@ -115,7 +115,7 @@ const lipSyncLoopId = ref<number>()
 const live2dLipSync = ref<Live2DLipSync>()
 const live2dLipSyncOptions: Live2DLipSyncOptions = { mouthUpdateIntervalMs: 50, mouthLerpWindowMs: 50 }
 
-const { activeCard } = storeToRefs(useAiriCardStore())
+const { activeCard } = storeToRefs(useSAKURACardStore())
 const speechStore = useSpeechStore()
 const { ssmlEnabled, activeSpeechProvider, activeSpeechModel, activeSpeechVoice, activeSpeechVoiceId, pitch, speechProviderError } = storeToRefs(speechStore)
 const activeCardId = computed(() => activeCard.value?.name ?? 'default')
@@ -597,3 +597,4 @@ defineExpose({
     </div>
   </div>
 </template>
+

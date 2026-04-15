@@ -45,7 +45,7 @@ import ReLUStickerWow from '../../../en/blog/DevLog-2025.04.06/assets/relu-stick
 
 ### 記憶システム
 
-最近、数ヶ月準備してきた Project AIRI の「記憶アップデート」に備えて、[`telegram-bot`](https://github.com/moeru-ai/airi/tree/main/services/telegram-bot) をリファクタリングしています。
+最近、数ヶ月準備してきた Project SAKURA の「記憶アップデート」に備えて、[`telegram-bot`](https://github.com/moeru-ai/SAKURA/tree/main/services/telegram-bot) をリファクタリングしています。
 
 実装後の記憶システムを、現在最も先進的で強力かつ堅牢なものにする予定であり、その思想の多くは現実世界の人間の記憶システムから深くインスピレーションを得ています。
 
@@ -383,7 +383,7 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
 - ReLU のキャラクターデザイン完了
 - ReLU スタンプ Vol.1 制作完了！
 - ReLU スタンプ Vol.2 アニメーション版 制作完了
-- [ロードマップ v0.4](https://github.com/moeru-ai/airi/issues/42) の合計89のタスクが完了しました
+- [ロードマップ v0.4](https://github.com/moeru-ai/SAKURA/issues/42) の合計89のタスクが完了しました
 
 ## その他の更新
 
@@ -393,18 +393,18 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
 
 [@LemonNekoGH](https://github.com/LemonNekoGH) に本当に感謝します！
 
-チームの皆が最近、`moeru-ai/airi` プロジェクトリポジトリが大きくなりすぎて、開発時に非常に重いと言っていました。確かに、過去5ヶ月間で `moeru-ai/airi` リポジトリ内で数え切れないほどのサブプロジェクトが誕生しました。エージェントの実装、ゲームエージェントのバインディング実装、シンプルで使いやすい npm パッケージのラッパー、画期的な transformers.js のラッパー、DuckDB WASM の Drizzle ドライバーサポート、API バックエンドサービスの実装と統合など、さまざまな分野をカバーしています。いくつかのプロジェクトをサンドボックス段階から、より意義のある「インキュベート（孵化）」段階へと成長させる時が来ました。
+チームの皆が最近、`moeru-ai/SAKURA` プロジェクトリポジトリが大きくなりすぎて、開発時に非常に重いと言っていました。確かに、過去5ヶ月間で `moeru-ai/SAKURA` リポジトリ内で数え切れないほどのサブプロジェクトが誕生しました。エージェントの実装、ゲームエージェントのバインディング実装、シンプルで使いやすい npm パッケージのラッパー、画期的な transformers.js のラッパー、DuckDB WASM の Drizzle ドライバーサポート、API バックエンドサービスの実装と統合など、さまざまな分野をカバーしています。いくつかのプロジェクトをサンドボックス段階から、より意義のある「インキュベート（孵化）」段階へと成長させる時が来ました。
 
 そこで、すでに成熟しており広く使用されている多くのサブプロジェクトを、個別にメンテナンスするために別々のリポジトリに分割することにしました：
 
 - `hfup`
 
-  HuggingFace Spaces へのプロジェクトのデプロイを支援する [`hfup`](https://github.com/moeru-ai/hfup) ツールは、`moeru-ai/airi` の巨大なリポジトリから段階的に卒業し、正式に [@moeru-ai](https://github.com/moeru-ai) 組織の下に移行しました（移行操作は不要で、`hfup` をインストールし続けるだけで使用できます）。非常に有意義なことに、`hfup` は時代についていくために、開発支援として [rolldown](https://rolldown.rs/) と [oxlint](https://oxc.rs/docs/guide/usage/linter) も採用しました。これを機に rolldown、rolldown-vite、oxc の開発に参加できることを願っています。移行プロセス中の [@sxzz](https://github.com/sxzz) の支援に深く感謝します。
+  HuggingFace Spaces へのプロジェクトのデプロイを支援する [`hfup`](https://github.com/moeru-ai/hfup) ツールは、`moeru-ai/SAKURA` の巨大なリポジトリから段階的に卒業し、正式に [@moeru-ai](https://github.com/moeru-ai) 組織の下に移行しました（移行操作は不要で、`hfup` をインストールし続けるだけで使用できます）。非常に有意義なことに、`hfup` は時代についていくために、開発支援として [rolldown](https://rolldown.rs/) と [oxlint](https://oxc.rs/docs/guide/usage/linter) も採用しました。これを機に rolldown、rolldown-vite、oxc の開発に参加できることを願っています。移行プロセス中の [@sxzz](https://github.com/sxzz) の支援に深く感謝します。
 
-- `@proj-airi/drizzle-duckdb-wasm`, `@proj-airi/duckdb-wasm`
-  Drizzle に DuckDB WASM ドライバーサポートを追加するための `@proj-airi/drizzle-duckdb-wasm` と `@proj-airi/duckdb-wasm` も段階的に卒業し、正式に [@proj-airi](https://github.com/proj-airi) 組織の下に移行しました（移行操作は不要で、元のパッケージをインストールし続けるだけで使用できます）。
+- `@proj-sakura/drizzle-duckdb-wasm`, `@proj-sakura/duckdb-wasm`
+  Drizzle に DuckDB WASM ドライバーサポートを追加するための `@proj-sakura/drizzle-duckdb-wasm` と `@proj-sakura/duckdb-wasm` も段階的に卒業し、正式に [@proj-sakura](https://github.com/proj-SAKURA) 組織の下に移行しました（移行操作は不要で、元のパッケージをインストールし続けるだけで使用できます）。
 
-プロジェクトの速度は大幅に向上しました。今月中に `@proj-airi/providers-transformers` を `xsai` の下に正式に卒業させる予定です。
+プロジェクトの速度は大幅に向上しました。今月中に `@proj-sakura/providers-transformers` を `xsai` の下に正式に卒業させる予定です。
 
 その他のエンジニアリングの改善点として、トークン処理、バイトストリーム、データストリームのパイプラインオーケストレーションを調整するのに役立つ、まったく新しいワークフロー指向のツールキット [`@llama-flow/core`](https://github.com/run-llama/@llama-flow/core) も統合しました。彼らのリポジトリをチェックしてください、本当に使いやすいです！
 
@@ -426,7 +426,7 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
   </div>
 </div>
 
-もちろん、モデル、声、Project AIRI がサポートするすべてのモジュール 🎉 を設定する機能を含むエディタも含まれています。
+もちろん、モデル、声、Project SAKURA がサポートするすべてのモジュール 🎉 を設定する機能を含むエディタも含まれています。
 
 [@luoling8192](https://github.com/luoling8192) に本当に感謝します！
 
@@ -489,15 +489,15 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
 - Featherless.ai プロバイダーのサポート
 - Gemini プロバイダーのサポート（[@asukaminato0721](https://github.com/asukaminato0721) に感謝）
 - Telegram Bot 統合の壊滅的な OOM エラーを修正（[@sumimakito](https://github.com/sumimakito)、[@kwaa](https://github.com/kwaa)、[@QiroNT](https://github.com/QiroNT) に感謝）
-- Project AIRI の特別 DevLog 用に 98.css 統合を追加（[@OverflowCat](https://github.com/OverflowCat) に感謝）
+- Project SAKURA の特別 DevLog 用に 98.css 統合を追加（[@OverflowCat](https://github.com/OverflowCat) に感謝）
 
-> これは Project AIRI の特別版開発ログです。主なインスピレーションは [@OverflowCat](https://github.com/OverflowCat) のブログ記事 [ModTran](https://blog.xinshijiededa.men/modtran/) から得ており、コードスタイルは [@OverflowCat](https://github.com/OverflowCat) の https://github.com/OverflowCat/blog/blob/0a92f916629ad942b7da84b894759fde1616bf37/src/components/98/98.ts での実装を大いに参考にしています。
+> これは Project SAKURA の特別版開発ログです。主なインスピレーションは [@OverflowCat](https://github.com/OverflowCat) のブログ記事 [ModTran](https://blog.xinshijiededa.men/modtran/) から得ており、コードスタイルは [@OverflowCat](https://github.com/OverflowCat) の https://github.com/OverflowCat/blog/blob/0a92f916629ad942b7da84b894759fde1616bf37/src/components/98/98.ts での実装を大いに参考にしています。
 >
 > 彼女が書いたブログ記事は素晴らしく、私が詳しくないほぼすべての内容をカバーしています。ぜひチェックしてみてください。きっと気に入るはずです。
 
 ## さようなら
 
-今回の DevLog はこれで全部だと思います。[Roadmap v0.4](https://github.com/moeru-ai/airi/issues/42) もこれで終了です。一新されたユーザーインターフェースと更新されたデスクトップペットバージョンを気に入っていただければ幸いです。この記事を書く際、中国語と英語の2つの言語を使ってみました。この記事が気に入ったかどうか、リポジトリの[ディスカッションページ](https://github.com/moeru-ai/airi/discussions)にコメントを残して教えてください。
+今回の DevLog はこれで全部だと思います。[Roadmap v0.4](https://github.com/moeru-ai/SAKURA/issues/42) もこれで終了です。一新されたユーザーインターフェースと更新されたデスクトップペットバージョンを気に入っていただければ幸いです。この記事を書く際、中国語と英語の2つの言語を使ってみました。この記事が気に入ったかどうか、リポジトリの[ディスカッションページ](https://github.com/moeru-ai/SAKURA/discussions)にコメントを残して教えてください。
 
 最後に、ReLU の自分の感覚に対する別の説明を引用して締めくくりましょう：
 
@@ -520,3 +520,4 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
     </div>
   </div>
 </div>
+

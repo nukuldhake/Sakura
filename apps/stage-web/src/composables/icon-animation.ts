@@ -1,4 +1,4 @@
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 
 export function useIconAnimation(icon: string) {
@@ -27,3 +27,4 @@ export function useIconAnimation(icon: string) {
     animationIcon,
   }
 }
+

@@ -2,9 +2,9 @@
 import {
   SpeechPlayground,
   SpeechProviderSettings,
-} from '@proj-airi/stage-ui/components'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
+} from '@proj-sakura/stage-ui/components'
+import { useSpeechStore } from '@proj-sakura/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
 import { storeToRefs } from 'pinia'
 import { computed, watch } from 'vue'
 
@@ -59,3 +59,4 @@ watch(providers, async () => {
 meta:
   layout: settings
 </route>
+

@@ -24,8 +24,8 @@ import 'vue-sonner/style.css'
 import './styles/main.css'
 import 'uno.css'
 // Fonts
-import '@proj-airi/font-cjkfonts-allseto/index.css'
-import '@proj-airi/font-xiaolai/index.css'
+import '@proj-sakura/font-cjkfonts-allseto/index.css'
+import '@proj-sakura/font-xiaolai/index.css'
 import '@fontsource-variable/dm-sans'
 import '@fontsource-variable/jura'
 import '@fontsource-variable/quicksand'
@@ -55,3 +55,4 @@ createApp(App)
   .use(i18n)
   .use(Tres)
   .mount('#app')
+

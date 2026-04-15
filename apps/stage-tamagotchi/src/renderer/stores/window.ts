@@ -1,4 +1,4 @@
-import { useElectronRelativeMouse } from '@proj-airi/electron-vueuse'
+import { useElectronRelativeMouse } from '@proj-sakura/electron-vueuse'
 import { useWindowSize } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
@@ -19,3 +19,4 @@ export const useWindowStore = defineStore('tamagotchi-window', () => {
     live2dLookAtY,
   }
 })
+

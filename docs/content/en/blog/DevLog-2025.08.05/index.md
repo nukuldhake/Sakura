@@ -13,7 +13,7 @@ preview-cover:
 import Button from '../../../../.vitepress/components/Button.vue'
 
 function handleOpenLatest() {
-  window.open('https://github.com/moeru-ai/airi/releases/latest', '_blank')
+  window.open('https://github.com/moeru-ai/SAKURA/releases/latest', '_blank')
 }
 </script>
 
@@ -38,10 +38,10 @@ Do check the past Blog & DevLog posts I wrote that are interesting to you:
 
 Let me be brutally honest about what the past three months looked like:
 
-- [**391 commits**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
-- [**1017 files changed**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
-- [**74,548 lines added**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
-- [**13,930 lines removed**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
+- [**391 commits**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
+- [**1017 files changed**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
+- [**74,548 lines added**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
+- [**13,930 lines removed**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
 
 > But for those of you who worked for software industries, these numbers mean,
 > nothing, it's just a reflection of the big impact we made in this release.
@@ -57,14 +57,14 @@ I would love to mention some of the milestones we achieved so far:
 - We have over 40+ contributors! 🫂
 - We got over 300+ Discord members! 👾
 - We announced ourselves on [Hacker News](https://news.ycombinator.com/item?id=44573640)
-- We announced ourselves on [Product Hunt](https://www.producthunt.com/products/airi)
+- We announced ourselves on [Product Hunt](https://www.producthunt.com/products/SAKURA)
 - We were trending on GitHub `#1` 🏆 on July 17, 2025
 
 ## Features
 
 ### Desktop version
 
-Tamagotchi is the name of the Desktop version of AIRI, where you can have it
+Tamagotchi is the name of the Desktop version of SAKURA, where you can have it
 running as a separated, and always-running companion on Desktop with other
 applications without interfering your work.
 
@@ -87,7 +87,7 @@ To toggle off the **Fade on hover** feature, default shortcut is <kbd aria-label
 
 <br />
 
-<ThemedVideo autoplay src="./assets/airi-demo-fade-on-hover.mp4" />
+<ThemedVideo autoplay src="./assets/SAKURA-demo-fade-on-hover.mp4" />
 
 Many users found it quite confusing why every time cursor hovers over the
 characters, entire window fades out. Apologies for the lack of documentation
@@ -102,7 +102,7 @@ the model window will always be a minimized window with transparent
 background for OBS or other streaming capturing drivers to capture
 **in the background**.
 
-If you are going to use AIRI for VTuber streaming, it's fine to not having
+If you are going to use SAKURA for VTuber streaming, it's fine to not having
 the Fade on hover feature, but once you wish to have it living as a
 virtual companion on your Desktop, you will start to notice that:
 
@@ -114,13 +114,13 @@ virtual companion on your Desktop, you will start to notice that:
   on.
 
 That's why we came up with the idea: make a feature to allow any characters
-inside AIRI to fade out when the mouse is hovering over the window, and
+inside SAKURA to fade out when the mouse is hovering over the window, and
 passthrough the mouse clicking events to the applications underneath it.
 
 I personally love this feature a lot since I can now have the characters inside
-AIRI to stay with me with any applications I use now without worrying about
+SAKURA to stay with me with any applications I use now without worrying about
 to disable or organize the order of the windows. Everyday when I developing
-AIRI, no matter it's Web version or Desktop version, I will always open her
+SAKURA, no matter it's Web version or Desktop version, I will always open her
 on my Desktop, along with Terminal, VSCode/Cursor, with me.
 
 **Fade on hover™** wasn't the only feature we updated in Desktop version,
@@ -142,7 +142,7 @@ The default shortcut of Move mode is <kbd aria-label="Shift" data-keyboard-key="
 
 <br />
 
-<ThemedVideo autoplay src="./assets/airi-demo-move.mp4" />
+<ThemedVideo autoplay src="./assets/SAKURA-demo-move.mp4" />
 
 A draggable area will appear when entering Move mode, besides moving position
 with mouse, using the Position > Center / Bottom Left / Bottom Right in Tray
@@ -162,7 +162,7 @@ The default shortcut of Move mode is <kbd aria-label="Shift" data-keyboard-key="
 
 <br />
 
-<ThemedVideo autoplay src="./assets/airi-demo-resize.mp4" />
+<ThemedVideo autoplay src="./assets/SAKURA-demo-resize.mp4" />
 
 #### Resource Island
 
@@ -179,7 +179,7 @@ disappear when the download is finished.
 See it in action:
 
 <video autoplay controls muted loop>
-  <source src="./assets/airi-demo-resource-island.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-resource-island.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -190,11 +190,11 @@ file is required.
 #### Local ASR/STT
 
 Thanks to [@luoling8192 (Luoling)](https://github.com/luoling8192), and the experiments
-we have done in the repository [candle-examples](https://github.com/proj-airi/candle-examples),
+we have done in the repository [candle-examples](https://github.com/proj-SAKURA/candle-examples),
 we now have a local ASR/STT engine that works on Windows, macOS and Linux.
 
 <video autoplay controls muted loop>
-  <source src="./assets/airi-demo-settings-hearing.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-settings-hearing.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -215,26 +215,26 @@ and easier to use.
 
 #### Onboarding
 
-We know that configuring AIRI is quite complex now (but still easy if comparing
+We know that configuring SAKURA is quite complex now (but still easy if comparing
 to many other pure Python based ones where you have to understand the code structure
 to configure it).
 
 Thanks to [Me1td0wn76 (melty kiss)](https://github.com/Me1td0wn76)'s contribution
 adding support of adding onboarding screen for Web version, now you can
-have a much better experience when you first time using AIRI.
+have a much better experience when you first time using SAKURA.
 
 They wrote a blog after the Pull Request being merged to share the
-experience contributing Project AIRI: [AIRIプロジェクトに参加した話 - YAMA-blog](https://yama-pro.blog/posts/airi/)
+experience contributing Project SAKURA: [SAKURAプロジェクトに参加した話 - YAMA-blog](https://yama-pro.blog/posts/SAKURA/)
 
-<img class="light" src="./assets/airi-demo-onboarding-light.avif" alt="Onboarding light mode" />
-<img class="dark" src="./assets/airi-demo-onboarding-dark.avif" alt="Onboarding dark mode" />
+<img class="light" src="./assets/SAKURA-demo-onboarding-light.avif" alt="Onboarding light mode" />
+<img class="dark" src="./assets/SAKURA-demo-onboarding-dark.avif" alt="Onboarding dark mode" />
 
 See it in action:
 
 <ThemedVideo
   autoplay
-  light="./assets/airi-demo-onboarding-light.mp4"
-  dark="./assets/airi-demo-onboarding-dark.mp4"
+  light="./assets/SAKURA-demo-onboarding-light.mp4"
+  dark="./assets/SAKURA-demo-onboarding-dark.mp4"
 />
 
 #### VRM
@@ -243,8 +243,8 @@ Thanks to the hard work done by [Lilia-Chen (Lilia_Chen)](https://github.com/Lil
 VRM models are now displayed better with precise camera implementation and rendering
 mechanism.
 
-<img class="light" src="./assets/airi-demo-vrm-light.avif" alt="Time series chart light mode" />
-<img class="dark" src="./assets/airi-demo-vrm-dark.avif" alt="Time series chart dark mode" />
+<img class="light" src="./assets/SAKURA-demo-vrm-light.avif" alt="Time series chart light mode" />
+<img class="dark" src="./assets/SAKURA-demo-vrm-dark.avif" alt="Time series chart dark mode" />
 
 ### Mobile Web
 
@@ -254,8 +254,8 @@ Onboarding is also available for Mobile Web version:
 
 <ThemedVideo
   autoplay
-  light="./assets/airi-demo-onboarding-mobile-light.mp4"
-  dark="./assets/airi-demo-onboarding-mobile-dark.mp4"
+  light="./assets/SAKURA-demo-onboarding-mobile-light.mp4"
+  dark="./assets/SAKURA-demo-onboarding-mobile-dark.mp4"
 />
 
 #### Scene
@@ -276,12 +276,12 @@ value to default.
 <br />
 
 <video class="light" autoplay controls muted loop>
-  <source src="./assets/airi-demo-quick-editor-mobile-light.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-quick-editor-mobile-light.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <video class="dark" autoplay controls muted loop>
-  <source src="./assets/airi-demo-quick-editor-mobile-dark.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-quick-editor-mobile-dark.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -299,41 +299,41 @@ around it, definitely check it out: [DevLog 2025.08.01](../DevLog-2025.08.01/).
 See it in action:
 
 <video class="light" autoplay controls muted loop>
-  <source src="./assets/airi-demo-clustr-light.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-clustr-light.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <video class="dark" autoplay controls muted loop>
-  <source src="./assets/airi-demo-clustr-dark.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-clustr-dark.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 #### Level meter
 
-> UI Component: https://airi.moeru.ai/ui/#/story/src-components-gadgets-levelmeter-story-vue
+> UI Component: https://SAKURA.moeru.ai/ui/#/story/src-components-gadgets-levelmeter-story-vue
 
 Useful when wishing to display the detected meter of the audio input, or
 the realtime system load:
 
-<img class="light" src="./assets/airi-ui-level-meter-light.avif" alt="Level meter light mode" />
-<img class="dark" src="./assets/airi-ui-level-meter-dark.avif" alt="Level meter dark mode" />
+<img class="light" src="./assets/SAKURA-ui-level-meter-light.avif" alt="Level meter light mode" />
+<img class="dark" src="./assets/SAKURA-ui-level-meter-dark.avif" alt="Level meter dark mode" />
 
 #### Time series chart
 
-> UI Component: https://airi.moeru.ai/ui/#/story/src-components-gadgets-timeserieschart-story-vue
+> UI Component: https://SAKURA.moeru.ai/ui/#/story/src-components-gadgets-timeserieschart-story-vue
 
 Similar to the Level meter for changing values, but especially useful for
 historical data.
 
-<img class="light" src="./assets/airi-ui-time-series-chart-light.avif" alt="Time series chart light mode" />
-<img class="dark" src="./assets/airi-ui-time-series-chart-dark.avif" alt="Time series chart dark mode" />
+<img class="light" src="./assets/SAKURA-ui-time-series-chart-light.avif" alt="Time series chart light mode" />
+<img class="dark" src="./assets/SAKURA-ui-time-series-chart-dark.avif" alt="Time series chart dark mode" />
 
 There are many more components we added...
 
-- [x] `<Progress />` (thanks to @Menci [2cb602aa](https://github.com/moeru-ai/airi/commit/2cb602aa3eac456a479b622a5ecf043831597ffe))
-- [x] `<FieldSelect />` ([d0d782ff](https://github.com/moeru-ai/airi/commit/d0d782ff94a5a0a12819725303f687bd1a47e87c))
-- [x] `<Alert />` (thanks [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/airi/pull/295))
-- [x] `<ErrorContainer />`  (thanks [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/airi/pull/295))
+- [x] `<Progress />` (thanks to @Menci [2cb602aa](https://github.com/moeru-ai/SAKURA/commit/2cb602aa3eac456a479b622a5ecf043831597ffe))
+- [x] `<FieldSelect />` ([d0d782ff](https://github.com/moeru-ai/SAKURA/commit/d0d782ff94a5a0a12819725303f687bd1a47e87c))
+- [x] `<Alert />` (thanks [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/SAKURA/pull/295))
+- [x] `<ErrorContainer />`  (thanks [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/SAKURA/pull/295))
 - [x] New sidebar nav design
 - [x] Toaster
 - [x] Prompt to update for user when new version is available
@@ -346,8 +346,8 @@ We got a brand new documentation site right now:
 
 <ThemedVideo
   autoplay
-  light="./assets/airi-docs-light.mp4"
-  dark="./assets/airi-docs-dark.mp4"
+  light="./assets/SAKURA-docs-light.mp4"
+  dark="./assets/SAKURA-docs-dark.mp4"
 />
 
 It looks stunning good, we completely rewrite it based on the work
@@ -360,8 +360,8 @@ of their components to build our own, do check them out!
 The blogs page looks good and better too, with new cover designed by
 [@lynzrand (Rynco Maekawa)](https://github.com/lynzrand)
 
-<img class="light" src="./assets/airi-docs-blogs-light.avif" alt="Time series chart light mode" />
-<img class="dark" src="./assets/airi-docs-blogs-dark.avif" alt="Time series chart dark mode" />
+<img class="light" src="./assets/SAKURA-docs-blogs-light.avif" alt="Time series chart light mode" />
+<img class="dark" src="./assets/SAKURA-docs-blogs-dark.avif" alt="Time series chart dark mode" />
 
 ### Translation workflow changes
 
@@ -369,11 +369,11 @@ We split the so called `i18n` or locales files out to dedicated package lives
 inside our own huge monorepo.
 
 When contributing with new locales, adding new translations,
-or fixing existing ones, please navigate to https://github.com/moeru-ai/airi/tree/main/packages/i18n/src/locales
+or fixing existing ones, please navigate to https://github.com/moeru-ai/SAKURA/tree/main/packages/i18n/src/locales
 first.
 
-<img class="light" src="./assets/airi-packages-i18n-light.avif" alt="Time series chart light mode" />
-<img class="dark" src="./assets/airi-packages-i18n-dark.avif" alt="Time series chart dark mode" />
+<img class="light" src="./assets/SAKURA-packages-i18n-light.avif" alt="Time series chart light mode" />
+<img class="dark" src="./assets/SAKURA-packages-i18n-dark.avif" alt="Time series chart dark mode" />
 
 You will find different directories for different languages here. Pick
 the desired one and continue.
@@ -524,20 +524,20 @@ But this wasn't the stop, we replaced `unbuild` with `tsdown`, this
 Now, the `postinstall` script is still required, if we could find a way to
 cache the build results with dependency awareness, many redundant builds
 can be avoided. This is where `turborepo` helps us even faster builds.
-With `turborepo`, the time it requires to build AIRI **reduced from 4 minutes
+With `turborepo`, the time it requires to build SAKURA **reduced from 4 minutes
 to 25 seconds in average**.
 
 ### Now Nix is supported
 
 Thanks to [@Weathercold (Weathercold)](https://github.com/Weathercold), we now
-have a Nix flake to build AIRI, which is a great addition to the
+have a Nix flake to build SAKURA, which is a great addition to the
 cross-platform compatibility. It works even on macOS.
 
 We are waiting the final Pull Request to be merged into nix-pkgs,
 but you can try it out with the following command:
 
 ```bash
-nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/airi
+nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/SAKURA
 ```
 
 ### Unified build pipeline
@@ -563,7 +563,7 @@ So technically, if you encountering any issues with the latest release,
 you can always try the latest build from the `main` branch to try whether
 we fixed it or not.
 
-Nightly builds can be found at https://github.com/moeru-ai/airi/actions/workflows/release-tamagotchi.yml
+Nightly builds can be found at https://github.com/moeru-ai/SAKURA/actions/workflows/release-tamagotchi.yml
 
 ## Before ending...
 
@@ -571,20 +571,20 @@ New packages born between this release:
 
 > Big shout out to [@sumimakito](https://github.com/sumimakito), she did so many fantastic things... I can't even count them all...
 
-- [`@proj-airi/chromatic`](https://github.com/proj-airi/chromatic) (by [@sumimakito](https://github.com/sumimakito))
-- [`@proj-airi/unocss-preset-chromatic`](https://github.com/proj-airi/chromatic) (by [@sumimakito](https://github.com/sumimakito))
+- [`@proj-sakura/chromatic`](https://github.com/proj-SAKURA/chromatic) (by [@sumimakito](https://github.com/sumimakito))
+- [`@proj-sakura/unocss-preset-chromatic`](https://github.com/proj-SAKURA/chromatic) (by [@sumimakito](https://github.com/sumimakito))
 - [`@moeru-ai/jem`](https://github.com/moeru-ai/inventory/tree/main/packages/jem-validator) (by [@LemonNekoGH](https://github.com/LemonNekoGH)), unified model catalog
 - [`clustr`](https://github.com/sumimakito/clustr) (by [@sumimakito](https://github.com/sumimakito))
-- [`@proj-airi/drizzle-orm-browser`](https://github.com/proj-airi/drizzle-orm-browser) (by me)
+- [`@proj-sakura/drizzle-orm-browser`](https://github.com/proj-SAKURA/drizzle-orm-browser) (by me)
 
 Side projects born between this release:
 
 - [HuggingFace Inspector](https://hf-inspector.moeru.ai/) (https://github.com/moeru-ai/hf-inspector)
-- [More candle examples about whisper & VAD, candle, burn, and ort](https://github.com/proj-airi/candle-examples)
+- [More candle examples about whisper & VAD, candle, burn, and ort](https://github.com/proj-SAKURA/candle-examples)
 - [(the Model Catalog) Inventory submission!](https://github.com/moeru-ai/inventory/pull/1) (by [@LemonNekoGH](https://github.com/LemonNekoGH))
 
 We cannot cover everything in this DevLog, for details, you can always track and read back
-at [Roadmap v0.7](https://github.com/moeru-ai/airi/issues/200) on our roadmap.
+at [Roadmap v0.7](https://github.com/moeru-ai/SAKURA/issues/200) on our roadmap.
 
 <div class="w-full flex flex-col items-center justify-center gap-3 py-3">
   <img src="./assets/relu-sticker-thinks.avif" alt="ReLU sticker thinks" class="w-30!" />
@@ -592,3 +592,4 @@ at [Roadmap v0.7](https://github.com/moeru-ai/airi/issues/200) on our roadmap.
     <span class="block font-bold">Thanks for reading all the way down here!</span>
   </div>
 </div>
+

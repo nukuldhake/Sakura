@@ -1,4 +1,4 @@
-import type { WebSocketEvents } from '@proj-airi/server-sdk'
+import type { WebSocketEvents } from '@proj-sakura/server-sdk'
 
 import type { FlowEntry, PreviewItem } from '../context-flow-types'
 
@@ -200,3 +200,4 @@ export function useContextFlowFormatters() {
     truncateText,
   }
 }
+

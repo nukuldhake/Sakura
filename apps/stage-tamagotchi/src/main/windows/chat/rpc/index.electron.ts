@@ -1,6 +1,6 @@
 import type { BrowserWindow } from 'electron'
 
-import type { ServerChannel } from '../../../services/airi/channel-server'
+import type { ServerChannel } from '../../../services/SAKURA/channel-server'
 import type { WidgetsWindowManager } from '../../widgets'
 
 import { defineInvokeHandler } from '@moeru/eventa'
@@ -8,8 +8,8 @@ import { createContext } from '@moeru/eventa/adapters/electron/main'
 import { ipcMain } from 'electron'
 
 import { electronOpenMainDevtools } from '../../../../shared/eventa'
-import { createServerChannelService } from '../../../services/airi/channel-server'
-import { createWidgetsService } from '../../../services/airi/widgets'
+import { createServerChannelService } from '../../../services/SAKURA/channel-server'
+import { createWidgetsService } from '../../../services/SAKURA/widgets'
 import { createScreenService, createWindowService } from '../../../services/electron'
 
 export function setupChatWindowElectronInvokes(params: {
@@ -31,3 +31,4 @@ export function setupChatWindowElectronInvokes(params: {
 
   defineInvokeHandler(context, electronOpenMainDevtools, () => params.window.webContents.openDevTools({ mode: 'detach' }))
 }
+

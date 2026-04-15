@@ -6,7 +6,7 @@ date: 2025-03-10
 
 ## 既視感
 
-先週の金曜日（3月7日）、AIRI のステージ UI と設定 UI の新しいスタイルをデザイン・構想しようとしていましたが、開発配信の終了間際にようやくアイデアが閃きました。
+先週の金曜日（3月7日）、SAKURA のステージ UI と設定 UI の新しいスタイルをデザイン・構想しようとしていましたが、開発配信の終了間際にようやくアイデアが閃きました。
 
 ## 日中
 
@@ -26,18 +26,18 @@ date: 2025-03-10
 
 > これでメニューからよりリズムを感じられるようになりましたね？！
 
-開発中に、現在 `packages/` ディレクトリにあるいくつかのパッケージが実際には独立したパッケージであり、Project AIRI のワークフローにさえ含まれていないことに気づきました。
+開発中に、現在 `packages/` ディレクトリにあるいくつかのパッケージが実際には独立したパッケージであり、Project SAKURA のワークフローにさえ含まれていないことに気づきました。
 
-つまり、これらのパッケージを他の場所に移動することで、メインリポジトリ [airi](https://github.com/moeru-ai/airi) のインストールサイズとビルドプロセスを簡素化できるということです。
+つまり、これらのパッケージを他の場所に移動することで、メインリポジトリ [SAKURA](https://github.com/moeru-ai/SAKURA) のインストールサイズとビルドプロセスを簡素化できるということです。
 
 > どこへ行くの？
 
-いい質問です！GitHub 上で [`@proj-airi`](https://github.com/proj-airi) という組織を登録しました。多くのパッケージや静的アプリケーションは Moeru AI にとっても有用ではないため、これらのパッケージを [`@proj-airi`](https://github.com/proj-airi) に移動するのが良いかもしれません。
+いい質問です！GitHub 上で [`@proj-sakura`](https://github.com/proj-SAKURA) という組織を登録しました。多くのパッケージや静的アプリケーションは Moeru AI にとっても有用ではないため、これらのパッケージを [`@proj-sakura`](https://github.com/proj-SAKURA) に移動するのが良いかもしれません。
 
-というわけで、いくつかのパッケージとアプリケーションを [`@proj-airi`](https://github.com/proj-airi) 組織に移動しました！こちらで確認できます：
+というわけで、いくつかのパッケージとアプリケーションを [`@proj-sakura`](https://github.com/proj-SAKURA) 組織に移動しました！こちらで確認できます：
 
-- https://github.com/proj-airi/webai-examples：WebGPU や関連コンテンツのデモ制作用。
-- https://github.com/proj-airi/lobe-icons：[Lobe Icons](https://github.com/lobehub/lobe-icons) の移植版で、Iconify JSON と UnoCSS で使用できます。
+- https://github.com/proj-SAKURA/webai-examples：WebGPU や関連コンテンツのデモ制作用。
+- https://github.com/proj-SAKURA/lobe-icons：[Lobe Icons](https://github.com/lobehub/lobe-icons) の移植版で、Iconify JSON と UnoCSS で使用できます。
 
 これら2つのリポジトリはオープンソースのままであり、通常通り MIT ライセンスを使用しますのでご心配なく。
 
@@ -47,9 +47,9 @@ date: 2025-03-10
 
 以下のコミットから彼/彼女の学習成果を確認できます：
 
-- https://github.com/moeru-ai/airi/pull/54
-- https://github.com/moeru-ai/airi/pull/55
-- https://github.com/moeru-ai/airi/pull/65
+- https://github.com/moeru-ai/SAKURA/pull/54
+- https://github.com/moeru-ai/SAKURA/pull/55
+- https://github.com/moeru-ai/SAKURA/pull/65
 
 ステージ上の波のアニメーションの修正と改善に協力してくれた [@sumimakito](https://github.com/sumimakito) と [@junkwarrior87](https://github.com/junkwarrior87) に深く感謝します。
 
@@ -57,10 +57,10 @@ date: 2025-03-10
 
 <ThemedVideo controls muted src="/en/blog/DevLog-2025.03.10/assets/customizable-theme-colors.mp4" />
 
-- https://github.com/moeru-ai/airi/pull/53
-- https://github.com/moeru-ai/airi/pull/60
-- https://github.com/moeru-ai/airi/pull/61
-- https://github.com/moeru-ai/airi/pull/63
+- https://github.com/moeru-ai/SAKURA/pull/53
+- https://github.com/moeru-ai/SAKURA/pull/60
+- https://github.com/moeru-ai/SAKURA/pull/61
+- https://github.com/moeru-ai/SAKURA/pull/63
 
 彼らはロゴさえもカスタムカラーに合わせて変化するようにしました 🤯。
 
@@ -76,10 +76,11 @@ date: 2025-03-10
 
 ああ、忘れるところでした... [@junkwarrior87](https://github.com/junkwarrior87) は、以前 [@LemonNekoGH](https://github.com/LemonNekoGH) がデモした、色相を RGB スペクトル全体で輝かせる機能を維持してくれました。これは「ダイナミックにしたい！」と呼ばれています（**RGB ON** 機能と考えてください 😂）：
 
-- https://github.com/moeru-ai/airi/pull/64
+- https://github.com/moeru-ai/SAKURA/pull/64
 
 ## 開発配信
 
 最近とても忙しくて 😭、開発配信を行っていません。
 
 今日の DevLog はここまでです。DevStream に参加し、最後まで付き合ってくれた皆さんに感謝します。また明日お会いしましょう。
+

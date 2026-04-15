@@ -1,3 +1,4 @@
-# @proj-airi/plugin-sdk
+# @proj-sakura/plugin-sdk
 
-Runtime-agnostic SDK for AIRI plugins.
+Runtime-agnostic SDK for SAKURA plugins.
+

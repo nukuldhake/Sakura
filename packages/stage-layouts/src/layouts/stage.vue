@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { LoginDrawer } from '@proj-airi/stage-ui/components/auth/index'
-import { useAuthStore } from '@proj-airi/stage-ui/stores/auth'
+import { LoginDrawer } from '@proj-sakura/stage-ui/components/auth/index'
+import { useAuthStore } from '@proj-sakura/stage-ui/stores/auth'
 import { useMediaQuery } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { watch } from 'vue'
@@ -26,3 +26,4 @@ watch([isAuthenticated, isMobile], ([auth, mobile]) => {
     <LoginDrawer v-model:open="isLoginOpen" />
   </main>
 </template>
+

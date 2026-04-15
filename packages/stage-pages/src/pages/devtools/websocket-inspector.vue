@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useWebSocketInspectorStore } from '@proj-airi/stage-ui/stores/devtools/websocket-inspector'
-import { Button, FieldCheckbox, Input } from '@proj-airi/ui'
+import { useWebSocketInspectorStore } from '@proj-sakura/stage-ui/stores/devtools/websocket-inspector'
+import { Button, FieldCheckbox, Input } from '@proj-sakura/ui'
 import { computed, nextTick, ref, watch } from 'vue'
 
 const store = useWebSocketInspectorStore()
@@ -191,3 +191,4 @@ meta:
   title: WebSocket Inspector
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

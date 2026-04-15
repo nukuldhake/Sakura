@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTheme } from '@proj-airi/ui'
+import { useTheme } from '@proj-sakura/ui'
 
 import { PartAnimatedWave, PatternCross } from '.'
 
@@ -18,3 +18,4 @@ const { isDark } = useTheme()
     </PartAnimatedWave>
   </PatternCross>
 </template>
+

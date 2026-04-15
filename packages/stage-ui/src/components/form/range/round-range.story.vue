@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RoundRange } from '@proj-airi/ui'
+import { RoundRange } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const minValue = ref(0)
@@ -26,3 +26,4 @@ const maxValue = ref(100)
     </Variant>
   </Story>
 </template>
+

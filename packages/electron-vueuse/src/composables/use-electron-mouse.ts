@@ -1,7 +1,7 @@
 import type { UseMouseOptions } from '@vueuse/core'
 
 import { defineInvoke } from '@moeru/eventa'
-import { cursorScreenPoint, startLoopGetCursorScreenPoint } from '@proj-airi/electron-eventa'
+import { cursorScreenPoint, startLoopGetCursorScreenPoint } from '@proj-sakura/electron-eventa'
 import { useMouse } from '@vueuse/core'
 import { ref } from 'vue'
 
@@ -34,3 +34,4 @@ export function useElectronMouse(options?: UseMouseOptions) {
   const eventTarget = useElectronMouseEventTarget()
   return useMouse({ ...options, target: eventTarget, type: 'screen' })
 }
+

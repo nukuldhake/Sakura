@@ -275,3 +275,5 @@ https://codepen.io/Francesco_Maretti/pen/yLPRvXp
   mask-image: linear-gradient(to bottom, #ffffff00 0%, #ffffff 50%, #ffffff00 100%);
 }
 </style>
+
+

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { WIP } from '@proj-airi/stage-ui/components'
+import { WIP } from '@proj-sakura/stage-ui/components'
 </script>
 
 <template>
@@ -15,3 +15,4 @@ meta:
     name: slide
     pageSpecificAvailable: true
 </route>
+

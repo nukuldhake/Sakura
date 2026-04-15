@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Select } from '@proj-airi/ui'
+import { Select } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const singleValue = ref('option1')
@@ -64,3 +64,4 @@ const options = [
     </Variant>
   </Story>
 </template>
+

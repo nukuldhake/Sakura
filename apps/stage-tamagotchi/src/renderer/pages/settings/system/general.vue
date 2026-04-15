@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import SettingsGeneralFields from '@proj-airi/stage-pages/components/settings-general-fields.vue'
+import SettingsGeneralFields from '@proj-sakura/stage-pages/components/settings-general-fields.vue'
 
-import { FieldCheckbox } from '@proj-airi/ui'
+import { FieldCheckbox } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -45,3 +45,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

@@ -1,17 +1,17 @@
 {
-  "name": "@proj-airi/stage-layouts",
+  "name": "@proj-sakura/stage-layouts",
   "type": "module",
   "private": true,
   "description": "Shared Layouts",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/stage-layouts"
   },
   "exports": {
@@ -31,12 +31,12 @@
   "dependencies": {
     "@moeru/eventa": "^1.0.0-beta.1",
     "@moeru/std": "catalog:",
-    "@proj-airi/ccc": "workspace:*",
-    "@proj-airi/i18n": "workspace:*",
-    "@proj-airi/server-sdk": "workspace:*",
-    "@proj-airi/stage-ui": "workspace:*",
-    "@proj-airi/stage-ui-three": "workspace:*",
-    "@proj-airi/ui": "workspace:*",
+    "@proj-sakura/ccc": "workspace:*",
+    "@proj-sakura/i18n": "workspace:*",
+    "@proj-sakura/server-sdk": "workspace:*",
+    "@proj-sakura/stage-ui": "workspace:*",
+    "@proj-sakura/stage-ui-three": "workspace:*",
+    "@proj-sakura/ui": "workspace:*",
     "@vueuse/core": "^14.2.1",
     "@vueuse/shared": "^14.2.1",
     "@xsai-ext/providers": "catalog:",
@@ -58,10 +58,12 @@
   },
   "devDependencies": {
     "@nekopaw/tempora": "catalog:",
-    "@proj-airi/stage-shared": "workspace:^",
+    "@proj-sakura/stage-shared": "workspace:^",
     "@types/audioworklet": "catalog:",
     "@types/three": "^0.183.1",
     "unplugin-info": "catalog:",
     "vue-tsc": "^3.1.8"
   }
 }
+
+

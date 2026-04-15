@@ -1,6 +1,6 @@
 ---
 title: デザインで貢献
-description: Project AIRI へのデザイン貢献方法
+description: Project SAKURA へのデザイン貢献方法
 ---
 
 ::: warning 準備中
@@ -11,3 +11,4 @@ description: Project AIRI へのデザイン貢献方法
 
 - [リソース](./resources)
 - [ツール](./tools)
+

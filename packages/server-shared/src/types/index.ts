@@ -1,2 +1,3 @@
 export * from './websocket'
-export * from '@proj-airi/plugin-protocol/types'
+export * from '@proj-sakura/plugin-protocol/types'
+

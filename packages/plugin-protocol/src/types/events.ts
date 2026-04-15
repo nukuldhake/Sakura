@@ -62,7 +62,7 @@ export type MetadataEventSource = ModuleIdentity
  *
  * Example:
  *  {
- *    id: "airi.config.stage-ui",
+ *    id: "SAKURA.config.stage-ui",
  *    version: 2,
  *    schema: { type: "object", properties: { model: { type: "string" } }, required: ["model"] },
  *  }
@@ -370,9 +370,9 @@ export enum MessageHeartbeat {
 }
 
 export enum WebSocketEventSource {
-  Server = 'proj-airi:server-runtime',
-  StageWeb = 'proj-airi:stage-web',
-  StageTamagotchi = 'proj-airi:stage-tamagotchi',
+  Server = 'proj-SAKURA:server-runtime',
+  StageWeb = 'proj-SAKURA:stage-web',
+  StageTamagotchi = 'proj-SAKURA:stage-tamagotchi',
 }
 
 interface InputSource {
@@ -1040,3 +1040,4 @@ export interface ProtocolEvents<C = undefined> {
 export type ProtocolEventOf<E, C = undefined> = E extends keyof ProtocolEvents<C>
   ? Omit<ProtocolEvents<C>[E], 'metadata'> & { metadata?: Record<string, unknown> }
   : never
+

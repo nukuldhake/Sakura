@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import type { ChatProvider } from '@xsai-ext/providers/utils'
 
-import { isStageTamagotchi } from '@proj-airi/stage-shared'
-import { useAudioAnalyzer } from '@proj-airi/stage-ui/composables'
-import { useAudioContext } from '@proj-airi/stage-ui/stores/audio'
-import { useChatOrchestratorStore } from '@proj-airi/stage-ui/stores/chat'
-import { useChatSessionStore } from '@proj-airi/stage-ui/stores/chat/session-store'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useHearingSpeechInputPipeline, useHearingStore } from '@proj-airi/stage-ui/stores/modules/hearing'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { useSettings, useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
-import { BasicTextarea, FieldSelect } from '@proj-airi/ui'
+import { isStageTamagotchi } from '@proj-sakura/stage-shared'
+import { useAudioAnalyzer } from '@proj-sakura/stage-ui/composables'
+import { useAudioContext } from '@proj-sakura/stage-ui/stores/audio'
+import { useChatOrchestratorStore } from '@proj-sakura/stage-ui/stores/chat'
+import { useChatSessionStore } from '@proj-sakura/stage-ui/stores/chat/session-store'
+import { useConsciousnessStore } from '@proj-sakura/stage-ui/stores/modules/consciousness'
+import { useHearingSpeechInputPipeline, useHearingStore } from '@proj-sakura/stage-ui/stores/modules/hearing'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
+import { useSettings, useSettingsAudioDevice } from '@proj-sakura/stage-ui/stores/settings'
+import { BasicTextarea, FieldSelect } from '@proj-sakura/ui'
 import { until } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger } from 'reka-ui'
@@ -511,3 +511,4 @@ watch(autoSendEnabled, (enabled) => {
     </div>
   </div>
 </template>
+

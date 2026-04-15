@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { Button, FieldInput, FieldSelect, FieldTextArea } from '@proj-airi/ui'
+import { useElectronEventaInvoke } from '@proj-sakura/electron-vueuse'
+import { Button, FieldInput, FieldSelect, FieldTextArea } from '@proj-sakura/ui'
 import { computed, reactive, ref } from 'vue'
 
 import { widgetsAdd, widgetsClear, widgetsOpenWindow, widgetsPrepareWindow, widgetsRemove, widgetsUpdate } from '../../../shared/eventa'
@@ -382,3 +382,4 @@ meta:
   titleKey: tamagotchi.settings.devtools.pages.widgets-calling.title
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

@@ -10,9 +10,9 @@ excerpt: |
 
 ## 回顾
 
-去年的 [DevLog](../DevLog-2025.08.26/index.md) 中，我们分享了 `airi-factorio` 纯视觉方向的一些进展，今天我想和大家分享一下我们在 Dome Keeper 游戏方向的一些进展……
+去年的 [DevLog](../DevLog-2025.08.26/index.md) 中，我们分享了 `SAKURA-factorio` 纯视觉方向的一些进展，今天我想和大家分享一下我们在 Dome Keeper 游戏方向的一些进展……
 
-等下，柠猫？你怎么不继续写 `airi-factorio` 了呢？
+等下，柠猫？你怎么不继续写 `SAKURA-factorio` 了呢？
 
 其实是我打退堂鼓了，因为 Factorio 太自由了，太复杂了，我实在是驾驭不了，于是转向了 [Dome Keeper](https://store.steampowered.com/app/1637320/Dome_Keeper/)，一个相对简单的游戏。
 
@@ -79,8 +79,9 @@ dome / enemy / player 仍然偏少，需要后续补样本。
 
 ## 下一步
 
-还记得 `airi-factorio` 仓库里的纯视觉方向的 Playground 吗？我打算扩展它，让它支持 Dome Keeper，让 `proj-airi` 整个组织都可以复用。还有，我们还需要更多的样本，尤其是 `dome`、`enemy` 和 `player` 类别的样本。
+还记得 `SAKURA-factorio` 仓库里的纯视觉方向的 Playground 吗？我打算扩展它，让它支持 Dome Keeper，让 `proj-SAKURA` 整个组织都可以复用。还有，我们还需要更多的样本，尤其是 `dome`、`enemy` 和 `player` 类别的样本。
 
-让我们期待接下来的进展吧！哦对了，mod 代码已经开源了，欢迎大家[来玩](https://github.com/proj-airi/game-playing-ai-dome-keeper)！
+让我们期待接下来的进展吧！哦对了，mod 代码已经开源了，欢迎大家[来玩](https://github.com/proj-SAKURA/game-playing-ai-dome-keeper)！
 
 除夕快乐！
+

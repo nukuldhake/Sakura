@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BackgroundPickerDialog } from '@proj-airi/stage-ui/components'
+import { BackgroundPickerDialog } from '@proj-sakura/stage-ui/components'
 import { storeToRefs } from 'pinia'
 
 import { useBackgroundStore } from '../../stores/background'
@@ -19,3 +19,4 @@ const { options, selectedOption } = storeToRefs(backgroundStore)
     @remove="option => backgroundStore.removeOption(option.id)"
   />
 </template>
+

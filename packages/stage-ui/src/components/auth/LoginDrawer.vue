@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { OAuthProvider } from '../../libs/auth'
 
-import { Button } from '@proj-airi/ui'
+import { Button } from '@proj-sakura/ui'
 import { useResizeObserver, useScreenSafeArea } from '@vueuse/core'
 import { DrawerContent, DrawerHandle, DrawerOverlay, DrawerPortal, DrawerRoot } from 'vaul-vue'
 import { ref } from 'vue'
@@ -72,3 +72,4 @@ async function handleSignIn(provider: OAuthProvider) {
     </DrawerPortal>
   </DrawerRoot>
 </template>
+

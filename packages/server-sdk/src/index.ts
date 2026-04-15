@@ -1,2 +1,3 @@
 export * from './client'
-export * from '@proj-airi/server-shared/types'
+export * from '@proj-sakura/server-shared/types'
+

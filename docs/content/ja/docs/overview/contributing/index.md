@@ -1,6 +1,6 @@
 ---
 title: コントリビューション
-description: Project AIRI への貢献
+description: Project SAKURA への貢献
 ---
 
 こんにちは！このプロジェクトへの貢献に興味を持っていただきありがとうございます。このガイドは、あなたが始めるのに役立ちます。
@@ -117,13 +117,13 @@ git rebase main
 
 ## このプロジェクトをフォークする
 
-[moeru-ai/airi](https://github.com/moeru-ai/airi) ページの右上にある **Fork** ボタンをクリックしてください。
+[moeru-ai/SAKURA](https://github.com/moeru-ai/SAKURA) ページの右上にある **Fork** ボタンをクリックしてください。
 
 ## クローン
 
 ```shell
-git clone https://github.com/<your-github-username>/airi.git
-cd airi
+git clone https://github.com/<your-github-username>/SAKURA.git
+cd SAKURA
 ```
 
 ## 作業用ブランチを作成する
@@ -178,7 +178,7 @@ nr dev:tamagotchi
 
 :::
 
-### Stage Web (Web 版 [airi.moeru.ai](https://airi.moeru.ai) 用)
+### Stage Web (Web 版 [SAKURA.moeru.ai](https://SAKURA.moeru.ai) 用)
 
 ```shell
 pnpm dev
@@ -230,14 +230,14 @@ cp .env .env.local
 データベースのマイグレーション
 
 ```shell
-pnpm -F @proj-airi/telegram-bot db:generate
-pnpm -F @proj-airi/telegram-bot db:push
+pnpm -F @proj-sakura/telegram-bot db:generate
+pnpm -F @proj-sakura/telegram-bot db:push
 ```
 
 ボットの実行
 
 ```shell
-pnpm -F @proj-airi/telegram-bot start
+pnpm -F @proj-sakura/telegram-bot start
 ```
 
 ::: tip
@@ -245,7 +245,7 @@ pnpm -F @proj-airi/telegram-bot start
 [@antfu/ni](https://github.com/antfu-collective/ni) ユーザーの場合：
 
 ```shell
-nr -F @proj-airi/telegram-bot dev
+nr -F @proj-sakura/telegram-bot dev
 ```
 
 :::
@@ -267,7 +267,7 @@ cp .env .env.local
 ボットの実行
 
 ```shell
-pnpm -F @proj-airi/discord-bot start
+pnpm -F @proj-sakura/discord-bot start
 ```
 
 ::: tip
@@ -275,7 +275,7 @@ pnpm -F @proj-airi/discord-bot start
 [@antfu/ni](https://github.com/antfu-collective/ni) ユーザーの場合：
 
 ```shell
-nr -F @proj-airi/discord-bot dev
+nr -F @proj-sakura/discord-bot dev
 ```
 
 :::
@@ -299,7 +299,7 @@ cp .env .env.local
 ボットの実行
 
 ```shell
-pnpm -F @proj-airi/minecraft-bot start
+pnpm -F @proj-sakura/minecraft-bot start
 ```
 
 ::: tip
@@ -307,7 +307,7 @@ pnpm -F @proj-airi/minecraft-bot start
 [@antfu/ni](https://github.com/antfu-collective/ni) ユーザーの場合：
 
 ```shell
-nr -F @proj-airi/minecraft-bot dev
+nr -F @proj-sakura/minecraft-bot dev
 ```
 
 :::
@@ -356,17 +356,18 @@ git push origin <your-branch-name> -u
 このプロジェクトへの貢献が初めての場合は、アップストリームリポジトリも追加する必要があります：
 
 ```shell
-git remote add upstream https://github.com/moeru-ai/airi.git
+git remote add upstream https://github.com/moeru-ai/SAKURA.git
 ```
 
 :::
 
 ## プルリクエストの作成
 
-[moeru-ai/airi](https://github.com/moeru-ai/airi) ページに移動し、**Pull requests** タブをクリックし、**New pull request** ボタンをクリックします。**Compare across forks** リンクをクリックし、あなたのフォークリポジトリを選択します。
+[moeru-ai/SAKURA](https://github.com/moeru-ai/SAKURA) ページに移動し、**Pull requests** タブをクリックし、**New pull request** ボタンをクリックします。**Compare across forks** リンクをクリックし、あなたのフォークリポジトリを選択します。
 
 変更を確認し、**Create pull request** ボタンをクリックします。
 
 ## やったー！できました！
 
 おめでとうございます！このプロジェクトへの最初の貢献を行いました。メンテナーがプルリクエストをレビューするのを待つことができます。
+

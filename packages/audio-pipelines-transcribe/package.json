@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/audio-pipelines-transcribe",
+  "name": "@proj-sakura/audio-pipelines-transcribe",
   "type": "module",
   "private": true,
   "exports": "./src/index.ts",
@@ -16,3 +16,4 @@
     "vitest": "catalog:vitest"
   }
 }
+

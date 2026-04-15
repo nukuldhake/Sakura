@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ButtonBar, Section } from '@proj-airi/stage-ui/components'
-import { useMarkdownStressStore } from '@proj-airi/stage-ui/stores/markdown-stress'
-import { Callout } from '@proj-airi/ui'
+import { ButtonBar, Section } from '@proj-sakura/stage-ui/components'
+import { useMarkdownStressStore } from '@proj-sakura/stage-ui/stores/markdown-stress'
+import { Callout } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -160,3 +160,4 @@ meta:
   titleKey: tamagotchi.settings.devtools.pages.markdown-stress.title
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

@@ -1,4 +1,4 @@
-import type { RouteTargetExpression } from '@proj-airi/server-shared/types'
+import type { RouteTargetExpression } from '@proj-sakura/server-shared/types'
 
 import type { AuthenticatedPeer } from '../../types'
 
@@ -120,3 +120,4 @@ export function matchesDestination(destination: string | RouteTargetExpression, 
 export function matchesDestinations(destinations: Array<string | RouteTargetExpression>, peer: AuthenticatedPeer) {
   return destinations.some(destination => matchesDestination(destination, peer))
 }
+

@@ -1,6 +1,6 @@
 ---
 title: 工具
-description: 用于设计 Project AIRI UI/UX 的工具
+description: 用于设计 Project SAKURA UI/UX 的工具
 ---
 
 ## 颜色
@@ -27,3 +27,4 @@ description: 用于设计 Project AIRI UI/UX 的工具
 
 - [Free SVG Backgrounds and Patterns | SVG Backgrounds](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/)
 - [Animated Background Headers - Generate animated background headers for any website](https://www.finisher.co/lab/header/)
+

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TransitionVertical } from '@proj-airi/ui'
+import { TransitionVertical } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { TooltipContent, TooltipPortal, TooltipProvider, TooltipRoot, TooltipTrigger } from 'reka-ui'
 import { ref, watch } from 'vue'
@@ -85,3 +85,4 @@ function handleClick() {
   opacity: 1;
 }
 </style>
+

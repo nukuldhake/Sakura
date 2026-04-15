@@ -1,6 +1,6 @@
-import type { ModuleIdentity, ProtocolEvents, RouteConfig, WebSocketEventSource } from '@proj-airi/plugin-protocol/types'
+import type { ModuleIdentity, ProtocolEvents, RouteConfig, WebSocketEventSource } from '@proj-sakura/plugin-protocol/types'
 
-export * from '@proj-airi/plugin-protocol/types'
+export * from '@proj-sakura/plugin-protocol/types'
 
 export interface WebSocketEventBaseMetadata {
   source?: ModuleIdentity
@@ -50,3 +50,4 @@ export type WebSocketEventInputs
   = | WebSocketEventOf<'input:text'>
     | WebSocketEventOf<'input:text:voice'>
     | WebSocketEventOf<'input:voice'>
+

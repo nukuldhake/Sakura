@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Component } from '../../../stores/resources'
 
-import { Progress } from '@proj-airi/ui'
+import { Progress } from '@proj-sakura/ui'
 
 const props = defineProps<{
   component: Component
@@ -34,3 +34,4 @@ const props = defineProps<{
     </div>
   </div>
 </template>
+

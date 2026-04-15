@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InputKeyValue } from '@proj-airi/ui'
+import { InputKeyValue } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const key = ref('')
@@ -24,3 +24,4 @@ const value = ref('')
     />
   </Story>
 </template>
+

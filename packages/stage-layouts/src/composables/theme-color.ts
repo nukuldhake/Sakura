@@ -6,9 +6,9 @@ import type { BackgroundItem } from '../stores/background'
 import Color from 'colorjs.io'
 
 import { withRetry } from '@moeru/std'
-import { colorFromElement, patchThemeSamplingHtml2CanvasClone } from '@proj-airi/stage-ui/libs'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { useTheme } from '@proj-airi/ui'
+import { colorFromElement, patchThemeSamplingHtml2CanvasClone } from '@proj-sakura/stage-ui/libs'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
+import { useTheme } from '@proj-sakura/ui'
 import { useDocumentVisibility, useIntervalFn } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { nextTick, watch } from 'vue'
@@ -191,3 +191,4 @@ export function useBackgroundThemeColor({
     syncBackgroundTheme,
   }
 }
+

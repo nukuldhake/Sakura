@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineInvoke } from '@moeru/eventa'
-import { useElectronEventaContext, useElectronMouseAroundWindowBorder, useElectronMouseInWindow } from '@proj-airi/electron-vueuse'
+import { useElectronEventaContext, useElectronMouseAroundWindowBorder, useElectronMouseInWindow } from '@proj-sakura/electron-vueuse'
 import { refDebounced, useBroadcastChannel } from '@vueuse/core'
 import { computed, onMounted, ref, watch } from 'vue'
 
@@ -19,7 +19,7 @@ const isAroundWindowBorderFor250Ms = refDebounced(isAroundWindowBorder, 250)
 type CaptionChannelEvent
   = | { type: 'caption-speaker', text: string }
     | { type: 'caption-assistant', text: string }
-const { data } = useBroadcastChannel<CaptionChannelEvent, CaptionChannelEvent>({ name: 'airi-caption-overlay' })
+const { data } = useBroadcastChannel<CaptionChannelEvent, CaptionChannelEvent>({ name: 'SAKURA-caption-overlay' })
 
 const context = useElectronEventaContext()
 const getAttached = defineInvoke(context.value, captionGetIsFollowingWindow)
@@ -116,3 +116,4 @@ onMounted(async () => {
 meta:
   layout: stage
 </route>
+

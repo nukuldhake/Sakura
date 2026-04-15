@@ -3,7 +3,7 @@ import type { Ref, ShallowRef } from 'vue'
 
 import type { BackgroundOption } from './types'
 
-import { BasicInputFile } from '@proj-airi/ui'
+import { BasicInputFile } from '@proj-sakura/ui'
 import { useObjectUrl } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 import { computed, nextTick, onScopeDispose, ref, shallowRef, watch } from 'vue'
@@ -336,3 +336,4 @@ async function applySelection(isImport = false) {
   }
 }
 </style>
+

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { isStageTamagotchi } from '@proj-airi/stage-shared'
-import { PageHeader } from '@proj-airi/stage-ui/components'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
+import { isStageTamagotchi } from '@proj-sakura/stage-shared'
+import { PageHeader } from '@proj-sakura/stage-ui/components'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { RouterView, useRoute } from 'vue-router'
@@ -95,3 +95,4 @@ const routeHeaderMetadata = computed(() => {
     </div>
   </div>
 </template>
+

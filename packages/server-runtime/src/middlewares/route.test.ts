@@ -1,4 +1,4 @@
-import type { RouteTargetExpression, WebSocketBaseEvent, WebSocketEventOf, WebSocketEvents } from '@proj-airi/server-shared/types'
+import type { RouteTargetExpression, WebSocketBaseEvent, WebSocketEventOf, WebSocketEvents } from '@proj-sakura/server-shared/types'
 
 import type { AuthenticatedPeer } from '../types'
 
@@ -143,3 +143,4 @@ describe('route middleware', () => {
     expect(isDevtoolsPeer(peer)).toBe(true)
   })
 })
+

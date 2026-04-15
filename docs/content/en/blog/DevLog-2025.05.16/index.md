@@ -26,14 +26,14 @@ import DemoDayHangzhou3 from './assets/demo-day-hangzhou-3.avif'
 </script>
 
 Hello again! Here's [Neko](https://github.com/nekomeowww), the girl who started
-the [Project AIRI](https://github.com/moeru-ai/airi)!
+the [Project SAKURA](https://github.com/moeru-ai/SAKURA)!
 
 Sorry for being late for new update in
-Project AIRI through the posted DevLog, please forgive us
+Project SAKURA through the posted DevLog, please forgive us
 for the delay.
 
 > We wrote many fantastic DevLogs about our development
-> progress once a while for the past months for AIRI, where
+> progress once a while for the past months for SAKURA, where
 > we share out thoughts, ideas, explaining in technologies
 > we use, artworks inspired from... everything.
 >
@@ -45,7 +45,7 @@ for the delay.
 
 # Dejavu
 
-For the past few weeks, the major quests of Project AIRI itself
+For the past few weeks, the major quests of Project SAKURA itself
 haven't progressed for a while, perhaps I was quite burned
 out from the huge UI refactoring and release since March
 2025. Most of the work was done by community maintainers,
@@ -79,23 +79,23 @@ documentation to share, for now, try read [Void's Lorebook Types](https://rentry
 
 > To use Character Card, navigate to Settings page (top right
 > corner of the app, or hovering Gear icon in desktop app),
-> Find and click the "Airi Card" button.
+> Find and click the "SAKURA Card" button.
 
-<img class="light" :src="CharacterCardMenuLight" alt="screenshot of a menu offers Airi Card menu button" />
-<img class="dark" :src="CharacterCardMenuDark" alt="screenshot of a menu offers Airi Card menu button" />
+<img class="light" :src="CharacterCardMenuLight" alt="screenshot of a menu offers SAKURA Card menu button" />
+<img class="dark" :src="CharacterCardMenuDark" alt="screenshot of a menu offers SAKURA Card menu button" />
 
-> This will bring you to the "Airi Card editor screen", where you can upload and
+> This will bring you to the "SAKURA Card editor screen", where you can upload and
 > edit your character card for persona customization.
 
-<img class="light" :src="CharacterCardSettingsLight" alt="screenshot of a menu offers Airi Card menu button" />
-<img class="dark" :src="CharacterCardSettingsDark" alt="screenshot of a menu offers Airi Card menu button" />
+<img class="light" :src="CharacterCardSettingsLight" alt="screenshot of a menu offers SAKURA Card menu button" />
+<img class="dark" :src="CharacterCardSettingsDark" alt="screenshot of a menu offers SAKURA Card menu button" />
 
 For Character Card showcases, we tried some approaches too...
 
 <img class="light" :src="CharacterCardShowcaseLight" alt="a card like user interface design for a blue hair character called ReLU" />
 <img class="dark" :src="CharacterCardShowcaseDark" alt="a card like user interface design for a blue hair character called ReLU" />
 
-It's live in our UI component library, you can play around with it: https://airi.moeru.ai/ui/#/story/src-components-menu-charactercard-story-vue .
+It's live in our UI component library, you can play around with it: https://SAKURA.moeru.ai/ui/#/story/src-components-menu-charactercard-story-vue .
 
 > Pure CSS and JavaScript controlled, layout works so we don't need to worry about the canvas calculation.
 >
@@ -104,7 +104,7 @@ It's live in our UI component library, you can play around with it: https://airi
 > much appreciated.
 
 - Tauri MCP support
-- Connects AIRI to Android devices
+- Connects SAKURA to Android devices
 
 These two was major update and try-out, and this part was done by [@LemonNekoGH](https://github.com/LemonNekoGH),
 she wrote another two DevLogs about these things and shared the technical
@@ -114,13 +114,13 @@ You can read them here:
 - [Controls Android](./DevLog-2025.04.22.mdx)
 - [MCP in Tauri](./DevLog-2025.04.28.md)
 
-## Project AIRI major quests
+## Project SAKURA major quests
 
 ### Ears listening, and mouth speaking
 
 From April 15, I found both VAD (voice activation detection),
 [ASR (a.k.a. automatic speech recognition)](https://huggingface.co/tasks/automatic-speech-recognition),
-and [TTS (text to speech)](https://huggingface.co/tasks/text-to-speech) in AIRI
+and [TTS (text to speech)](https://huggingface.co/tasks/text-to-speech) in SAKURA
 are very complex and hard to use and understand, for that time, I was cooperating
 with [@himself65](https://github.com/himself65) to improve and test the use cases
 for the new project from [Llama Index](https://www.llamaindex.ai/), a library
@@ -130,13 +130,13 @@ bytes, called [`llama-flow`](https://github.com/run-llama/llama-flow).
 [`llama-flow`](https://github.com/run-llama/llama-flow) is really small,
 and type-safe to use. In the old days without it, I have to manually wrap
 another **queue** structured, and Vue's reactivity powered workflow system
-to chain many asynchronous tasks together to be able to process data to power AIRI.
+to chain many asynchronous tasks together to be able to process data to power SAKURA.
 
 That was the time I started to experiment more examples, demos on simplifying VAD,
 ASR, TTS workflow.
 
 Eventually, I got this:
-[WebAI Realtime Voice Chat Examples](https://github.com/proj-airi/webai-example-realtime-voice-chat),
+[WebAI Realtime Voice Chat Examples](https://github.com/proj-SAKURA/webai-example-realtime-voice-chat),
 which I managed to proof the work can be done on Web browser within one single
 300 ~ 500 lines of TypeScript code to achieve ChatGPT voice chat system.
 
@@ -146,10 +146,10 @@ I tried my best to split all the possible steps into small and reusable pieces
 to help demonstrate how you can construct a real-time voice chat system
 from ground up and scratch:
 
-- [VAD](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad)
-- [VAD + ASR](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr)
-- [VAD + ASR + LLM Chat](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat)
-- [VAD + ASR + LLM Chat + TTS](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat-tts)
+- [VAD](https://github.com/proj-SAKURA/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad)
+- [VAD + ASR](https://github.com/proj-SAKURA/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr)
+- [VAD + ASR + LLM Chat](https://github.com/proj-SAKURA/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat)
+- [VAD + ASR + LLM Chat + TTS](https://github.com/proj-SAKURA/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat-tts)
 
 > Hope you could learn some from them.
 
@@ -159,12 +159,12 @@ called [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx), it supports
 iOS, etc. over 12 languages. Fascinating!
 
 So [@luoling](https://github.com/luoling8192) made another small demo for this too:
-[Sherpa ONNX powered VAD + ASR + LLM Chat + TTS](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/main/apps/sherpa-onnx-demo)
+[Sherpa ONNX powered VAD + ASR + LLM Chat + TTS](https://github.com/proj-SAKURA/webai-example-realtime-voice-chat/tree/main/apps/sherpa-onnx-demo)
 
 #### Birth of xsAI 🤗 Transformers.js
 
 Because the work we have done for VAD, ASR, Chat, and TTS demos, this gave the
-birth of a new side project called [xsAI 🤗 Transformers.js](https://github.com/proj-airi/xsai-transformers)
+birth of a new side project called [xsAI 🤗 Transformers.js](https://github.com/proj-SAKURA/xsai-transformers)
 , enabling the simplicity to call the WebGPU powered model inference and serving with
 workers while still keeping the API compatible to our prior succeeded project called
 [xsAI](https://github.com/moeru-ai/xsai).
@@ -207,7 +207,7 @@ one for my own.
 
 I did some small experiments on integrating a WebGPU powered background
 remover right in the system, you can play around with it here in
-[https://airi.moeru.ai/devtools/background-remove](https://airi.moeru.ai/devtools/background-remove).
+[https://SAKURA.moeru.ai/devtools/background-remove](https://SAKURA.moeru.ai/devtools/background-remove).
 
 ### xsAI & unSpeech
 
@@ -216,11 +216,11 @@ provider, quite useful I guess?
 
 ### UI
 
-- New [Tutorial stepper](https://airi.moeru.ai/ui/#/story/src-components-misc-steppers-steppers-story-vue?variantId=src-components-misc-steppers-steppers-story-vue-0), [File upload](https://airi.moeru.ai/ui/#/story/src-components-form-input-inputfile-story-vue?variantId=default), and [Textarea](https://airi.moeru.ai/ui/#/story/src-components-form-textarea-textarea-story-vue?variantId=default) component
+- New [Tutorial stepper](https://SAKURA.moeru.ai/ui/#/story/src-components-misc-steppers-steppers-story-vue?variantId=src-components-misc-steppers-steppers-story-vue-0), [File upload](https://SAKURA.moeru.ai/ui/#/story/src-components-form-input-inputfile-story-vue?variantId=default), and [Textarea](https://SAKURA.moeru.ai/ui/#/story/src-components-form-textarea-textarea-story-vue?variantId=default) component
 - Color issues
-- [Typography improved](https://airi.moeru.ai/ui/#/story/stories-typographysans-story-vue?)
+- [Typography improved](https://SAKURA.moeru.ai/ui/#/story/stories-typographysans-story-vue?)
 
-More of the stories can be found at [Roadmap v0.5](https://github.com/moeru-ai/airi/issues/113)
+More of the stories can be found at [Roadmap v0.5](https://github.com/moeru-ai/SAKURA/issues/113)
 
 ## Side-quests
 
@@ -268,7 +268,7 @@ Let's end with DevLog with more images from the recent event we attended in Hang
 
 <img :src="DemoDayHangzhou1" alt="Demo Day @ Hangzhou" />
 
-This is me, I shared the AIRI project with other attendees, and we had a great time
+This is me, I shared the SAKURA project with other attendees, and we had a great time
 there! Meet so many of the talented developers, product designers, and entrepreneurs.
 
 Introduced almost everything I shared today in this DevLog, and also the beloved AI VTuber Neuro-sama.
@@ -279,7 +279,7 @@ The slides I used to share was this:
 <img :src="DemoDayHangzhou3" alt="Demo Day @ Hangzhou" />
 
 The slides itself is purely open sourced, you can play around
-it here too: [https://talks.ayaka.io/nekoayaka/2025-05-10-airi-how-we-recreated-it/#/1](https://talks.ayaka.io/nekoayaka/2025-05-10-airi-how-we-recreated-it/#/1)
+it here too: [https://talks.ayaka.io/nekoayaka/2025-05-10-SAKURA-how-we-recreated-it/#/1](https://talks.ayaka.io/nekoayaka/2025-05-10-SAKURA-how-we-recreated-it/#/1)
 
 ## Milestones
 
@@ -292,7 +292,7 @@ I would love to mention some of the milestone we reached in the past few weeks:
 - ReLU character design finished!
 - ReLU character modeling finished!
 - Negotiated with a few companies for sponsorships, and cooperation!
-- 92 tasks finished for [Roadmap v0.5](https://github.com/moeru-ai/airi/issues/113)
+- 92 tasks finished for [Roadmap v0.5](https://github.com/moeru-ai/SAKURA/issues/113)
   - UI
     - Loading screen and tutorial modules
     - Multiple bug fixes including loading states and Firefox compatibility issues
@@ -317,3 +317,4 @@ I would love to mention some of the milestone we reached in the past few weeks:
     - Comprehensive documentation
 
 See you!
+

@@ -8,7 +8,7 @@ import ChatHistory from './history.vue'
 const markdownMessages = ref<ChatHistoryItem[]>([
   {
     role: 'user',
-    content: 'Hey AIRI, can you summarize today\'s tasks?',
+    content: 'Hey SAKURA, can you summarize today\'s tasks?',
   },
   {
     role: 'assistant',
@@ -122,3 +122,4 @@ const streamingMessage = ref<ChatAssistantMessage>({
     </Variant>
   </Story>
 </template>
+

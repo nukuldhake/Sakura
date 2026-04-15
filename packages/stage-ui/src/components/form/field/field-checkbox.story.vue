@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FieldCheckbox } from '@proj-airi/ui'
+import { FieldCheckbox } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const checkedValue = ref(true)
@@ -59,3 +59,4 @@ const uncheckedValue = ref(false)
     </Variant>
   </Story>
 </template>
+

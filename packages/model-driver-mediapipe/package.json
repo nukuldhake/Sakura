@@ -1,17 +1,17 @@
 {
-  "name": "@proj-airi/model-driver-mediapipe",
+  "name": "@proj-sakura/model-driver-mediapipe",
   "type": "module",
   "private": true,
-  "description": "MediaPipe motion capture workshop (experimental) for Project AIRI",
+  "description": "MediaPipe motion capture workshop (experimental) for Project SAKURA",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/model-driver-mediapipe"
   },
   "exports": {
@@ -35,3 +35,5 @@
     "tsx": "catalog:"
   }
 }
+
+

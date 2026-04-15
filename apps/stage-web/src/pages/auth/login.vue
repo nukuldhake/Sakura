@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { OAuthProvider } from '@proj-airi/stage-ui/libs/auth'
+import type { OAuthProvider } from '@proj-sakura/stage-ui/libs/auth'
 
-import { LoginDrawer } from '@proj-airi/stage-ui/components/auth'
-import { fetchSession, signIn } from '@proj-airi/stage-ui/libs/auth'
-import { Button } from '@proj-airi/ui'
+import { LoginDrawer } from '@proj-sakura/stage-ui/components/auth'
+import { fetchSession, signIn } from '@proj-sakura/stage-ui/libs/auth'
+import { Button } from '@proj-sakura/ui'
 import { useMediaQuery } from '@vueuse/core'
 import { onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
@@ -51,7 +51,7 @@ watch(isDesktop, (val) => {
 <template>
   <div v-if="isDesktop" class="min-h-screen flex flex-col items-center justify-center">
     <div class="mb-8 text-3xl font-bold">
-      Sign in to AIRI Stage
+      Sign in to SAKURA Stage
     </div>
     <div class="max-w-xs w-full flex flex-col gap-3">
       <Button
@@ -80,10 +80,11 @@ watch(isDesktop, (val) => {
     <div class="mb-12 flex flex-col items-center gap-4">
       <img src="../../assets/logo.svg" class="h-24 w-24 rounded-3xl shadow-lg">
       <div class="text-3xl font-bold">
-        AIRI Stage
+        SAKURA Stage
       </div>
     </div>
 
     <LoginDrawer :open="true" />
   </div>
 </template>
+

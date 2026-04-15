@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Callout, FieldSelect } from '@proj-airi/ui'
+import { Callout, FieldSelect } from '@proj-sakura/ui'
 import { computed } from 'vue'
 
 const props = withDefaults(defineProps<{
@@ -83,3 +83,4 @@ const ringEnabledClass = computed(() => enabled.value
     </div>
   </div>
 </template>
+

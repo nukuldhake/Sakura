@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Input } from '@proj-airi/ui'
+import { Input } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const textValue = ref('')
@@ -149,3 +149,4 @@ const urlValue = ref('https://example.com')
     </Variant>
   </Story>
 </template>
+

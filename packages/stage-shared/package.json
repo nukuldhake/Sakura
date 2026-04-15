@@ -1,17 +1,17 @@
 {
-  "name": "@proj-airi/stage-shared",
+  "name": "@proj-sakura/stage-shared",
   "type": "module",
   "private": true,
   "description": "Shared",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/stage-shared"
   },
   "exports": {
@@ -35,3 +35,5 @@
     "@types/audioworklet": "catalog:"
   }
 }
+
+

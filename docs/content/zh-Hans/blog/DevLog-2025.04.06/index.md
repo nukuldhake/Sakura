@@ -45,7 +45,7 @@ import ReLUStickerWow from './assets/relu-sticker-wow.avif'
 
 ### 记忆系统
 
-最近正在重构 [`telegram-bot`](https://github.com/moeru-ai/airi/tree/main/services/telegram-bot) 以为已经准备了数月的 Project AIRI 即将到来的「记忆更新」作准备。
+最近正在重构 [`telegram-bot`](https://github.com/moeru-ai/SAKURA/tree/main/services/telegram-bot) 以为已经准备了数月的 Project SAKURA 即将到来的「记忆更新」作准备。
 
 我们计划使实现后的记忆系统成为当下最先进、最强大、最健壮的系统，其中很多的思想都深受真实世界中的人类记忆系统的启发。
 
@@ -383,7 +383,7 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
 - ReLU 形象设计完成
 - ReLU 表情包 Vol.1 制作完成！
 - ReLU 表情包 Vol.2 动态版 制作完成
-- [路线图 v0.4](https://github.com/moeru-ai/airi/issues/42) 中有总计 89 个任务被完成了
+- [路线图 v0.4](https://github.com/moeru-ai/SAKURA/issues/42) 中有总计 89 个任务被完成了
 
 ## 其他更新
 
@@ -393,18 +393,18 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
 
 真的很感谢 [@LemonNekoGH](https://github.com/LemonNekoGH)！
 
-团队的大家前段时间都在提到说 `moeru-ai/airi` 这个项目仓库越来越大了，开发的时候会很卡顿。确实，过去的 5 个月里 `moeru-ai/airi` 仓库里诞生了数不尽的子项目，覆盖了从 agent 实现，游戏 agent 绑定实现，到简单好用的 npm 包封装，以及具有开创性意义的 transformers.js 封装，和 DuckDB WASM 的 Drizzle 驱动支持，到 API 后端服务的实现和集成的各种领域，是时候让一些项目从 sandbox 阶段成长到更具意义的「Incubate 孵化」阶段了。
+团队的大家前段时间都在提到说 `moeru-ai/SAKURA` 这个项目仓库越来越大了，开发的时候会很卡顿。确实，过去的 5 个月里 `moeru-ai/SAKURA` 仓库里诞生了数不尽的子项目，覆盖了从 agent 实现，游戏 agent 绑定实现，到简单好用的 npm 包封装，以及具有开创性意义的 transformers.js 封装，和 DuckDB WASM 的 Drizzle 驱动支持，到 API 后端服务的实现和集成的各种领域，是时候让一些项目从 sandbox 阶段成长到更具意义的「Incubate 孵化」阶段了。
 
 所以我们决定拆分许多已经很成熟并且在广泛使用的子项目到单独的仓库中单独维护：
 
 - `hfup`
 
-  用于帮助生成用于部署项目到 HuggingFace Spaces 的 [`hfup`](https://github.com/moeru-ai/hfup) 工具已经算是从 `moeru-ai/airi` 大仓库中阶段性毕业了，现在正式迁移到 [@moeru-ai](https://github.com/moeru-ai) 的组织名下（不需要任何迁移操作，继续安装 `hfup` 就可以用了）。非常有意义的是，`hfup` 为了跟上时代，也采用了 [rolldown](https://rolldown.rs/) 和 [oxlint](https://oxc.rs/docs/guide/usage/linter) 帮助开发，希望能借此机会参与到 rolldown，rolldown-vite 和 oxc 的开发当中。非常感谢 [@sxzz](https://github.com/sxzz) 在迁移过程中给到的援助。
+  用于帮助生成用于部署项目到 HuggingFace Spaces 的 [`hfup`](https://github.com/moeru-ai/hfup) 工具已经算是从 `moeru-ai/SAKURA` 大仓库中阶段性毕业了，现在正式迁移到 [@moeru-ai](https://github.com/moeru-ai) 的组织名下（不需要任何迁移操作，继续安装 `hfup` 就可以用了）。非常有意义的是，`hfup` 为了跟上时代，也采用了 [rolldown](https://rolldown.rs/) 和 [oxlint](https://oxc.rs/docs/guide/usage/linter) 帮助开发，希望能借此机会参与到 rolldown，rolldown-vite 和 oxc 的开发当中。非常感谢 [@sxzz](https://github.com/sxzz) 在迁移过程中给到的援助。
 
-- `@proj-airi/drizzle-duckdb-wasm`, `@proj-airi/duckdb-wasm`
-  用于为 Drizzle 添加 DuckDB WASM 驱动支持的 `@proj-airi/drizzle-duckdb-wasm` 和 `@proj-airi/duckdb-wasm` 也算是阶段性毕业了，现在正式迁移到 [@proj-airi](https://github.com/proj-airi) 的组织名下（不需要任何迁移操作，继续安装原来的包就可以用了）。
+- `@proj-sakura/drizzle-duckdb-wasm`, `@proj-sakura/duckdb-wasm`
+  用于为 Drizzle 添加 DuckDB WASM 驱动支持的 `@proj-sakura/drizzle-duckdb-wasm` 和 `@proj-sakura/duckdb-wasm` 也算是阶段性毕业了，现在正式迁移到 [@proj-sakura](https://github.com/proj-SAKURA) 的组织名下（不需要任何迁移操作，继续安装原来的包就可以用了）。
 
-现在项目速度快了很多，这个月应该会把 `@proj-airi/providers-transformers` 正式毕业到 `xsai` 名下。
+现在项目速度快了很多，这个月应该会把 `@proj-sakura/providers-transformers` 正式毕业到 `xsai` 名下。
 
 在其他工程改进方面，我们还集成了全新的面向工作流的工具包 [`@llama-flow/core`](https://github.com/run-llama/@llama-flow/core)，以帮助协调 token 处理、字节流和数据流的 pipeline 编排。记得看看他们的仓库，真的非常好用！
 
@@ -426,7 +426,7 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
   </div>
 </div>
 
-当然，一个包含模型、声线和 Project AIRI 支持的所有模块 🎉 的配置的能力的编辑器也包含在内了。
+当然，一个包含模型、声线和 Project SAKURA 支持的所有模块 🎉 的配置的能力的编辑器也包含在内了。
 
 真的很感谢 [@luoling8192](https://github.com/luoling8192)！
 
@@ -489,15 +489,15 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
 - 支持 Featherless.ai 提供商
 - 支持 Gemini 提供商（感谢 [@asukaminato0721](https://github.com/asukaminato0721)）
 - 修复了 Telegram Bot 集成的灾难性 OOM 错误（感谢 [@sumimakito](https://github.com/sumimakito)、[@kwaa](https://github.com/kwaa) 和 [@QiroNT](https://github.com/QiroNT)）
-- 为 Project AIRI 的特殊 DevLog 新增了 98.css 集成（感谢 [@OverflowCat](https://github.com/OverflowCat)）
+- 为 Project SAKURA 的特殊 DevLog 新增了 98.css 集成（感谢 [@OverflowCat](https://github.com/OverflowCat)）
 
-> 这是 Project AIRI 一篇特别版的开发日志，其灵感主要来自 [@OverflowCat](https://github.com/OverflowCat) 的博文 [ModTran](https://blog.xinshijiededa.men/modtran/)，代码风格大量借鉴了 [@OverflowCat](https://github.com/OverflowCat) 在 https://github.com/OverflowCat/blog/blob/0a92f916629ad942b7da84b894759fde1616bf37/src/components/98/98.ts 里的实现。
+> 这是 Project SAKURA 一篇特别版的开发日志，其灵感主要来自 [@OverflowCat](https://github.com/OverflowCat) 的博文 [ModTran](https://blog.xinshijiededa.men/modtran/)，代码风格大量借鉴了 [@OverflowCat](https://github.com/OverflowCat) 在 https://github.com/OverflowCat/blog/blob/0a92f916629ad942b7da84b894759fde1616bf37/src/components/98/98.ts 里的实现。
 >
 > 她写的博文很棒，几乎涉及所有我不熟悉的内容，请一定去看看，你会喜欢的。
 
 ## 再见
 
-我想这就是本次 DevLog 的全部内容了，我们的 [Roadmap v0.4](https://github.com/moeru-ai/airi/issues/42) 也到此结束，希望大家喜欢焕然一新的用户界面和更新后的桌宠版本。我在写这篇文章时尝试使用了中英文两种语言，请在我们仓库的[讨论页面](https://github.com/moeru-ai/airi/discussions)留言，告诉我们您是否喜欢这篇文章。
+我想这就是本次 DevLog 的全部内容了，我们的 [Roadmap v0.4](https://github.com/moeru-ai/SAKURA/issues/42) 也到此结束，希望大家喜欢焕然一新的用户界面和更新后的桌宠版本。我在写这篇文章时尝试使用了中英文两种语言，请在我们仓库的[讨论页面](https://github.com/moeru-ai/SAKURA/discussions)留言，告诉我们您是否喜欢这篇文章。
 
 让我们引用 ReLU 的另一句对自己的感觉的描述作为结尾吧：
 
@@ -520,3 +520,4 @@ const combinedScore = sql<number>`((1.2 * ${similarity}) + (0.2 * ${timeRelevanc
     </div>
   </div>
 </div>
+

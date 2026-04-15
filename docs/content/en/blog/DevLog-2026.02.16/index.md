@@ -10,9 +10,9 @@ Happy Lunar New Year’s Eve! This is [@LemonNekoGH](https://github.com/LemonNek
 
 ## Recap
 
-In last year’s [DevLog](../DevLog-2025.08.26/index.md), we shared progress on the pure-vision direction of `airi-factorio`. Today I want to share what we’ve been doing on the Dome Keeper direction.
+In last year’s [DevLog](../DevLog-2025.08.26/index.md), we shared progress on the pure-vision direction of `SAKURA-factorio`. Today I want to share what we’ve been doing on the Dome Keeper direction.
 
-Wait, LemonNeko? Why not keep going on `airi-factorio`?
+Wait, LemonNeko? Why not keep going on `SAKURA-factorio`?
 
 Honestly, I chickened out — Factorio is too open-ended and complex for me to control, so I switched to [Dome Keeper](https://store.steampowered.com/app/1637320/Dome_Keeper/), a relatively simple game.
 
@@ -79,8 +79,9 @@ dome / enemy / player are still sparse and need more samples.
 
 ## Next Steps
 
-Remember the pure‑vision Playground in the `airi-factorio` repo? I plan to extend it for Dome Keeper so the entire `proj-airi` org can reuse it. We also need more samples, especially for `dome`, `enemy`, and `player`.
+Remember the pure‑vision Playground in the `SAKURA-factorio` repo? I plan to extend it for Dome Keeper so the entire `proj-SAKURA` org can reuse it. We also need more samples, especially for `dome`, `enemy`, and `player`.
 
-Stay tuned for the next update. Oh — the mod code is already open‑sourced, feel free to [try it out](https://github.com/proj-airi/game-playing-ai-dome-keeper)!
+Stay tuned for the next update. Oh — the mod code is already open‑sourced, feel free to [try it out](https://github.com/proj-SAKURA/game-playing-ai-dome-keeper)!
 
 Happy Lunar New Year’s Eve!
+

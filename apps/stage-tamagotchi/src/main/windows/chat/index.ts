@@ -1,4 +1,4 @@
-import type { ServerChannel } from '../../services/airi/channel-server'
+import type { ServerChannel } from '../../services/SAKURA/channel-server'
 import type { WidgetsWindowManager } from '../widgets'
 
 import { join, resolve } from 'node:path'
@@ -45,3 +45,4 @@ export function setupChatWindowReusableFunc(params: {
     return window
   }).getWindow
 }
+

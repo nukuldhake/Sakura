@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Collapsible } from '@proj-airi/ui'
+import { Collapsible } from '@proj-sakura/ui'
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -48,3 +48,4 @@ const formattedArgs = computed(() => {
     </div>
   </Collapsible>
 </template>
+

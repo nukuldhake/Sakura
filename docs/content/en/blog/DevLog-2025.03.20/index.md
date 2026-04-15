@@ -21,7 +21,7 @@ Hello again! It has been 10 days since the last post of DevLog
 
 We made a lot of improvements to our user interface, we made it possible
 to integrate more LLM providers, and speech providers, first time to post
-AIRI on Discord, bilibili, and many other social media platforms.
+SAKURA on Discord, bilibili, and many other social media platforms.
 
 There is so much more that we can't wait to tell you about.
 
@@ -31,7 +31,7 @@ Let's rewind the time a little bit!
 
 <img :src="Gelbana" alt="Gelbana" />
 
-> Ahh, don't worry, our beloved [AIRI](https://github.com/moeru-ai/airi) will
+> Ahh, don't worry, our beloved [SAKURA](https://github.com/moeru-ai/SAKURA) will
 > not turn into GEL-NANA like this. BUT, if you haven't watched the
 > [_Steins;Gate_](https://myanimelist.net/anime/9253/Steins_Gate) anime series,
 > try it~!
@@ -76,7 +76,7 @@ recorded once done:
 
 The entire OKLCH color palette can spread on to the canvas all at once
 for us to take as reference. But it wasn't perfect to tryout the colors
-and have the same scheme of feelings of Project AIRI's theme, was it?
+and have the same scheme of feelings of Project SAKURA's theme, was it?
 
 So I first re-implemented the color slider, which feels much more suitable:
 
@@ -86,22 +86,22 @@ So I first re-implemented the color slider, which feels much more suitable:
 This does make the slider a bit more professional.
 
 The logo and the default greenish color can be replaced to align the theme
-of AIRI, that's why I designed another dedicated logo for the UI page:
+of SAKURA, that's why I designed another dedicated logo for the UI page:
 
-<img class="light" :src="HistoireLogo" alt="project airi logo for histoire" />
-<img class="dark" :src="HistoireLogoDark" alt="project airi logo for histoire" />
+<img class="light" :src="HistoireLogo" alt="project SAKURA logo for histoire" />
+<img class="dark" :src="HistoireLogoDark" alt="project SAKURA logo for histoire" />
 
 Oh, right, the entire UI component has been deployed to Netlify as usual
 under the path `/ui/`, feel free to take a look at it if you ever wondered
 how does the UI elements look like:
-[https://airi.moeru.ai/ui/](https://airi.moeru.ai/ui/)
+[https://SAKURA.moeru.ai/ui/](https://SAKURA.moeru.ai/ui/)
 
 There are tons of other features that we cannot cover in this DevLog entirely:
 
 - [x] Supported for all of the LLM providers.
 - [x] Improved the animation and transition of menu navigation UI.
 - [x] Improved the spacing of the fields, new form!
-- [x] Component for (almost all the todo components on the [Roadmap](https://github.com/moeru-ai/airi/issues/42))
+- [x] Component for (almost all the todo components on the [Roadmap](https://github.com/moeru-ai/SAKURA/issues/42))
   - [x] Form
     - [x] Radio
     - [x] Radio Group
@@ -165,7 +165,7 @@ what Neuro-sama can do with the new **Speech** ability!
 
 With all of those, we can get this result:
 
-<ThemedVideo controls muted autoplay src="./assets/airi-demo.mp4" />
+<ThemedVideo controls muted autoplay src="./assets/SAKURA-demo.mp4" />
 
 Nearly the same. But our story doesn't end here, currently, we haven't
 achieved memory, and better motion control, and the transcription settings
@@ -187,3 +187,4 @@ all the way down here.
 I'll see you all tomorrow.
 
 > El Psy Congroo.
+

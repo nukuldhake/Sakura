@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { ccv3 } from '@proj-airi/ccc'
+import type { ccv3 } from '@proj-sakura/ccc'
 
-import { Alert } from '@proj-airi/stage-ui/components'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { InputFile } from '@proj-airi/ui'
-import { Select } from '@proj-airi/ui/components/form'
+import { Alert } from '@proj-sakura/stage-ui/components'
+import { useSAKURACardStore } from '@proj-sakura/stage-ui/stores/modules/SAKURA-card'
+import { InputFile } from '@proj-sakura/ui'
+import { Select } from '@proj-sakura/ui/components/form'
 import { storeToRefs } from 'pinia'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -16,7 +16,7 @@ import CardListItem from './components/CardListItem.vue'
 import DeleteCardDialog from './components/DeleteCardDialog.vue'
 
 const { t } = useI18n()
-const cardStore = useAiriCardStore()
+const cardStore = useSAKURACardStore()
 const { addCard, removeCard } = cardStore
 const { cards, activeCardId } = storeToRefs(cardStore)
 
@@ -163,16 +163,16 @@ function getVersionNumber(id: string) {
 // Card module short name
 function getModuleShortName(id: string, module: 'consciousness' | 'voice') {
   const card = cards.value.get(id)
-  if (!card || !card.extensions?.airi?.modules)
+  if (!card || !card.extensions?.SAKURA?.modules)
     return 'default'
 
-  const airiExt = card.extensions.airi.modules
+  const SAKURAExt = card.extensions.SAKURA.modules
 
   if (module === 'consciousness') {
-    return airiExt.consciousness?.model ? airiExt.consciousness.model.split('-').pop() || 'default' : 'default'
+    return SAKURAExt.consciousness?.model ? SAKURAExt.consciousness.model.split('-').pop() || 'default' : 'default'
   }
   else if (module === 'voice') {
-    return airiExt.speech?.voice_id || 'default'
+    return SAKURAExt.speech?.voice_id || 'default'
   }
 
   return 'default'
@@ -340,3 +340,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

@@ -13,7 +13,7 @@ withDefaults(defineProps<{
   links?: AboutLink[]
 }>(), {
   title: 'Project',
-  highlight: 'AIRI',
+  highlight: 'SAKURA',
   subtitle: '',
   links: undefined,
 })
@@ -32,3 +32,4 @@ const showDialog = defineModel({ type: Boolean, default: false, required: false 
     />
   </AboutDialogBase>
 </template>
+

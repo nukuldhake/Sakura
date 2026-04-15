@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Character } from '@proj-airi/stage-ui/types/character'
+import type { Character } from '@proj-sakura/stage-ui/types/character'
 
-import { useCharacterStore } from '@proj-airi/stage-ui/stores/characters'
-import { Button, FieldInput } from '@proj-airi/ui'
+import { useCharacterStore } from '@proj-sakura/stage-ui/stores/characters'
+import { Button, FieldInput } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, ref } from 'vue'
 
@@ -129,3 +129,4 @@ meta:
   title: Characters
   subtitleKey: settings.title
 </route>
+

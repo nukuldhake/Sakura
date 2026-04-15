@@ -1,4 +1,4 @@
-import type { RouteTargetExpression, WebSocketEvent } from '@proj-airi/server-shared/types'
+import type { RouteTargetExpression, WebSocketEvent } from '@proj-sakura/server-shared/types'
 
 import type { AuthenticatedPeer } from '../types'
 
@@ -92,3 +92,4 @@ export function collectDestinations(event: WebSocketEvent | (Omit<WebSocketEvent
 }
 
 export { matchesDestinations }
+

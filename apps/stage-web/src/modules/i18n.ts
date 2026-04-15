@@ -1,4 +1,4 @@
-import messages from '@proj-airi/i18n/locales'
+import messages from '@proj-sakura/i18n/locales'
 
 import { createI18n } from 'vue-i18n'
 
@@ -12,3 +12,4 @@ export const i18n = createI18n({
   fallbackLocale: 'en',
   messages: messages as any,
 })
+

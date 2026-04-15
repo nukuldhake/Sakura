@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { DisplayModel } from '../../../../stores/display-models'
 
-import { Live2DScene, useLive2d } from '@proj-airi/stage-ui-live2d'
-import { ThreeScene, useModelStore } from '@proj-airi/stage-ui-three'
-import { Button, Callout } from '@proj-airi/ui'
+import { Live2DScene, useLive2d } from '@proj-sakura/stage-ui-live2d'
+import { ThreeScene, useModelStore } from '@proj-sakura/stage-ui-three'
+import { Button, Callout } from '@proj-sakura/ui'
 import { useMouse } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { ref, watch } from 'vue'
@@ -124,3 +124,4 @@ watch(selectedModel, async () => {
     </div>
   </template>
 </template>
+

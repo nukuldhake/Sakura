@@ -1,6 +1,6 @@
 import type { BrowserWindow } from 'electron'
 
-import type { ServerChannel } from '../../../services/airi/channel-server'
+import type { ServerChannel } from '../../../services/SAKURA/channel-server'
 import type { AutoUpdater } from '../../../services/electron/auto-updater'
 import type { DevtoolsWindowManager } from '../../devtools'
 import type { WidgetsWindowManager } from '../../widgets'
@@ -10,8 +10,8 @@ import { createContext } from '@moeru/eventa/adapters/electron/main'
 import { ipcMain } from 'electron'
 
 import { electronOpenDevtoolsWindow, electronOpenSettingsDevtools } from '../../../../shared/eventa'
-import { createServerChannelService } from '../../../services/airi/channel-server'
-import { createWidgetsService } from '../../../services/airi/widgets'
+import { createServerChannelService } from '../../../services/SAKURA/channel-server'
+import { createWidgetsService } from '../../../services/SAKURA/widgets'
 import { createAutoUpdaterService, createScreenService, createWindowService } from '../../../services/electron'
 
 export async function setupSettingsWindowInvokes(params: {
@@ -39,3 +39,4 @@ export async function setupSettingsWindowInvokes(params: {
     await params.devtoolsMarkdownStressWindow.openWindow(payload?.route)
   })
 }
+

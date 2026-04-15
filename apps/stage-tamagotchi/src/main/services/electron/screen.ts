@@ -2,8 +2,8 @@ import type { createContext } from '@moeru/eventa/adapters/electron/main'
 import type { BrowserWindow } from 'electron'
 
 import { defineInvokeHandler } from '@moeru/eventa'
-import { cursorScreenPoint, startLoopGetCursorScreenPoint } from '@proj-airi/electron-eventa'
-import { createRendererLoop } from '@proj-airi/electron-vueuse/main'
+import { cursorScreenPoint, startLoopGetCursorScreenPoint } from '@proj-sakura/electron-eventa'
+import { createRendererLoop } from '@proj-sakura/electron-vueuse/main'
 import { screen } from 'electron'
 
 import { electron } from '../../../shared/eventa'
@@ -30,3 +30,4 @@ export function createScreenService(params: { context: ReturnType<typeof createC
   defineInvokeHandler(params.context, electron.screen.screenToDipRect, rect => rect ? screen.screenToDipRect(params.window, rect) : params.window.getBounds())
   defineInvokeHandler(params.context, electron.screen.getCursorScreenPoint, () => screen.getCursorScreenPoint())
 }
+

@@ -1,4 +1,4 @@
-import type { MetadataEventSource } from '@proj-airi/server-shared/types'
+import type { MetadataEventSource } from '@proj-sakura/server-shared/types'
 
 export interface Peer {
   /**
@@ -33,3 +33,4 @@ export interface AuthenticatedPeer extends NamedPeer {
   identity?: MetadataEventSource
   lastHeartbeatAt?: number
 }
+

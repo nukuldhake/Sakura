@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FlowEntry, SparkNotifyEntryState } from '../context-flow-types'
 
-import { Input } from '@proj-airi/ui'
+import { Input } from '@proj-sakura/ui'
 import { nextTick, ref, watch } from 'vue'
 
 import ContextFlowEntryCard from './context-flow-entry-card.vue'
@@ -62,3 +62,4 @@ watch(() => filterText.value, scrollToTop)
     </div>
   </div>
 </template>
+

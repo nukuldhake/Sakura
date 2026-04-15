@@ -1,6 +1,6 @@
 ---
 title: Tools
-description: Tools for designing the UI, UX for Project AIRI
+description: Tools for designing the UI, UX for Project SAKURA
 ---
 
 ## Colors
@@ -27,3 +27,4 @@ You may already learned that a _complementary color_ is, it was useful for the c
 
 - [Free SVG Backgrounds and Patterns | SVG Backgrounds](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/)
 - [Animated Background Headers - Generate animated background headers for any website](https://www.finisher.co/lab/header/)
+

@@ -1,4 +1,4 @@
-import type { BackgroundOption } from '@proj-airi/stage-ui/components'
+import type { BackgroundOption } from '@proj-sakura/stage-ui/components'
 import type { Ref, ShallowRef } from 'vue'
 
 import localforage from 'localforage'
@@ -326,3 +326,4 @@ export const useBackgroundStore = defineStore('background', () => {
     setSampledColor,
   }
 })
+

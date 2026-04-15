@@ -1,4 +1,4 @@
-import type { ServerChannel } from '../../services/airi/channel-server'
+import type { ServerChannel } from '../../services/SAKURA/channel-server'
 import type { AutoUpdater } from '../../services/electron/auto-updater'
 import type { DevtoolsWindowManager } from '../devtools'
 import type { WidgetsWindowManager } from '../widgets'
@@ -55,3 +55,4 @@ export function setupSettingsWindowReusableFunc(params: {
     return window
   }).getWindow
 }
+

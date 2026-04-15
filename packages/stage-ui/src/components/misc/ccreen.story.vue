@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Screen } from '@proj-airi/ui'
+import { Screen } from '@proj-sakura/ui'
 </script>
 
 <template>
@@ -19,3 +19,4 @@ import { Screen } from '@proj-airi/ui'
     </Variant>
   </Story>
 </template>
+

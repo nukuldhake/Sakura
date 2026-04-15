@@ -218,8 +218,8 @@ title: 编年史 v0.0.1
 
 ### 代码仓库 & 架构
 
-- [x] [迁移到 SPA](https://github.com/nekomeowww/airi-vtuber/commit/cd0f371595a669c570dc263e72dd3ce54afab7ff)
-- [x] [迁移到 Monorepo](https://github.com/nekomeowww/airi-vtuber/commit/ee4878710eeded6ef1b66474905936353d0176b4)
+- [x] [迁移到 SPA](https://github.com/nekomeowww/SAKURA-vtuber/commit/cd0f371595a669c570dc263e72dd3ce54afab7ff)
+- [x] [迁移到 Monorepo](https://github.com/nekomeowww/SAKURA-vtuber/commit/ee4878710eeded6ef1b66474905936353d0176b4)
 - [x] 统一到 moeru-ai 组织
 
 ### 交互优化
@@ -506,3 +506,4 @@ Now, please choose one then respond with only JSON.
 ```
 
 实验：[https://poe.com/s/PqQfwNd2V2wFpmR0YUke](https://poe.com/s/PqQfwNd2V2wFpmR0YUke)
+

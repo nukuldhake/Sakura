@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { defineInvoke } from '@moeru/eventa'
-import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { useSettings, useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
-import { useTheme } from '@proj-airi/ui'
+import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-sakura/electron-vueuse'
+import { useSettings, useSettingsAudioDevice } from '@proj-sakura/stage-ui/stores/settings'
+import { useTheme } from '@proj-sakura/ui'
 import { useWindowSize } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
@@ -155,3 +155,4 @@ function refreshWindow() {
     </div>
   </div>
 </template>
+

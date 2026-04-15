@@ -19,7 +19,7 @@ import SteinsGateMayori from './assets/steins-gate-mayori.avif'
 
 又见面了！距离上一篇开发日志已经过去10天了。
 
-我们对用户界面进行了大量改进，使其能够集成更多的 LLM 提供商和语音提供商，并首次在 Discord、bilibili 和许多其他社交媒体平台上发布了 AIRI。
+我们对用户界面进行了大量改进，使其能够集成更多的 LLM 提供商和语音提供商，并首次在 Discord、bilibili 和许多其他社交媒体平台上发布了 SAKURA。
 
 还有很多我们迫不及待想要告诉你的内容。
 
@@ -29,7 +29,7 @@ import SteinsGateMayori from './assets/steins-gate-mayori.avif'
 
 <img :src="Gelbana" alt="Gelbana" />
 
-> 啊，别担心，我们心爱的 [AIRI](https://github.com/moeru-ai/airi) 不会变成这样的 GEL-NANA。不过，如果你还没有看过 [_Steins;Gate_](https://myanimelist.net/anime/9253/Steins_Gate) 动漫系列，强烈推荐你试试看~！
+> 啊，别担心，我们心爱的 [SAKURA](https://github.com/moeru-ai/SAKURA) 不会变成这样的 GEL-NANA。不过，如果你还没有看过 [_Steins;Gate_](https://myanimelist.net/anime/9253/Steins_Gate) 动漫系列，强烈推荐你试试看~！
 
 我们一直在开发初始设置 UI 设计，动画效果得到了改进，10天前实现了可自定义的主题着色。对我们任何人来说，这确实是忙碌的一周（特别是我们都是兼职参与这个项目，哈哈，如果你愿意的话，欢迎加入我们。🥺（恳求脸））。
 
@@ -59,7 +59,7 @@ import SteinsGateMayori from './assets/steins-gate-mayori.avif'
 
 <ThemedVideo muted autoplay src="./assets/histoire-first-look.mp4" />
 
-整个 OKLCH 调色板可以一次性展开到画布上，供我们参考。但是要尝试颜色并获得与 Project AIRI 主题相同的感觉方案并不完美，不是吗？
+整个 OKLCH 调色板可以一次性展开到画布上，供我们参考。但是要尝试颜色并获得与 Project SAKURA 主题相同的感觉方案并不完美，不是吗？
 
 所以我首先重新实现了颜色滑块，感觉更合适：
 
@@ -68,20 +68,20 @@ import SteinsGateMayori from './assets/steins-gate-mayori.avif'
 
 这确实让滑块更加专业。
 
-logo 和默认的绿色可以被替换以与 AIRI 的主题保持一致，这就是为什么我为 UI 页面专门设计了另一个 logo：
+logo 和默认的绿色可以被替换以与 SAKURA 的主题保持一致，这就是为什么我为 UI 页面专门设计了另一个 logo：
 
-<img class="light" :src="HistoireLogo" alt="project airi logo for histoire" />
-<img class="dark" :src="HistoireLogoDark" alt="project airi logo for histoire" />
+<img class="light" :src="HistoireLogo" alt="project SAKURA logo for histoire" />
+<img class="dark" :src="HistoireLogoDark" alt="project SAKURA logo for histoire" />
 
 哦，对了，整个 UI 组件已经像往常一样部署到 Netlify，路径为 `/ui/`，如果你想知道 UI 元素是什么样子的，请随时查看：
-[https://airi.moeru.ai/ui/](https://airi.moeru.ai/ui/)
+[https://SAKURA.moeru.ai/ui/](https://SAKURA.moeru.ai/ui/)
 
 还有很多其他功能我们无法在这个开发日志中完全涵盖：
 
 - [x] 支持所有 LLM 提供商。
 - [x] 改进了菜单导航 UI 的动画和过渡。
 - [x] 改进了字段的间距，新表单！
-- [x] 组件（[路线图](https://github.com/moeru-ai/airi/issues/42)上几乎所有待办组件）
+- [x] 组件（[路线图](https://github.com/moeru-ai/SAKURA/issues/42)上几乎所有待办组件）
   - [x] 表单
     - [x] 单选
     - [x] 单选组
@@ -134,7 +134,7 @@ logo 和默认的绿色可以被替换以与 AIRI 的主题保持一致，这就
 
 有了所有这些，我们可以得到这个结果：
 
-<ThemedVideo controls muted autoplay src="./assets/airi-demo.mp4" />
+<ThemedVideo controls muted autoplay src="./assets/SAKURA-demo.mp4" />
 
 几乎一模一样。但我们的故事并没有在这里结束，目前，我们还没有实现记忆功能、更好的动作控制，转录设置 UI 也缺失了。希望我们能在月底前完成这些工作。
 
@@ -152,3 +152,4 @@ logo 和默认的绿色可以被替换以与 AIRI 的主题保持一致，这就
 明天见。
 
 > El Psy Congroo.
+

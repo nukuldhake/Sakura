@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Skeleton } from '@proj-airi/ui'
+import { Skeleton } from '@proj-sakura/ui'
 </script>
 
 <template>
@@ -133,3 +133,4 @@ import { Skeleton } from '@proj-airi/ui'
     </Variant>
   </Story>
 </template>
+

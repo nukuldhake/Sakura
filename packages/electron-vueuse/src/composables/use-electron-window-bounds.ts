@@ -1,5 +1,5 @@
 import { defineInvoke } from '@moeru/eventa'
-import { bounds, startLoopGetBounds } from '@proj-airi/electron-eventa'
+import { bounds, startLoopGetBounds } from '@proj-sakura/electron-eventa'
 import { ref } from 'vue'
 
 import { getElectronEventaContext } from './use-electron-eventa-context'
@@ -42,3 +42,4 @@ export function useElectronWindowBounds() {
     height: windowBoundsHeight,
   }
 }
+

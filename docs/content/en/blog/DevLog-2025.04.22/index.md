@@ -8,13 +8,13 @@ date: 2025-04-22
 
 Hello everyone, I'm [@LemonNeko](https://github.com/LemonNekoGH), and this time I'm participating in writing the DevLog to share development stories with you.
 
-Two months ago, we ported AIRI's web interface to Electron [#7](https://github.com/moeru-ai/airi/pull/7) (which has now been refactored using Tauri 🤣 [#90](https://github.com/moeru-ai/airi/pull/90)), allowing it to appear as a desktop pet on our screens. At the same time, I had the idea of allowing AIRI to use mobile phones, but I kept putting it off.
+Two months ago, we ported SAKURA's web interface to Electron [#7](https://github.com/moeru-ai/SAKURA/pull/7) (which has now been refactored using Tauri 🤣 [#90](https://github.com/moeru-ai/SAKURA/pull/90)), allowing it to appear as a desktop pet on our screens. At the same time, I had the idea of allowing SAKURA to use mobile phones, but I kept putting it off.
 
-Last weekend (2025.04.20), I spent some time creating an MCP server demo [airi-android](https://github.com/LemonNekoGH/airi-android) that can interact with ADB, providing AIRI with basic mobile interaction capabilities (in fact, most LLMs can interact with phones through it). Here's a demo video:
+Last weekend (2025.04.20), I spent some time creating an MCP server demo [SAKURA-android](https://github.com/LemonNekoGH/SAKURA-android) that can interact with ADB, providing SAKURA with basic mobile interaction capabilities (in fact, most LLMs can interact with phones through it). Here's a demo video:
 
 <ThemedVideo controls muted src="./assets/cursor-open-settings.mp4" />
 
-I also packaged it as a Docker image and submitted it to the [MCP server list](https://mcp.so/server/airi-android/lemonnekogh). Feel free to try it if you're interested.
+I also packaged it as a Docker image and submitted it to the [MCP server list](https://mcp.so/server/SAKURA-android/lemonnekogh). Feel free to try it if you're interested.
 
 Actually, my initial idea was to write some Tool Calling code, modify the prompts, and tell the LLM that we can use these tools to interact with the phone, and that would be it. ~~But recently MCP has been so popular that I had some FOMO, so I chose MCP to implement it.~~
 
@@ -30,7 +30,7 @@ Ah, resources—I know this! In Ruby on Rails, users are a type of resource. So 
 from mcp.server.fastmcp import FastMCP
 from ppadb.client import Client
 
-mcp = FastMCP("airi-android")
+mcp = FastMCP("SAKURA-android")
 adb_client = Client()
 
 @mcp.resource("adb://devices")
@@ -50,7 +50,7 @@ I haven't figured out exactly how to let LLMs operate phones yet, and I'd like t
 It seems to work well so far, but I have some small questions:
 
 1. If the screen shows a game that uses graphics APIs to draw content directly on the screen rather than UI components, UI automation tools can't get the element positions and thus can't operate them.
-2. LLM responses have length limits. If the operation is complex, it might need to be completed in steps. Can we automatically notify it after each step is completed to trigger the next step, like in [airi-factorio](https://github.com/moeru-ai/airi-factorio)?
+2. LLM responses have length limits. If the operation is complex, it might need to be completed in steps. Can we automatically notify it after each step is completed to trigger the next step, like in [SAKURA-factorio](https://github.com/moeru-ai/SAKURA-factorio)?
 3. If some apps have cool animations, taking a screenshot immediately after an operation might not show the effect. Would we need to wait a while after the operation before taking a screenshot, or use screen recording directly?
 4. What about the security of letting AI directly operate phones? What risks might there be?
 
@@ -66,6 +66,7 @@ During development, I also learned some small tricks, like using the command lin
 emulator -avd Pixel_6_Pro_API_34
 ```
 
-Next, I plan to connect the AIRI desktop pet to the MCP server and see what it wants to do. Maybe it will open Telegram and chat with us, just like ReLU does now, but without using Telegram's API.
+Next, I plan to connect the SAKURA desktop pet to the MCP server and see what it wants to do. Maybe it will open Telegram and chat with us, just like ReLU does now, but without using Telegram's API.
 
 Thank you for reading this possibly somewhat rambling and not very substantial DevLog. See you next time!
+

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FieldInput } from '@proj-airi/ui'
+import { FieldInput } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const textValue = ref('')
@@ -92,3 +92,4 @@ const emailValue = ref('user@example.com')
     </Variant>
   </Story>
 </template>
+

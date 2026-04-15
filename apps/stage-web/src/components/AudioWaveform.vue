@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useAudioContext } from '@proj-airi/stage-ui/stores/audio'
-import { useTheme } from '@proj-airi/ui'
+import { useAudioContext } from '@proj-sakura/stage-ui/stores/audio'
+import { useTheme } from '@proj-sakura/ui'
 import { useElementBounding } from '@vueuse/core'
 import { onMounted, ref } from 'vue'
 
@@ -93,3 +93,4 @@ onMounted(async () => {
     <canvas ref="canvasElemRef" h-full w-full />
   </div>
 </template>
+

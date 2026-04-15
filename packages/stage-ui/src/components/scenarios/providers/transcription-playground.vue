@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { HearingTranscriptionResult } from '../../../stores/modules/hearing'
 
-import { Button, FieldRange, FieldSelect } from '@proj-airi/ui'
+import { Button, FieldRange, FieldSelect } from '@proj-sakura/ui'
 import { until } from '@vueuse/core'
 import { computed, onUnmounted, ref, shallowRef, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -248,3 +248,4 @@ onUnmounted(() => {
     </div>
   </div>
 </template>
+

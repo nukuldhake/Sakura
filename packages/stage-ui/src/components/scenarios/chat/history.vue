@@ -25,7 +25,7 @@ const chatHistoryRef = ref<HTMLDivElement>()
 
 const { t } = useI18n()
 const labels = computed(() => ({
-  assistant: props.assistantLabel ?? t('stage.chat.message.character-name.airi'),
+  assistant: props.assistantLabel ?? t('stage.chat.message.character-name.SAKURA'),
   user: props.userLabel ?? t('stage.chat.message.character-name.you'),
   error: props.errorLabel ?? t('stage.chat.message.character-name.core-system'),
 }))
@@ -102,3 +102,4 @@ const renderMessages = computed<ChatHistoryItem[]>(() => {
     </template>
   </div>
 </template>
+

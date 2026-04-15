@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Textarea } from '@proj-airi/ui'
+import { Textarea } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const input = ref('')
@@ -20,3 +20,4 @@ const input = ref('')
     </Variant>
   </Story>
 </template>
+

@@ -13,7 +13,7 @@ import { setupAboutWindowElectronInvokes } from './rpc/index.electron'
 export function setupAboutWindowReusable(params: { autoUpdater: AutoUpdater }) {
   return createReusableWindow(async () => {
     const window = new BrowserWindow({
-      title: 'About AIRI',
+      title: 'About SAKURA',
       width: 670,
       height: 730,
       show: false,
@@ -40,3 +40,4 @@ export function setupAboutWindowReusable(params: { autoUpdater: AutoUpdater }) {
     return window
   }).getWindow
 }
+

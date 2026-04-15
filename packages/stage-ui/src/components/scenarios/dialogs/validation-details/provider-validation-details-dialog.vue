@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ProviderValidationStep } from '../../../../libs/providers/validators/run'
 
-import { Button } from '@proj-airi/ui'
+import { Button } from '@proj-sakura/ui'
 import { useMediaQuery, useResizeObserver, useScreenSafeArea } from '@vueuse/core'
 import { DialogContent, DialogOverlay, DialogPortal, DialogRoot, DialogTitle } from 'reka-ui'
 import { DrawerContent, DrawerHandle, DrawerOverlay, DrawerPortal, DrawerRoot } from 'vaul-vue'
@@ -107,3 +107,4 @@ const selectedSteps = computed(() => {
     </DrawerPortal>
   </DrawerRoot>
 </template>
+

@@ -2,7 +2,7 @@
 import type { PreTrainedModel, Processor } from '@huggingface/transformers'
 
 import { AutoModel, AutoProcessor, env, RawImage } from '@huggingface/transformers'
-import { Button, Checkbox, InputFile } from '@proj-airi/ui'
+import { Button, Checkbox, InputFile } from '@proj-sakura/ui'
 import { check } from 'gpuu/webgpu'
 import { computed, onMounted, ref, watch } from 'vue'
 
@@ -391,3 +391,4 @@ function hidePreview() {
     </Teleport>
   </div>
 </template>
+

@@ -1,17 +1,17 @@
 {
-  "name": "@proj-airi/server-sdk",
+  "name": "@proj-sakura/server-sdk",
   "type": "module",
   "version": "0.8.5-beta.3",
-  "description": "Client-side SDK implementation for connecting to AIRI server components and runtimes",
+  "description": "Client-side SDK implementation for connecting to SAKURA server components and runtimes",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/server-sdk"
   },
   "exports": {
@@ -37,7 +37,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@proj-airi/server-shared": "workspace:^",
+    "@proj-sakura/server-shared": "workspace:^",
     "crossws": "^0.4.4",
     "superjson": "catalog:"
   },
@@ -45,3 +45,5 @@
     "@moeru/std": "catalog:"
   }
 }
+
+

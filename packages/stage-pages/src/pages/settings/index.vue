@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { IconItem, RippleGrid } from '@proj-airi/stage-ui/components'
-import { useRippleGridState } from '@proj-airi/stage-ui/composables/use-ripple-grid-state'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
+import { IconItem, RippleGrid } from '@proj-sakura/stage-ui/components'
+import { useRippleGridState } from '@proj-sakura/stage-ui/composables/use-ripple-grid-state'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
@@ -82,3 +82,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

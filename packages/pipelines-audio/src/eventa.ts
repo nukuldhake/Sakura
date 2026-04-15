@@ -10,17 +10,17 @@ import type {
 
 import { defineEventa } from '@moeru/eventa'
 
-export const speechSegmentEvent = defineEventa<TextSegment>('proj-airi:pipelines:output:speech:segment')
-export const speechSpecialEvent = defineEventa<TextSegment>('proj-airi:pipelines:output:speech:special')
-export const speechTtsRequestEvent = defineEventa<TtsRequest>('proj-airi:pipelines:output:speech:tts-request')
-export const speechTtsResultEvent = defineEventa<TtsResult<any>>('proj-airi:pipelines:output:speech:tts-result')
-export const speechPlaybackStartEvent = defineEventa<PlaybackStartEvent<any>>('proj-airi:pipelines:output:speech:playback-start')
-export const speechPlaybackEndEvent = defineEventa<PlaybackEndEvent<any>>('proj-airi:pipelines:output:speech:playback-end')
-export const speechPlaybackInterruptEvent = defineEventa<PlaybackInterruptEvent<any>>('proj-airi:pipelines:output:speech:playback-interrupt')
-export const speechPlaybackRejectEvent = defineEventa<PlaybackRejectEvent<any>>('proj-airi:pipelines:output:speech:playback-reject')
-export const speechIntentStartEvent = defineEventa<string>('proj-airi:pipelines:output:speech:intent-start')
-export const speechIntentEndEvent = defineEventa<string>('proj-airi:pipelines:output:speech:intent-end')
-export const speechIntentCancelEvent = defineEventa<{ intentId: string, reason?: string }>('proj-airi:pipelines:output:speech:intent-cancel')
+export const speechSegmentEvent = defineEventa<TextSegment>('proj-SAKURA:pipelines:output:speech:segment')
+export const speechSpecialEvent = defineEventa<TextSegment>('proj-SAKURA:pipelines:output:speech:special')
+export const speechTtsRequestEvent = defineEventa<TtsRequest>('proj-SAKURA:pipelines:output:speech:tts-request')
+export const speechTtsResultEvent = defineEventa<TtsResult<any>>('proj-SAKURA:pipelines:output:speech:tts-result')
+export const speechPlaybackStartEvent = defineEventa<PlaybackStartEvent<any>>('proj-SAKURA:pipelines:output:speech:playback-start')
+export const speechPlaybackEndEvent = defineEventa<PlaybackEndEvent<any>>('proj-SAKURA:pipelines:output:speech:playback-end')
+export const speechPlaybackInterruptEvent = defineEventa<PlaybackInterruptEvent<any>>('proj-SAKURA:pipelines:output:speech:playback-interrupt')
+export const speechPlaybackRejectEvent = defineEventa<PlaybackRejectEvent<any>>('proj-SAKURA:pipelines:output:speech:playback-reject')
+export const speechIntentStartEvent = defineEventa<string>('proj-SAKURA:pipelines:output:speech:intent-start')
+export const speechIntentEndEvent = defineEventa<string>('proj-SAKURA:pipelines:output:speech:intent-end')
+export const speechIntentCancelEvent = defineEventa<{ intentId: string, reason?: string }>('proj-SAKURA:pipelines:output:speech:intent-cancel')
 
 export const speechPipelineEventMap = {
   onSegment: speechSegmentEvent,
@@ -37,3 +37,4 @@ export const speechPipelineEventMap = {
 } as const
 
 export type SpeechPipelineEventName = keyof typeof speechPipelineEventMap
+

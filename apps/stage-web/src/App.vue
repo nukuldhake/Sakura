@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { OnboardingDialog, ToasterRoot } from '@proj-airi/stage-ui/components'
-import { useSharedAnalyticsStore } from '@proj-airi/stage-ui/stores/analytics'
-import { useCharacterOrchestratorStore } from '@proj-airi/stage-ui/stores/character'
-import { useChatSessionStore } from '@proj-airi/stage-ui/stores/chat/session-store'
-import { useDisplayModelsStore } from '@proj-airi/stage-ui/stores/display-models'
-import { useContextBridgeStore } from '@proj-airi/stage-ui/stores/mods/api/context-bridge'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { useOnboardingStore } from '@proj-airi/stage-ui/stores/onboarding'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { useTheme } from '@proj-airi/ui'
-import { StageTransitionGroup } from '@proj-airi/ui-transitions'
+import { OnboardingDialog, ToasterRoot } from '@proj-sakura/stage-ui/components'
+import { useSharedAnalyticsStore } from '@proj-sakura/stage-ui/stores/analytics'
+import { useCharacterOrchestratorStore } from '@proj-sakura/stage-ui/stores/character'
+import { useChatSessionStore } from '@proj-sakura/stage-ui/stores/chat/session-store'
+import { useDisplayModelsStore } from '@proj-sakura/stage-ui/stores/display-models'
+import { useContextBridgeStore } from '@proj-sakura/stage-ui/stores/mods/api/context-bridge'
+import { useSAKURACardStore } from '@proj-sakura/stage-ui/stores/modules/SAKURA-card'
+import { useSpeechStore } from '@proj-sakura/stage-ui/stores/modules/speech'
+import { useOnboardingStore } from '@proj-sakura/stage-ui/stores/onboarding'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
+import { useTheme } from '@proj-sakura/ui'
+import { StageTransitionGroup } from '@proj-sakura/ui-transitions'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, onUnmounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -30,7 +30,7 @@ const characterOrchestratorStore = useCharacterOrchestratorStore()
 const speechStore = useSpeechStore()
 const { shouldShowSetup } = storeToRefs(onboardingStore)
 const { isDark } = useTheme()
-const cardStore = useAiriCardStore()
+const cardStore = useSAKURACardStore()
 const analyticsStore = useSharedAnalyticsStore()
 
 const primaryColor = computed(() => {
@@ -149,3 +149,4 @@ function handleSetupSkipped() {
   animation: hue-anim 10s linear infinite;
 }
 </style>
+

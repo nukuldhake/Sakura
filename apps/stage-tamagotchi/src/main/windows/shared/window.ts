@@ -1,5 +1,5 @@
 import type { createContext } from '@moeru/eventa/adapters/electron/main'
-import type { ResizeDirection } from '@proj-airi/electron-eventa'
+import type { ResizeDirection } from '@proj-sakura/electron-eventa'
 import type { BrowserWindow, BrowserWindowConstructorOptions } from 'electron'
 
 import { isMacOS } from 'std-env'
@@ -92,3 +92,4 @@ export function setupBaseWindowElectronInvokes(params: {
   createWindowService({ context: params.context, window: params.window })
   createAppService({ context: params.context, window: params.window })
 }
+

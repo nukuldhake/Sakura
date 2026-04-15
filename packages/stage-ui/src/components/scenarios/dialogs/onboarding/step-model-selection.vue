@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from '@proj-airi/ui'
+import { Button } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { inject } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -75,3 +75,4 @@ const {
     />
   </div>
 </template>
+

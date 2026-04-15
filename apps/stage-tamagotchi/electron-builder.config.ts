@@ -36,7 +36,7 @@ else {
 }
 
 export default {
-  appId: 'ai.moeru.airi',
+  appId: 'ai.moeru.SAKURA',
   productName: 'Sakura',
   directories: {
     output: 'dist',
@@ -86,10 +86,10 @@ export default {
     '**/*.node',
   ],
   extraMetadata: {
-    name: 'ai.moeru.airi',
+    name: 'ai.moeru.SAKURA',
     main: 'out/main/index.js',
-    homepage: 'https://airi.moeru.ai/docs/',
-    repository: 'https://github.com/moeru-ai/airi',
+    homepage: 'https://SAKURA.moeru.ai/docs/',
+    repository: 'https://github.com/moeru-ai/SAKURA',
     license: 'MIT',
   },
   win: {
@@ -147,6 +147,7 @@ export default {
   publish: {
     provider: 'github',
     owner: 'moeru-ai',
-    repo: 'airi',
+    repo: 'SAKURA',
   },
 } as Configuration
+

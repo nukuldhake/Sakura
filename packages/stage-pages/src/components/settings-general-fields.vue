@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { all } from '@proj-airi/i18n'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { FieldCheckbox, FieldSelect, useTheme } from '@proj-airi/ui'
+import { all } from '@proj-sakura/i18n'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
+import { FieldCheckbox, FieldSelect, useTheme } from '@proj-sakura/ui'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -55,3 +55,4 @@ const languages = computed(() => {
     </div>
   </div>
 </template>
+

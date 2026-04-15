@@ -9,9 +9,9 @@ preview-cover:
   dark: "@assets('./assets/250608-dark.avif')"
 ---
 
-大家好，我是 LemonNeko，AIRI 的维护者之一，由我来为大家带来今天的 DevLog：让 AIRI 桌宠的 Live2D 模型可以注视鼠标位置。
+大家好，我是 LemonNeko，SAKURA 的维护者之一，由我来为大家带来今天的 DevLog：让 SAKURA 桌宠的 Live2D 模型可以注视鼠标位置。
 
-Hello everyone, here's LemonNeko, one of maintainer of AIRI. Today's DevLog is talking about: Let Live2D model of AIRI Tamagotchi to focus position.
+Hello everyone, here's LemonNeko, one of maintainer of SAKURA. Today's DevLog is talking about: Let Live2D model of SAKURA Tamagotchi to focus position.
 
 ## 思路整理「Chain of Thoughts」
 
@@ -21,7 +21,7 @@ Hello everyone, here's LemonNeko, one of maintainer of AIRI. Today's DevLog is t
 
 First of all, we need to know, there are two basic interactions of Live2D: **Focus**, and **Tap**, when we create a Live2D canvas, model will auto focus the position of our cursor, head will look at it, like this:
 
-![](./assets/airi-tamagotchi-focus.gif)
+![](./assets/SAKURA-tamagotchi-focus.gif)
 
 但是当鼠标离开网页内容后，Live2D 就不再会知道鼠标的位置在哪了，所以我们需要手动告诉它鼠标在哪。
 
@@ -41,16 +41,16 @@ For example, we have a screen like this:
 
 ![](./assets/screen.avif)
 
-蓝色框是屏幕，粉色是 AIRI 的窗口，紫色箭头是鼠标，我们定义：
+蓝色框是屏幕，粉色是 SAKURA 的窗口，紫色箭头是鼠标，我们定义：
 
-The blue box is the screen, the pink box is the AIRI window, the purple arrow is the cursor, we define:
+The blue box is the screen, the pink box is the SAKURA window, the purple arrow is the cursor, we define:
 
 - 屏幕高宽为：`A x B`<br>The screen size is: `A x B`
-- AIRI 窗口左上角位置为：`(E, F)`<br>The position of AIRI window is: `(E, F)`
-- AIRI 窗口大小为：`C x D`<br>The size of AIRI window is: `C x D`
+- SAKURA 窗口左上角位置为：`(E, F)`<br>The position of SAKURA window is: `(E, F)`
+- SAKURA 窗口大小为：`C x D`<br>The size of SAKURA window is: `C x D`
 - 鼠标位置是：`G, H`<br>The position of cursor is: `G, H`
 
-那么鼠标的位置在 AIRI 窗口中的位置应当是：`(G - E, H - F)`
+那么鼠标的位置在 SAKURA 窗口中的位置应当是：`(G - E, H - F)`
 
 Then the relative position of cursor to window is: `(G - E, H - F)`
 
@@ -99,7 +99,7 @@ Unfortunately, the story is not as simple as I thought. The idea of getting the 
 
 好了，我们实现了 Live2D 模型在 Tauri 上跟随窗口之外的鼠标位置，这就是本次 DevLog 的全部内容，以下是我在实现过程中查阅的资料，欢迎详细阅读以及讨论：
 
-In this DevLog, we learned how to get the relative position of cursor to window, and how to set the focus point of Live2D model manually. If you want to know more about the implementation details, you can check the [source code](https://github.com/moeru-ai/airi/pull/194) of this PR.
+In this DevLog, we learned how to get the relative position of cursor to window, and how to set the focus point of Live2D model manually. If you want to know more about the implementation details, you can check the [source code](https://github.com/moeru-ai/SAKURA/pull/194) of this PR.
 
 - [手动配置模型的交互 - pixi-live2d-display](https://github.com/guansss/pixi-live2d-display/wiki/Complete-Guide#manually-1 "手动配置模型的交互 - pixi-live2d-display")
 - [Win32 API: GetCursorPos](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getcursorpos "GetCursorPos")
@@ -108,3 +108,4 @@ In this DevLog, we learned how to get the relative position of cursor to window,
 - [macOS API: `NSEvent.mouseLocation`](https://developer.apple.com/documentation/appkit/nsevent/mouselocation "NSEvent.mouseLocation")
 
 > 封面图片由 [@Rynco Maekawa](https://github.com/lynzrand) 提供<br>Cover image by [@Rynco Maekawa](https://github.com/lynzrand)
+

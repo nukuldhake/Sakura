@@ -1,18 +1,18 @@
 {
-  "name": "@proj-airi/plugin-sdk",
+  "name": "@proj-sakura/plugin-sdk",
   "type": "module",
   "version": "0.8.5-beta.3",
   "private": true,
-  "description": "Plugin SDK for Project AIRI",
+  "description": "Plugin SDK for Project SAKURA",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/plugin-sdk"
   },
   "exports": {
@@ -41,9 +41,11 @@
   },
   "dependencies": {
     "@moeru/eventa": "catalog:",
-    "@proj-airi/plugin-protocol": "workspace:*",
-    "@proj-airi/server-shared": "workspace:*",
+    "@proj-sakura/plugin-protocol": "workspace:*",
+    "@proj-sakura/server-shared": "workspace:*",
     "valibot": "^1.2.0",
     "xstate": "^5.28.0"
   }
 }
+
+

@@ -27,7 +27,7 @@ export const electronPluginUnload = defineInvokeEventa<PluginRegistrySnapshot, {
 export const electronPluginInspect = defineInvokeEventa<PluginHostDebugSnapshot>('eventa:invoke:electron:plugins:inspect')
 export const electronPluginUpdateCapability = defineInvokeEventa<PluginCapabilityState, PluginCapabilityPayload>('eventa:invoke:electron:plugins:capability:update')
 
-export const pluginProtocolListProvidersEventName = 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers'
+export const pluginProtocolListProvidersEventName = 'proj-SAKURA:plugin-sdk:apis:protocol:resources:providers:list-providers'
 export const pluginProtocolListProviders = defineInvokeEventa<Array<{ name: string }>>(pluginProtocolListProvidersEventName)
 
 export const captionIsFollowingWindowChanged = defineEventa<boolean>('eventa:event:electron:windows:caption-overlay:is-following-window-changed')
@@ -96,7 +96,7 @@ export interface PluginRegistrySnapshot {
 }
 
 // TODO: Replace these manually duplicated IPC types with re-exports from
-// @proj-airi/plugin-sdk (CapabilityDescriptor) once stage-ui and the shared
+// @proj-sakura/plugin-sdk (CapabilityDescriptor) once stage-ui and the shared
 // eventa layer can depend on the SDK without introducing unwanted coupling.
 export interface PluginCapabilityPayload {
   key: string
@@ -140,5 +140,6 @@ export const widgetsRemoveEvent = defineEventa<{ id: string }>('eventa:event:ele
 export const widgetsClearEvent = defineEventa('eventa:event:electron:windows:widgets:clear')
 export const widgetsUpdateEvent = defineEventa<{ id: string, componentProps?: Record<string, any> }>('eventa:event:electron:windows:widgets:update')
 
-export { electron } from '@proj-airi/electron-eventa'
-export * from '@proj-airi/electron-eventa/electron-updater'
+export { electron } from '@proj-sakura/electron-eventa'
+export * from '@proj-sakura/electron-eventa/electron-updater'
+

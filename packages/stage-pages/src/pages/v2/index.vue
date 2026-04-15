@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useAuthStore } from '@proj-airi/stage-ui/stores/auth'
-import { useCharacterStore } from '@proj-airi/stage-ui/stores/characters'
-import { Button } from '@proj-airi/ui'
+import { useAuthStore } from '@proj-sakura/stage-ui/stores/auth'
+import { useCharacterStore } from '@proj-sakura/stage-ui/stores/characters'
+import { Button } from '@proj-sakura/ui'
 import { computed, onMounted } from 'vue'
 
 const characterStore = useCharacterStore()
@@ -256,3 +256,4 @@ const characters = computed(() => Array.from(characterStore.characters.values())
     </div>
   </div>
 </template>
+

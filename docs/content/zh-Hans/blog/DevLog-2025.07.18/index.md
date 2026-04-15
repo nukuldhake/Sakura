@@ -3,17 +3,17 @@ title: DevLog @ 2025.07.18
 category: DevLog
 date: 2025-07-18
 excerpt: |
-  在阅读完有关 Factorio 强化学习环境的论文后，我们想和大家分享我们如何计划改进 Factorio agent 项目 `airi-factorio`。
+  在阅读完有关 Factorio 强化学习环境的论文后，我们想和大家分享我们如何计划改进 Factorio agent 项目 `SAKURA-factorio`。
 preview-cover:
   light: "@assets('../../../en/blog/DevLog-2025.07.18/assets/factorio-belt.gif')"
   dark: "@assets('../../../en/blog/DevLog-2025.07.18/assets/factorio-belt.gif')"
 ---
 
-大家好，我是 [@LemonNeko](https://github.com/LemonNekoGH)，AIRI 的维护者之一。
+大家好，我是 [@LemonNeko](https://github.com/LemonNekoGH)，SAKURA 的维护者之一。
 
 ## 回顾
 
-半年前，我第一次尝试写一个可以游玩知名自动化生产模拟经营游戏 [Factorio](https://www.factorio.com/) 的 AI Agent [`airi-factorio`](https://github.com/moeru-ai/airi-factorio)，并在其中进行了这些实践：
+半年前，我第一次尝试写一个可以游玩知名自动化生产模拟经营游戏 [Factorio](https://www.factorio.com/) 的 AI Agent [`SAKURA-factorio`](https://github.com/moeru-ai/SAKURA-factorio)，并在其中进行了这些实践：
 
 - 使用 TypeScript 编写 Factorio Mod：使用 [tstl](https://github.com/TypeScriptToLua/TypeScriptToLua) 来将 TypeScript 代码编译成 Lua 代码。
 - 使用 RCON 与 Factorio Mod 进行交互：使用 [factorio-rcon-api](https://github.com/nekomeowww/factorio-rcon-api) 来与 Factorio 通信，调用 `/c` 命令来执行 Mod 注册的函数。很感谢 [@nekomeowww](https://github.com/nekomeowww)。
@@ -44,7 +44,7 @@ FLE 分为两种模式：
 
 他们评测了 Claude 3.5 Sonnet、GPT-4o、Deepseek-v3、Gemini-2 等多款主流 LLM，但是在 Lab-play 中当时最强的 Claude 3.5 也只完成了 7 个关卡。
 
-读到这里，我开始好奇，他们的评测如此复杂，那么在技术实现上是如何保证可维护性的呢？继续阅读发现，他们的实现方式与 `airi-factorio` 非常相似，但是相对 `airi-factorio` 来说有很多优点：
+读到这里，我开始好奇，他们的评测如此复杂，那么在技术实现上是如何保证可维护性的呢？继续阅读发现，他们的实现方式与 `SAKURA-factorio` 非常相似，但是相对 `SAKURA-factorio` 来说有很多优点：
 
 - 使用 Python 编写，LLM 生成 Python 代码并直接在 Python REPL 中执行，可以直接在标准输出中读取结果。由于 Python 的数据集远远多于 Lua，所以生成的准确性更高，也能生成更复杂的代码。
 - Lua mod 中只包含执行操作的原语，比如 place_entity 放置实体，更复杂的逻辑放到 Python 中写，可以减少 Lua mod 出现 bug 的可能，就不用那么频繁的重启游戏。
@@ -54,9 +54,9 @@ FLE 分为两种模式：
 
 他们还贴出了他们使用的 [系统提示词](https://arxiv.org/html/2503.09617v1#A8.SS4)，规定了环境结构、响应格式、最佳实践、如何理解游戏输出等等。
 
-## 回到 `airi-factorio`
+## 回到 `SAKURA-factorio`
 
-和 FLE 比起来，我们的实现显得相当幼稚，那我们要怎么改进 `airi-factorio` 呢？
+和 FLE 比起来，我们的实现显得相当幼稚，那我们要怎么改进 `SAKURA-factorio` 呢？
 
 我不想写 Python，我只熟悉 TypeScript 和 Golang，很巧，我们最近也写了 [mcp-launcher](https://github.com/moeru-ai/mcp-launcher)，一个适用于所有可能的 MCP 服务器的构建器，我们可以配合它来使用 Golang 来实现一个 MCP 服务器，然后让 LLM 来调用它。
 
@@ -78,8 +78,9 @@ FLE 分为两种模式：
 
 ## 结束
 
-感谢阅读，如果感兴趣，可以翻阅 FLE 的论文和 [代码](https://github.com/JackHopkins/factorio-learning-environment)，也许我的理解有误，欢迎指正！这次的阅读也许不够深入，但是接下来我在按照我的思路来改进 `airi-factorio` 的时候，会需要反复阅读，在有进展时再更新。
+感谢阅读，如果感兴趣，可以翻阅 FLE 的论文和 [代码](https://github.com/JackHopkins/factorio-learning-environment)，也许我的理解有误，欢迎指正！这次的阅读也许不够深入，但是接下来我在按照我的思路来改进 `SAKURA-factorio` 的时候，会需要反复阅读，在有进展时再更新。
 
 这篇 DevLog 就到这里，祝大家周末愉快！
 
 > 封面取自 [@anrew10](https://es.pixilart.com/art/factorio-yellow-belt-132272fb3d727dd) 的作品
+

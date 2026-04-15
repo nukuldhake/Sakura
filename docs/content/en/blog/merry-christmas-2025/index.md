@@ -8,7 +8,7 @@ preview-cover:
   dark: "@assets('./assets/merry-christmas-iru.avif')"
 ---
 
-**Merry Christmas** from the AIRI team!
+**Merry Christmas** from the SAKURA team!
 
 ![Christmas Art](./assets/merry-christmas-iru.avif)
 
@@ -32,7 +32,7 @@ Just hours ago, we saw that on X, [KOL @Dexerto](https://x.com/Dexerto) posted [
 > She reached level 123 with over 110,000 subs and more than 1,000,000 bits.
 
 Happy birthday, Neuro-sama. And congratulations to you, creator of Vedal, also, artist Camila. It's unbelievable you made this
-far, it is you, and also the Swarm brought me here wishing to deliver my version of cyber life, continuously making AIRI to grow.
+far, it is you, and also the Swarm brought me here wishing to deliver my version of cyber life, continuously making SAKURA to grow.
 
 ![](./assets/neuro-sama-happy-birthday-live.avif)
 
@@ -44,7 +44,8 @@ far, it is you, and also the Swarm brought me here wishing to deliver my version
   - Grok Ani from xAI
   - nice scenario [gogh](https://store.steampowered.com/app/3213850/gogh/)
   - and good community and music, [Chill with You](https://store.steampowered.com/app/3548580/LoFi/)
-  - we got a list of https://github.com/proj-airi/awesome-ai-vtubers you could track more projects like us.
+  - we got a list of https://github.com/proj-SAKURA/awesome-ai-vtubers you could track more projects like us.
 4. Having over 3400+ Discord members
 
 Thank you for building, testing, and dreaming with us this year. May your holiday be peaceful, your cocoa hot. 🎁
+

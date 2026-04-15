@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=SAKURA
+Exec=SAKURA %U
+Terminal=false
+Type=Application
+Icon=ai.moeru.SAKURA
+StartupWMClass=SAKURA
+Comment=SAKURA is an AI VTuber/Waifu chatbot supporting Live2D/VRM avatars, featuring human-like interactions and modular stage-based rendering.
+Categories=Utility;
+
+

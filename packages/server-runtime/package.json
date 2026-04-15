@@ -1,17 +1,17 @@
 {
-  "name": "@proj-airi/server-runtime",
+  "name": "@proj-sakura/server-runtime",
   "type": "module",
   "version": "0.8.5-beta.3",
-  "description": "Server runtime implementation for AIRI running in different environments",
+  "description": "Server runtime implementation for SAKURA running in different environments",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/server-runtime"
   },
   "exports": {
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@guiiai/logg": "catalog:",
-    "@proj-airi/server-shared": "workspace:^",
+    "@proj-sakura/server-shared": "workspace:^",
     "crossws": "^0.4.4",
     "h3": "^2.0.1-rc.14",
     "listhen": "^1.9.0",
@@ -45,3 +45,5 @@
     "superjson": "catalog:"
   }
 }
+
+

@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { ChatHistoryItem } from '@proj-airi/stage-ui/types/chat'
+import type { ChatHistoryItem } from '@proj-sakura/stage-ui/types/chat'
 import type { ChatProvider } from '@xsai-ext/providers/utils'
 
-import { ChatHistory, HearingConfigDialog } from '@proj-airi/stage-ui/components'
-import { useAudioAnalyzer } from '@proj-airi/stage-ui/composables'
-import { useAudioContext } from '@proj-airi/stage-ui/stores/audio'
-import { useChatOrchestratorStore } from '@proj-airi/stage-ui/stores/chat'
-import { useChatMaintenanceStore } from '@proj-airi/stage-ui/stores/chat/maintenance'
-import { useChatSessionStore } from '@proj-airi/stage-ui/stores/chat/session-store'
-import { useChatStreamStore } from '@proj-airi/stage-ui/stores/chat/stream-store'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { useSettings, useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
-import { BasicTextarea, useTheme } from '@proj-airi/ui'
+import { ChatHistory, HearingConfigDialog } from '@proj-sakura/stage-ui/components'
+import { useAudioAnalyzer } from '@proj-sakura/stage-ui/composables'
+import { useAudioContext } from '@proj-sakura/stage-ui/stores/audio'
+import { useChatOrchestratorStore } from '@proj-sakura/stage-ui/stores/chat'
+import { useChatMaintenanceStore } from '@proj-sakura/stage-ui/stores/chat/maintenance'
+import { useChatSessionStore } from '@proj-sakura/stage-ui/stores/chat/session-store'
+import { useChatStreamStore } from '@proj-sakura/stage-ui/stores/chat/stream-store'
+import { useConsciousnessStore } from '@proj-sakura/stage-ui/stores/modules/consciousness'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
+import { useSettings, useSettingsAudioDevice } from '@proj-sakura/stage-ui/stores/settings'
+import { BasicTextarea, useTheme } from '@proj-sakura/ui'
 import { useResizeObserver, useScreenSafeArea } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue'
@@ -286,3 +286,4 @@ https://stackoverflow.com/questions/72780266/why-doesnt-blur-backdrop-filter-wor
   max-height: 35dvh;
 }
 </style>
+

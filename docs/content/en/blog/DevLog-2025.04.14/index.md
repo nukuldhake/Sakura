@@ -6,7 +6,7 @@ date: 2025-04-14
 
 ## Introduction
 
-[Last time](../DevLog-2025.04.06/#memory-system-memory-system) we discussed AIRI's memory system. Today, let's dive deeper into how to implement such a complex memory system and explore future prospects.
+[Last time](../DevLog-2025.04.06/#memory-system-memory-system) we discussed SAKURA's memory system. Today, let's dive deeper into how to implement such a complex memory system and explore future prospects.
 
 ## Starting with Search Engines
 
@@ -96,11 +96,11 @@ RAG now popularizes a new process called reranking model, which essentially **us
 
 However, reranking still cannot solve many problems of the memory layer: forgetting curves, memory reinforcement, random memory recall, and emotionally influenced reranking scores - these are not things reranking models can handle.
 
-To build a good memory layer for AIRI, we need to establish a good reranking mechanism, combining RAG basic capabilities with past search engine reranking experience.
+To build a good memory layer for SAKURA, we need to establish a good reranking mechanism, combining RAG basic capabilities with past search engine reranking experience.
 
 ## Memory Layer Experimental Platform
 
-[Project AIRI Memory Driver @duckdb/duckdb-wasm Playground](https://drizzle-orm-duckdb-wasm.netlify.app/#/memory-decay)
+[Project SAKURA Memory Driver @duckdb/duckdb-wasm Playground](https://drizzle-orm-duckdb-wasm.netlify.app/#/memory-decay)
 
 ![](./assets/memory-driver.avif)
 
@@ -143,9 +143,9 @@ Long-term memory is important, with a long half-life, evolved from short-term me
 
 Finally, muscle memory - rather than calling it a type of memory, it's more like a conditioned reflex that has been formed.
 
-## How Should AIRI Be Designed?
+## How Should SAKURA Be Designed?
 
-From this, we can glimpse AIRI's implementation principles:
+From this, we can glimpse SAKURA's implementation principles:
 
 - Working memory is like the messages array
 - Short-term memory is like RAG memory entries that are less easily recalled, newer ones are easier to recall
@@ -233,3 +233,4 @@ The road ahead is long, and we still need to continue working hard.
 [^2]: https://help.aliyun.com/zh/open-search/industry-algorithm-edition/configure-dts-real-time-synchronization
 
 [^3]: https://zh.wikipedia.org/wiki/%E9%81%97%E5%BF%98%E6%9B%B2%E7%BA%BF
+

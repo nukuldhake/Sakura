@@ -1,4 +1,4 @@
-# @proj-airi/model-driver-mediapipe
+# @proj-sakura/model-driver-mediapipe
 
 Single-person motion capture workshop package.
 
@@ -33,3 +33,4 @@ Keep upstream docs/snippets in `packages/model-driver-mediapipe/references/`.
 The minimal API surface this package uses is summarized in:
 
 - `packages/model-driver-mediapipe/references/tasks-vision-api.md`
+

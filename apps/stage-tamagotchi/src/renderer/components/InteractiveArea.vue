@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { ChatHistoryItem } from '@proj-airi/stage-ui/types/chat'
+import type { ChatHistoryItem } from '@proj-sakura/stage-ui/types/chat'
 import type { ChatProvider } from '@xsai-ext/providers/utils'
 
-import { ChatHistory } from '@proj-airi/stage-ui/components'
-import { useChatOrchestratorStore } from '@proj-airi/stage-ui/stores/chat'
-import { useChatMaintenanceStore } from '@proj-airi/stage-ui/stores/chat/maintenance'
-import { useChatSessionStore } from '@proj-airi/stage-ui/stores/chat/session-store'
-import { useChatStreamStore } from '@proj-airi/stage-ui/stores/chat/stream-store'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { BasicTextarea } from '@proj-airi/ui'
+import { ChatHistory } from '@proj-sakura/stage-ui/components'
+import { useChatOrchestratorStore } from '@proj-sakura/stage-ui/stores/chat'
+import { useChatMaintenanceStore } from '@proj-sakura/stage-ui/stores/chat/maintenance'
+import { useChatSessionStore } from '@proj-sakura/stage-ui/stores/chat/session-store'
+import { useChatStreamStore } from '@proj-sakura/stage-ui/stores/chat/stream-store'
+import { useConsciousnessStore } from '@proj-sakura/stage-ui/stores/modules/consciousness'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
+import { BasicTextarea } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -165,3 +165,4 @@ const historyMessages = computed(() => messages.value as unknown as ChatHistoryI
     />
   </div>
 </template>
+

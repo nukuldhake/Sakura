@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useModelStore } from '@proj-airi/stage-ui-three'
-import { useLive2d } from '@proj-airi/stage-ui/stores/live2d'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { RoundRange } from '@proj-airi/ui'
+import { useModelStore } from '@proj-sakura/stage-ui-three'
+import { useLive2d } from '@proj-sakura/stage-ui/stores/live2d'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
+import { RoundRange } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 
@@ -203,3 +203,4 @@ defineExpose({
   transform: translateX(0) scale(1);
 }
 </style>
+

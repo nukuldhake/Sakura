@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { WebSocketBaseEvent, WebSocketEventOf, WebSocketEvents } from '@proj-airi/server-sdk'
-import type { ChatStreamEvent, ContextMessage } from '@proj-airi/stage-ui/types/chat'
+import type { WebSocketBaseEvent, WebSocketEventOf, WebSocketEvents } from '@proj-sakura/server-sdk'
+import type { ChatStreamEvent, ContextMessage } from '@proj-sakura/stage-ui/types/chat'
 
 import type { FlowDirection, FlowEntry, SparkNotifyEntryState } from './context-flow-types'
 
 import { errorMessageFrom } from '@moeru/std'
-import { ContextUpdateStrategy } from '@proj-airi/server-sdk'
-import { useCharacterOrchestratorStore, useCharacterStore } from '@proj-airi/stage-ui/stores/character'
-import { useChatOrchestratorStore } from '@proj-airi/stage-ui/stores/chat'
-import { CHAT_STREAM_CHANNEL_NAME, CONTEXT_CHANNEL_NAME } from '@proj-airi/stage-ui/stores/chat/constants'
-import { useModsServerChannelStore } from '@proj-airi/stage-ui/stores/mods/api/channel-server'
-import { getEventSourceKey } from '@proj-airi/stage-ui/utils'
-import { Callout } from '@proj-airi/ui'
+import { ContextUpdateStrategy } from '@proj-sakura/server-sdk'
+import { useCharacterOrchestratorStore, useCharacterStore } from '@proj-sakura/stage-ui/stores/character'
+import { useChatOrchestratorStore } from '@proj-sakura/stage-ui/stores/chat'
+import { CHAT_STREAM_CHANNEL_NAME, CONTEXT_CHANNEL_NAME } from '@proj-sakura/stage-ui/stores/chat/constants'
+import { useModsServerChannelStore } from '@proj-sakura/stage-ui/stores/mods/api/channel-server'
+import { getEventSourceKey } from '@proj-sakura/stage-ui/utils'
+import { Callout } from '@proj-sakura/ui'
 import { useBroadcastChannel } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
@@ -589,3 +589,4 @@ meta:
   titleKey: tamagotchi.settings.devtools.pages.context-flow.title
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

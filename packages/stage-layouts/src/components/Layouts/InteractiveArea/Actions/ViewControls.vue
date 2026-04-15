@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { Button } from '@proj-airi/ui'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
+import { Button } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 
 const emits = defineEmits<{
@@ -71,3 +71,4 @@ function handleViewControlsToggle(targetMode: 'x' | 'y' | 'z' | 'scale') {
   opacity: 1;
 }
 </style>
+

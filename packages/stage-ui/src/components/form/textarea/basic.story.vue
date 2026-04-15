@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BasicTextarea } from '@proj-airi/ui'
+import { BasicTextarea } from '@proj-sakura/ui'
 </script>
 
 <template>
@@ -19,3 +19,4 @@ import { BasicTextarea } from '@proj-airi/ui'
     </Variant>
   </Story>
 </template>
+

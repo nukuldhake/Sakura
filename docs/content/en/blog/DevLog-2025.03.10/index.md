@@ -7,7 +7,7 @@ date: 2025-03-10
 ## Dejavu
 
 In the last Friday (March 7th), I was trying to design and manipulate a new
-feeling of the AIRI stage UI and settings UI, the idea finally appears
+feeling of the SAKURA stage UI and settings UI, the idea finally appears
 in my mind at the ending of the DevStream.
 
 ## Day time
@@ -37,25 +37,25 @@ implementing this dotted effect for the buttons:
 
 During the development, we found that some of the packages that currently living
 under the `packages/` directory are actually independent packages that were not
-even in the workflow of Project AIRI.
+even in the workflow of Project SAKURA.
 
 This means we can now move them out to another place to simplify the installation
 sizes and building process for the primary repository
-[airi](https://github.com/moeru-ai/airi).
+[SAKURA](https://github.com/moeru-ai/SAKURA).
 
 > Where do we go?
 
-Nice question! We got [`@proj-airi`](https://github.com/proj-airi) already
+Nice question! We got [`@proj-sakura`](https://github.com/proj-SAKURA) already
 registered on GitHub as a organization, since many of the packages and static
 applications were not useful for Moeru AI too, perhaps we can move those
-packages to [`@proj-airi`](https://github.com/proj-airi).
+packages to [`@proj-sakura`](https://github.com/proj-SAKURA).
 
 So, we moved some of the packages and applications into
-[`@proj-airi`](https://github.com/proj-airi) organization! You can check them out:
+[`@proj-sakura`](https://github.com/proj-SAKURA) organization! You can check them out:
 
-- https://github.com/proj-airi/webai-examples : meant to make demos with WebGPU and
+- https://github.com/proj-SAKURA/webai-examples : meant to make demos with WebGPU and
   related stuff.
-- https://github.com/proj-airi/lobe-icons : port of
+- https://github.com/proj-SAKURA/lobe-icons : port of
   [Lobe Icons](https://github.com/lobehub/lobe-icons) for Iconify JSON and UnoCSS use.
 
 Those two repository will remain open source and licensed with MIT as usual, don't
@@ -68,9 +68,9 @@ online and helped us to make the wave animation on stage in pure CSS!
 
 You can go through the commits to learn from him/her:
 
-- https://github.com/moeru-ai/airi/pull/54
-- https://github.com/moeru-ai/airi/pull/55
-- https://github.com/moeru-ai/airi/pull/65
+- https://github.com/moeru-ai/SAKURA/pull/54
+- https://github.com/moeru-ai/SAKURA/pull/55
+- https://github.com/moeru-ai/SAKURA/pull/65
 
 Much appreciated to [@sumimakito](https://github.com/sumimakito) and
 [@junkwarrior87](https://github.com/junkwarrior87) on helping fixing and improving the
@@ -82,10 +82,10 @@ colors for the entire stage! (I never thought this could be done within hours...
 
 <ThemedVideo controls muted src="./assets/customizable-theme-colors.mp4" />
 
-- https://github.com/moeru-ai/airi/pull/53
-- https://github.com/moeru-ai/airi/pull/60
-- https://github.com/moeru-ai/airi/pull/61
-- https://github.com/moeru-ai/airi/pull/63
+- https://github.com/moeru-ai/SAKURA/pull/53
+- https://github.com/moeru-ai/SAKURA/pull/60
+- https://github.com/moeru-ai/SAKURA/pull/61
+- https://github.com/moeru-ai/SAKURA/pull/63
 
 They even made it possible for the logo to follow the customizable colors 🤯.
 
@@ -107,7 +107,7 @@ kept the feature that making the color hue shines through the entire RGB spectru
 that demonstrated previously by [@LemonNekoGH](https://github.com/LemonNekoGH), it's
 called "I Want It Dynamic!" (You can think of this as a **RGB ON** feature 😂):
 
-- https://github.com/moeru-ai/airi/pull/64
+- https://github.com/moeru-ai/SAKURA/pull/64
 
 ## DevStream
 
@@ -115,3 +115,4 @@ I was quite busy these days 😭, so there wasn't any DevStream happening.
 
 That's all for today's DevLog, thank you to everyone that joined the DevStream
 and stayed with me until the end. I'll see you all tomorrow.
+

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useElectronAllDisplays, useElectronMouse } from '@proj-airi/electron-vueuse'
+import { useElectronAllDisplays, useElectronMouse } from '@proj-sakura/electron-vueuse'
 import { useWindowSize } from '@vueuse/core'
 import { computed } from 'vue'
 
@@ -144,3 +144,4 @@ meta:
   title: useElectronAllDisplays
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

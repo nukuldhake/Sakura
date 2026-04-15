@@ -6,10 +6,10 @@ import {
   Alert,
   SpeechPlayground,
   SpeechProviderSettings,
-} from '@proj-airi/stage-ui/components'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { FieldRange } from '@proj-airi/ui'
+} from '@proj-sakura/stage-ui/components'
+import { useSpeechStore } from '@proj-sakura/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
+import { FieldRange } from '@proj-sakura/ui'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -59,7 +59,7 @@ onMounted(async () => {
     const res = await fetch(`${baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl}/health`, {
       method: 'GET',
       headers: {
-        'player2-game-key': 'airi',
+        'player2-game-key': 'SAKURA',
       },
     })
     hasPlayer2.value = res.status === 200
@@ -131,3 +131,4 @@ watch(speedRatio, async () => {
     stageTransition:
       name: slide
   </route>
+

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Input, TransitionVertical } from '@proj-airi/ui'
+import { Input, TransitionVertical } from '@proj-sakura/ui'
 
 import { AudioSpectrum, AudioSpectrumVisualizer } from '../gadgets'
 
@@ -260,3 +260,4 @@ function togglePlayback() {
   opacity: 1;
 }
 </style>
+

@@ -1,7 +1,7 @@
 import type { BrowserWindow, BrowserWindowConstructorOptions, Rectangle } from 'electron'
 import type { InferOutput } from 'valibot'
 
-import type { ServerChannel } from '../../services/airi/channel-server'
+import type { ServerChannel } from '../../services/SAKURA/channel-server'
 
 import { createHash } from 'node:crypto'
 import { join, resolve } from 'node:path'
@@ -20,7 +20,7 @@ import { captionGetIsFollowingWindow, captionIsFollowingWindowChanged } from '..
 import { baseUrl, getElectronMainDirname, load, withHashRoute } from '../../libs/electron/location'
 import { createConfig } from '../../libs/electron/persistence'
 import { createReusableWindow } from '../../libs/electron/window-manager'
-import { createServerChannelService } from '../../services/airi/channel-server'
+import { createServerChannelService } from '../../services/SAKURA/channel-server'
 import { mapForBreakpoints, resolutionBreakpoints, widthFrom } from '../shared/display'
 import { setupBaseWindowElectronInvokes, transparentWindowConfig } from '../shared/window'
 
@@ -404,3 +404,4 @@ export function setupCaptionWindowManager(params: {
     resetToSide,
   }
 }
+

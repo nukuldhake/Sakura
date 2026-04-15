@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { PaneArea } from '@proj-airi/stage-ui/components'
-import { listProviders } from '@proj-airi/stage-ui/libs'
-import { useProviderCatalogStore } from '@proj-airi/stage-ui/stores/provider-catalog'
-import { Button, Input } from '@proj-airi/ui'
+import { PaneArea } from '@proj-sakura/stage-ui/components'
+import { listProviders } from '@proj-sakura/stage-ui/libs'
+import { useProviderCatalogStore } from '@proj-sakura/stage-ui/stores/provider-catalog'
+import { Button, Input } from '@proj-sakura/ui'
 import { breakpointsTailwind, refDebounced, useBreakpoints } from '@vueuse/core'
 import { DropdownMenuContent, DropdownMenuPortal, DropdownMenuRoot, DropdownMenuTrigger } from 'reka-ui'
 import { Pane, Splitpanes } from 'splitpanes'
@@ -147,3 +147,4 @@ function handleClick(providerId: string) {
     </Splitpanes>
   </div>
 </template>
+

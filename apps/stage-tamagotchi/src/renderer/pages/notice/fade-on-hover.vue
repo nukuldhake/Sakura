@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { Button, Checkbox, TransitionVertical } from '@proj-airi/ui'
+import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-sakura/electron-vueuse'
+import { Button, Checkbox, TransitionVertical } from '@proj-sakura/ui'
 import { refDebounced, useDark, useMouseInElement } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
@@ -254,3 +254,4 @@ async function handleAction(action: 'confirm' | 'cancel' | 'close') {
   backdrop-filter: blur(12px);
 }
 </style>
+

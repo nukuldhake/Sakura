@@ -16,8 +16,8 @@ import App from './App.vue'
 
 import { i18n } from './modules/i18n'
 
-import '@proj-airi/font-cjkfonts-allseto/index.css'
-import '@proj-airi/font-xiaolai/index.css'
+import '@proj-sakura/font-cjkfonts-allseto/index.css'
+import '@proj-sakura/font-xiaolai/index.css'
 import '@unocss/reset/tailwind.css'
 import 'splitpanes/dist/splitpanes.css'
 import 'vue-sonner/style.css'
@@ -88,3 +88,4 @@ if (import.meta.env.DEV && !import.meta.env.SSR) {
   // `observer.disconnect()` is idempotent, so it's safe to call it multiple times.
   setTimeout(() => observer.disconnect(), 15 * 1000)
 }
+

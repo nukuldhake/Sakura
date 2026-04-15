@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { electron } from '@proj-airi/electron-eventa'
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { HearingConfigDialog } from '@proj-airi/stage-ui/components'
-import { useAudioAnalyzer, useAudioContextFromStream } from '@proj-airi/stage-ui/composables'
-import { useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
+import { electron } from '@proj-sakura/electron-eventa'
+import { useElectronEventaInvoke } from '@proj-sakura/electron-vueuse'
+import { HearingConfigDialog } from '@proj-sakura/stage-ui/components'
+import { useAudioAnalyzer, useAudioContextFromStream } from '@proj-sakura/stage-ui/composables'
+import { useSettingsAudioDevice } from '@proj-sakura/stage-ui/stores/settings'
 import { useAsyncState } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUnmounted, watch } from 'vue'
@@ -56,3 +56,4 @@ onUnmounted(async () => {
     <slot />
   </HearingConfigDialog>
 </template>
+

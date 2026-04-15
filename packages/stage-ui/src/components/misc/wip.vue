@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Callout } from '@proj-airi/ui'
+import { Callout } from '@proj-sakura/ui'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -20,3 +20,4 @@ const { t } = useI18n()
     </p>
   </Callout>
 </template>
+

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { electron } from '@proj-airi/electron-eventa'
-import { useElectronEventaInvoke, useElectronWindowResize } from '@proj-airi/electron-vueuse'
+import { electron } from '@proj-sakura/electron-eventa'
+import { useElectronEventaInvoke, useElectronWindowResize } from '@proj-sakura/electron-vueuse'
 import { useAsyncState } from '@vueuse/core'
 
 const isWindows = useElectronEventaInvoke(electron.app.isWindows)
@@ -47,3 +47,4 @@ const isWindowsRef = useAsyncState(() => isWindows(), false)
 .handle.sw { bottom: 0; left: 0; width: 10px; height: 10px; cursor: sw-resize; }
 .handle.se { bottom: 0; right: 0; width: 10px; height: 10px; cursor: se-resize; }
 </style>
+

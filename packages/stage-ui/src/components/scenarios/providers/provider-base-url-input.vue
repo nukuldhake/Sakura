@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FieldInput } from '@proj-airi/ui'
+import { FieldInput } from '@proj-sakura/ui'
 
 const props = defineProps<{
   placeholder?: string
@@ -21,3 +21,4 @@ const modelValue = defineModel<string>({ required: true })
     type="text"
   />
 </template>
+

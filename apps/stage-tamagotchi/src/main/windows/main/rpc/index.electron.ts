@@ -1,6 +1,6 @@
 import type { BrowserWindow } from 'electron'
 
-import type { ServerChannel } from '../../../services/airi/channel-server'
+import type { ServerChannel } from '../../../services/SAKURA/channel-server'
 import type { AutoUpdater } from '../../../services/electron/auto-updater'
 import type { NoticeWindowManager } from '../../notice'
 import type { WidgetsWindowManager } from '../../widgets'
@@ -10,8 +10,8 @@ import { createContext } from '@moeru/eventa/adapters/electron/main'
 import { ipcMain } from 'electron'
 
 import { electronOpenChat, electronOpenMainDevtools, electronOpenSettings, noticeWindowEventa } from '../../../../shared/eventa'
-import { createServerChannelService } from '../../../services/airi/channel-server'
-import { createWidgetsService } from '../../../services/airi/widgets'
+import { createServerChannelService } from '../../../services/SAKURA/channel-server'
+import { createWidgetsService } from '../../../services/SAKURA/widgets'
 import { createAutoUpdaterService } from '../../../services/electron'
 import { toggleWindowShow } from '../../shared'
 import { setupBaseWindowElectronInvokes } from '../../shared/window'
@@ -42,3 +42,4 @@ export function setupMainWindowElectronInvokes(params: {
   defineInvokeHandler(context, electronOpenChat, async () => toggleWindowShow(await params.chatWindow()))
   defineInvokeHandler(context, noticeWindowEventa.openWindow, payload => params.noticeWindow.open(payload))
 }
+

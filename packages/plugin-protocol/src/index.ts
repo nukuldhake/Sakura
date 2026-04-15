@@ -1,1 +1,2 @@
-console.warn('import @proj-airi/plugin-protocol/types instead')
+console.warn('import @proj-sakura/plugin-protocol/types instead')
+

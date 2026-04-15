@@ -7,11 +7,11 @@ import {
   ProviderBasicSettings,
   ProviderSettingsContainer,
   ProviderSettingsLayout,
-} from '@proj-airi/stage-ui/components'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { streamWebSpeechAPITranscription } from '@proj-airi/stage-ui/stores/providers/web-speech-api'
-import { useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
-import { Button, FieldSelect } from '@proj-airi/ui'
+} from '@proj-sakura/stage-ui/components'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
+import { streamWebSpeechAPITranscription } from '@proj-sakura/stage-ui/stores/providers/web-speech-api'
+import { useSettingsAudioDevice } from '@proj-sakura/stage-ui/stores/settings'
+import { Button, FieldSelect } from '@proj-sakura/ui'
 import { until } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
@@ -505,3 +505,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

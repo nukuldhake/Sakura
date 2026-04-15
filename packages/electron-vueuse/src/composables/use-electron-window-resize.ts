@@ -1,6 +1,6 @@
-import type { ResizeDirection } from '@proj-airi/electron-eventa'
+import type { ResizeDirection } from '@proj-sakura/electron-eventa'
 
-import { electron } from '@proj-airi/electron-eventa'
+import { electron } from '@proj-sakura/electron-eventa'
 
 import { useElectronEventaInvoke } from './use-electron-eventa-context'
 
@@ -42,3 +42,4 @@ export function useElectronWindowResize() {
     handleResizeStart,
   }
 }
+

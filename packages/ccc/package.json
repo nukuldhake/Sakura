@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/ccc",
+  "name": "@proj-sakura/ccc",
   "type": "module",
   "private": true,
   "exports": "./src/index.ts",
@@ -13,3 +13,4 @@
     "meta-png": "^1.0.6"
   }
 }
+

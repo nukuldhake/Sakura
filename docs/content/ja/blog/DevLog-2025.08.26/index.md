@@ -3,7 +3,7 @@ title: DevLog @ 2025.08.26
 category: DevLog
 date: 2025-08-26
 excerpt: |
-  `airi-factorio` の純粋な視覚方向の進捗状況を共有し、思考を固めて揮発しないようにします。
+  `SAKURA-factorio` の純粋な視覚方向の進捗状況を共有し、思考を固めて揮発しないようにします。
 preview-cover:
 # TODO
 ---
@@ -12,17 +12,17 @@ preview-cover:
 import NmsIou from '../../../en/blog/DevLog-2025.08.26/components/nms-iou.vue'
 </script>
 
-お久しぶりです、AIRI メンテナーの一人、[@LemonNeko](https://github.com/LemonNekoGH) です。~~ああ、LLM のようにこうやって始めるのには少し飽きてきました。~~
+お久しぶりです、SAKURA メンテナーの一人、[@LemonNeko](https://github.com/LemonNekoGH) です。~~ああ、LLM のようにこうやって始めるのには少し飽きてきました。~~
 
-前回の [DevLog](../DevLog-2025.07.18/index.md) で、[Factorio Learning Environment](https://arxiv.org/abs/2503.09617) の論文を軽く見て、`airi-factorio` をどのように改善する予定かについて簡単に話しました。しかし...今日皆さんと共有したいのはそれではなく、純粋な視覚方向の進捗状況についてです。
+前回の [DevLog](../DevLog-2025.07.18/index.md) で、[Factorio Learning Environment](https://arxiv.org/abs/2503.09617) の論文を軽く見て、`SAKURA-factorio` をどのように改善する予定かについて簡単に話しました。しかし...今日皆さんと共有したいのはそれではなく、純粋な視覚方向の進捗状況についてです。
 
 今年の6月、[@nekomeowww](https://github.com/nekomeowww) がほぼリアルタイムの [VLM Playground](https://huggingface.co/spaces/moeru-ai/smolvlm-realtime-webgpu-vue) HuggingFace Spaces をリリースしました。これは非常にクールだと感じたので、まずは単純なリアルタイム画像認識（当時は物体検出と画像認識を混同していました）を試して、何らかの方法で AI に意思決定を任せ、最終的に何らかの方法でアクションを出力してゲームに実行させることにしました。
 
 まずは成果をお見せします：
 
-<ThemedVideo src="/en/blog/DevLog-2025.08.26/assets/airi-factorio-yolo-v0-playground-vnc.mp4" controls playsinline />
+<ThemedVideo src="/en/blog/DevLog-2025.08.26/assets/SAKURA-factorio-yolo-v0-playground-vnc.mp4" controls playsinline />
 
-動画では、Web ページ内で VNC に接続して Factorio をプレイしています。右側は物体検出の結果で、ほぼリアルタイムです。[HuggingFace Space](https://huggingface.co/spaces/proj-airi/factorio-yolo-v0-playground) にもデプロイしたので、ぜひ遊んでみてください。
+動画では、Web ページ内で VNC に接続して Factorio をプレイしています。右側は物体検出の結果で、ほぼリアルタイムです。[HuggingFace Space](https://huggingface.co/spaces/proj-SAKURA/factorio-yolo-v0-playground) にもデプロイしたので、ぜひ遊んでみてください。
 
 さて、どうやって実現したのでしょうか？
 
@@ -76,7 +76,7 @@ sudo apt install -y x11vnc
 sudo apt install -y websockify novnc
 ```
 
-これで Docker イメージの準備が整いました。完全な [Dockerfile](https://github.com/moeru-ai/airi-factorio/blob/a6bf243f14cbc0d765ff7ed13389bca33c1fdfa2/docker/Dockerfile) と[使用説明](https://github.com/moeru-ai/airi-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground)はこちらで確認できます。
+これで Docker イメージの準備が整いました。完全な [Dockerfile](https://github.com/moeru-ai/SAKURA-factorio/blob/a6bf243f14cbc0d765ff7ed13389bca33c1fdfa2/docker/Dockerfile) と[使用説明](https://github.com/moeru-ai/SAKURA-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground)はこちらで確認できます。
 
 ## 物体検出モデルのトレーニング
 
@@ -90,11 +90,11 @@ sudo apt install -y websockify novnc
 2. [`game.take_screenshot`](https://lua-api.factorio.com/latest/classes/LuaGameScript.html#take_screenshot) を使用して、さまざまなズーム比率と照明条件（daytime）でスクリーンショットを撮ります。
 3. 選択ボックスに基づいて注釈データを生成し、[`helpers.write_file`](https://lua-api.factorio.com/latest/classes/LuaHelpers.html#write_file) を使用してファイルに保存します。
 
-私の収集スクリプトは[ここ](https://github.com/moeru-ai/airi-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/factorio-rcon-snippets-for-node/src/factorio_yolo_dataset_collector_v0.ts)にあります。`typescript-to-lua` を使用して TypeScript を Lua にコンパイルし、RCON を使用して Factorio に渡して実行します。
+私の収集スクリプトは[ここ](https://github.com/moeru-ai/SAKURA-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/factorio-rcon-snippets-for-node/src/factorio_yolo_dataset_collector_v0.ts)にあります。`typescript-to-lua` を使用して TypeScript を Lua にコンパイルし、RCON を使用して Factorio に渡して実行します。
 
 スクリプトでは、3 つのモデルの組立機とベルトコンベアを収集しました。各マシンについて 20 枚の画像、各画像は 1280x1280 の解像度で、UI は含まれていません。
 
-ああ、それと、収集スクリプトをより適切にデバッグするために、[VSCode プラグイン](https://github.com/moeru-ai/airi-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/vscode-factorio-rcon-evaluator/README.md)を開発しました。これは CodeLens アクションを提供し、ワンクリックでスクリプトをコンパイルして実行できます。
+ああ、それと、収集スクリプトをより適切にデバッグするために、[VSCode プラグイン](https://github.com/moeru-ai/SAKURA-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/vscode-factorio-rcon-evaluator/README.md)を開発しました。これは CodeLens アクションを提供し、ワンクリックでスクリプトをコンパイルして実行できます。
 
 画像と注釈データが収集されたら、[YOLO 公式の形式](https://docs.ultralytics.com/datasets/detect/)に従ってデータセットを整理し、[Ultralytics Hub](https://www.ultralytics.com/hub) にアップロードして効果を確認できます：
 
@@ -116,7 +116,7 @@ model.export(format="onnx")
 
 640x640 の解像度で、MPS デバイス（macOS では MPS デバイスを使用するとパフォーマンスが向上します）を使用して、100 エポックトレーニングしました。各エポックには 5 つのバッチがあり、約 70 エポックで最良の結果が得られました。ONNX モデルをエクスポートしました。トレーニングには約 8 分かかり、モデルサイズは約 10MB でした。
 
-データセット、トレーニングコード、およびエクスポートされた ONNX モデルは[ここ](https://github.com/moeru-ai/airi-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground)で見ることができます。
+データセット、トレーニングコード、およびエクスポートされた ONNX モデルは[ここ](https://github.com/moeru-ai/SAKURA-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground)で見ることができます。
 
 ## 推論の実行
 
@@ -178,7 +178,7 @@ function nms(boxes: Box[], iouThreshold: number): Box[] {
 }
 ```
 
-Playground 全体のソースコードは[ここ](https://github.com/moeru-ai/airi-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground)で見ることができます。
+Playground 全体のソースコードは[ここ](https://github.com/moeru-ai/SAKURA-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground)で見ることができます。
 
 また、以下の可視化コンポーネントで IOU と NMS の効果を体験することもできます。タグをドラッグしてボックスの位置を変更してください：
 
@@ -197,3 +197,4 @@ Playground 全体のソースコードは[ここ](https://github.com/moeru-ai/ai
 ## 最後に
 
 ここまでが今月の私の成果です。収穫は多かったですね。私の助けになってくれた [@nekomeowww](https://github.com/nekomeowww)、[@dsh0416](https://github.com/dsh0416)、[makito](https://github.com/sumimakito) に感謝します。次はモデルのパフォーマンスを向上させる方法を考え、何らかの方法で AI にゲームを制御させるつもりです。
+

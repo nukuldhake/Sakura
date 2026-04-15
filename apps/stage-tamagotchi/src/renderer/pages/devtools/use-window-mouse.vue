@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useElectronMouse } from '@proj-airi/electron-vueuse'
+import { useElectronMouse } from '@proj-sakura/electron-vueuse'
 
 const { x, y } = useElectronMouse()
 </script>
@@ -20,3 +20,4 @@ meta:
   title: useWindowMouse
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

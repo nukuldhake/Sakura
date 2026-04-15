@@ -8,13 +8,13 @@ date: 2025-04-22
 
 大家好，我是 [@LemonNeko](https://github.com/LemonNekoGH)，这次有我来参与撰写 DevLog 和大家分享开发的故事。
 
-在两个月前，我们将 AIRI 的网页端移植到了 Electron 上 [#7](https://github.com/moeru-ai/airi/pull/7)（现在已经被我们使用 Tauri 重构 🤣 [#90](https://github.com/moeru-ai/airi/pull/90)），它可以作为桌宠出现在我们的屏幕上，于此同时，我出现了允许 AIRI 使用手机的想法，但是迟迟没有动手。
+在两个月前，我们将 SAKURA 的网页端移植到了 Electron 上 [#7](https://github.com/moeru-ai/SAKURA/pull/7)（现在已经被我们使用 Tauri 重构 🤣 [#90](https://github.com/moeru-ai/SAKURA/pull/90)），它可以作为桌宠出现在我们的屏幕上，于此同时，我出现了允许 SAKURA 使用手机的想法，但是迟迟没有动手。
 
-在上个周末（2025.04.20），我花了点时间，做了一个能与 ADB 交互的 MCP 服务器 Demo [airi-android](https://github.com/LemonNekoGH/airi-android)，给 AIRI 提供了最基础的与手机交互的能力（事实上大部分 LLM 都可以通过它与手机交互），这是演示视频：
+在上个周末（2025.04.20），我花了点时间，做了一个能与 ADB 交互的 MCP 服务器 Demo [SAKURA-android](https://github.com/LemonNekoGH/SAKURA-android)，给 SAKURA 提供了最基础的与手机交互的能力（事实上大部分 LLM 都可以通过它与手机交互），这是演示视频：
 
 <ThemedVideo controls muted src="./assets/cursor-open-settings.mp4" />
 
-我也把它打包成了 Docker 镜像，提交到了 [MCP 服务器列表](https://mcp.so/server/airi-android/lemonnekogh)，有兴趣的可以试试。
+我也把它打包成了 Docker 镜像，提交到了 [MCP 服务器列表](https://mcp.so/server/SAKURA-android/lemonnekogh)，有兴趣的可以试试。
 
 实际上我一开始的思路是写一写 Tool Calling 的代码，改一改提示词，告诉 LLM 我们可以使用这些工具来与手机交互，就结束了。~~但是最近 MCP 实在太火了，我有点 FOMO，所以选择了 MCP 来实现它。~~
 
@@ -30,7 +30,7 @@ date: 2025-04-22
 from mcp.server.fastmcp import FastMCP
 from ppadb.client import Client
 
-mcp = FastMCP("airi-android")
+mcp = FastMCP("SAKURA-android")
 adb_client = Client()
 
 @mcp.resource("adb://devices")
@@ -50,7 +50,7 @@ def get_devices():
 目前看来运行良好，但是我有一些小小的问题：
 
 1. 屏幕中是一个游戏，游戏使用图形 API 直接在屏幕上画了内容，而不是使用 UI 组件，所以 UI 自动化工具无法获取到元素的位置，也就无法操作它。
-2. 一个 LLM 响应的内容是有上限的，如果操作比较复杂，可能要分个步骤来完成，我们可以像 [airi-factorio](https://github.com/moeru-ai/airi-factorio) 那样，在步骤完成之后自动告诉它，触发下一个步骤吗？
+2. 一个 LLM 响应的内容是有上限的，如果操作比较复杂，可能要分个步骤来完成，我们可以像 [SAKURA-factorio](https://github.com/moeru-ai/SAKURA-factorio) 那样，在步骤完成之后自动告诉它，触发下一个步骤吗？
 3. 如果有一些应用有酷炫的动画，在操作完成之后立刻截屏，可能看不到效果，我们会不会需要在操作完成之后，等待一段时间再截屏，或者直接使用录屏功能？
 4. 直接让 AI 操作手机的安全性如何，会有哪些风险？
 
@@ -66,6 +66,7 @@ def get_devices():
 emulator -avd Pixel_6_Pro_API_34
 ```
 
-下一步，我打算给 AIRI 桌宠接上 MCP 服务器，看看它会想做什么，也许它会点开 Telegram 和我们聊天，就像现在的 ReLU 那样，只不过不是用 Telegram 的 API。
+下一步，我打算给 SAKURA 桌宠接上 MCP 服务器，看看它会想做什么，也许它会点开 Telegram 和我们聊天，就像现在的 ReLU 那样，只不过不是用 Telegram 的 API。
 
 感谢你看完这篇可能有点啰嗦而且干货不多的 DevLog，我们下次再见！
+

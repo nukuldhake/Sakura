@@ -13,7 +13,7 @@ preview-cover:
 import Button from '../../../../.vitepress/components/Button.vue'
 
 function handleOpenLatest() {
-  window.open('https://github.com/moeru-ai/airi/releases/latest', '_blank')
+  window.open('https://github.com/moeru-ai/SAKURA/releases/latest', '_blank')
 }
 </script>
 
@@ -36,10 +36,10 @@ function handleOpenLatest() {
 
 让我坦诚地告诉大家过去三个月的情况：
 
-- [**391 次提交**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
-- [**1017 个文件变更**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
-- [**74,548 行代码新增**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
-- [**13,930 行代码删除**](https://github.com/moeru-ai/airi/compare/v0.6.1...v0.7.0)
+- [**391 次提交**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
+- [**1017 个文件变更**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
+- [**74,548 行代码新增**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
+- [**13,930 行代码删除**](https://github.com/moeru-ai/SAKURA/compare/v0.6.1...v0.7.0)
 
 > 但对于在软件行业工作的你们来说，这些数字毫无意义，
 > 它们只是反映了我们在这个版本中所做重大影响的体现。
@@ -55,14 +55,14 @@ function handleOpenLatest() {
 - 我们有超过 40+ 贡献者！🫂
 - 我们有超过 300+ Discord 成员！👾
 - 我们在 [Hacker News](https://news.ycombinator.com/item?id=44573640) 上发布了自我介绍
-- 我们在 [Product Hunt](https://www.producthunt.com/products/airi) 上发布了自我介绍
+- 我们在 [Product Hunt](https://www.producthunt.com/products/SAKURA) 上发布了自我介绍
 - 我们在 2025 年 7 月 17 日 GitHub 趋势榜上排名 `#1` 🏆
 
 ## 功能
 
 ### 桌面版本
 
-Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
+Tamagotchi 是 SAKURA 桌面版本的名称，你可以让它作为独立的、
 始终运行的伴侣在桌面上运行，与其他应用程序一起工作而不会干扰你的工作。
 
 之前，桌面版本更多处于实验阶段，UI/UX 不够精致和完善，
@@ -84,7 +84,7 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 
 <br />
 
-<ThemedVideo autoplay src="./assets/airi-demo-fade-on-hover.mp4" />
+<ThemedVideo autoplay src="./assets/SAKURA-demo-fade-on-hover.mp4" />
 
 许多用户发现每次光标悬停在角色上时，整个窗口都会淡出，这让他们感到困惑。
 对于缺乏文档解释这个功能以及为什么我们认为它对 AI 伴侣很重要的道歉。
@@ -96,7 +96,7 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 模型窗口将始终是一个最小化的窗口，具有透明背景，
 供 OBS 或其他流媒体捕获驱动程序**在后台**捕获。
 
-如果你打算使用 AIRI 进行 VTuber 流媒体，不使用悬停淡出功能是可以的，
+如果你打算使用 SAKURA 进行 VTuber 流媒体，不使用悬停淡出功能是可以的，
 但一旦你希望它作为虚拟伴侣生活在你的桌面上，你就会开始注意到：
 
 - 如果我们设计让模型窗口始终置顶，它会阻止对其下方应用程序的鼠标事件，
@@ -104,12 +104,12 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 - 如果你必须手动切换模型窗口的可见性，这会带来很多不便，
   特别是在专注于你正在处理的事情时。
 
-这就是为什么我们想出了这个主意：创建一个功能，允许 AIRI 中的任何角色
+这就是为什么我们想出了这个主意：创建一个功能，允许 SAKURA 中的任何角色
 在鼠标悬停在窗口上时淡出，并将鼠标点击事件传递给其下方的应用程序。
 
-我个人非常喜欢这个功能，因为我现在可以让 AIRI 中的角色
+我个人非常喜欢这个功能，因为我现在可以让 SAKURA 中的角色
 与我一起使用任何应用程序，而不用担心禁用或组织窗口顺序。
-每天当我开发 AIRI 时，无论是 Web 版本还是桌面版本，
+每天当我开发 SAKURA 时，无论是 Web 版本还是桌面版本，
 我都会始终在我的桌面上打开她，与终端、VSCode/Cursor 一起陪伴我。
 
 **悬停淡出™**并不是我们在桌面版本中更新的唯一功能，
@@ -129,7 +129,7 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 
 <br />
 
-<ThemedVideo autoplay src="./assets/airi-demo-move.mp4" />
+<ThemedVideo autoplay src="./assets/SAKURA-demo-move.mp4" />
 
 进入移动模式时会显示一个可拖动区域，除了用鼠标移动位置外，
 使用托盘菜单中的位置 > 居中 / 左下 / 右下也是另一个选择。
@@ -148,7 +148,7 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 <br />
 
 <video autoplay controls muted loop playsinline>
-  <source src="./assets/airi-demo-resize.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-resize.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
@@ -164,7 +164,7 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 
 观看实际操作：
 
-<ThemedVideo autoplay src="./assets/airi-demo-resource-island.mp4" />
+<ThemedVideo autoplay src="./assets/SAKURA-demo-resource-island.mp4" />
 
 它确实包含一个指向准备模块的链接，因此你可以点击模块链接
 打开目标模块设置页面，了解为什么需要这个模型或文件。
@@ -172,11 +172,11 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 #### 本地 ASR/STT
 
 感谢 [@luoling8192 (Luoling)](https://github.com/luoling8192)，以及我们在仓库
-[candle-examples](https://github.com/proj-airi/candle-examples) 中进行的实验，
+[candle-examples](https://github.com/proj-SAKURA/candle-examples) 中进行的实验，
 我们现在有了一个在 Windows、macOS 和 Linux 上工作的本地 ASR/STT 引擎。
 
 <video autoplay controls muted loop playsinline>
-  <source src="./assets/airi-demo-settings-hearing.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-settings-hearing.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
@@ -195,25 +195,25 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 
 #### 引导界面
 
-我们知道现在配置 AIRI 相当复杂（但如果与许多其他纯 Python 基础的相比仍然容易，
+我们知道现在配置 SAKURA 相当复杂（但如果与许多其他纯 Python 基础的相比仍然容易，
 那些需要你理解代码结构来配置）。
 
 感谢 [Me1td0wn76 (melty kiss)](https://github.com/Me1td0wn76) 的贡献，
-为 Web 版本添加了引导界面支持，现在你可以在第一次使用 AIRI 时
+为 Web 版本添加了引导界面支持，现在你可以在第一次使用 SAKURA 时
 获得更好的体验。
 
 他们在 Pull Request 合并后写了一篇博客来分享
-贡献 Project AIRI 的经验：[AIRIプロジェクトに参加した話 - YAMA-blog](https://yama-pro.blog/posts/airi/)
+贡献 Project SAKURA 的经验：[SAKURAプロジェクトに参加した話 - YAMA-blog](https://yama-pro.blog/posts/SAKURA/)
 
-<img class="light" src="./assets/airi-demo-onboarding-light.avif" alt="引导界面亮色模式" />
-<img class="dark" src="./assets/airi-demo-onboarding-dark.avif" alt="引导界面暗色模式" />
+<img class="light" src="./assets/SAKURA-demo-onboarding-light.avif" alt="引导界面亮色模式" />
+<img class="dark" src="./assets/SAKURA-demo-onboarding-dark.avif" alt="引导界面暗色模式" />
 
 观看实际操作：
 
 <ThemedVideo
   autoplay
-  light="./assets/airi-demo-onboarding-light.mp4"
-  dark="./assets/airi-demo-onboarding-dark.mp4"
+  light="./assets/SAKURA-demo-onboarding-light.mp4"
+  dark="./assets/SAKURA-demo-onboarding-dark.mp4"
 />
 
 #### VRM
@@ -221,8 +221,8 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 感谢 [Lilia-Chen (Lilia_Chen)](https://github.com/Lilia-Chen) 的辛勤工作，
 VRM 模型现在通过精确的相机实现和渲染机制显示得更好。
 
-<img class="light" src="./assets/airi-demo-vrm-light.avif" alt="VRM 亮色模式" />
-<img class="dark" src="./assets/airi-demo-vrm-dark.avif" alt="VRM 暗色模式" />
+<img class="light" src="./assets/SAKURA-demo-vrm-light.avif" alt="VRM 亮色模式" />
+<img class="dark" src="./assets/SAKURA-demo-vrm-dark.avif" alt="VRM 暗色模式" />
 
 ### 移动 Web
 
@@ -232,8 +232,8 @@ VRM 模型现在通过精确的相机实现和渲染机制显示得更好。
 
 <ThemedVideo
   autoplay
-  light="./assets/airi-demo-onboarding-mobile-light.mp4"
-  dark="./assets/airi-demo-onboarding-mobile-dark.mp4"
+  light="./assets/SAKURA-demo-onboarding-mobile-light.mp4"
+  dark="./assets/SAKURA-demo-onboarding-mobile-dark.mp4"
 />
 
 #### 场景
@@ -253,12 +253,12 @@ VRM 模型现在通过精确的相机实现和渲染机制显示得更好。
 <br />
 
 <video class="light" autoplay controls muted loop playsinline>
-  <source src="./assets/airi-demo-quick-editor-mobile-light.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-quick-editor-mobile-light.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
 <video class="dark" autoplay controls muted loop playsinline>
-  <source src="./assets/airi-demo-quick-editor-mobile-dark.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-quick-editor-mobile-dark.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
@@ -275,39 +275,39 @@ VRM 模型现在通过精确的相机实现和渲染机制显示得更好。
 观看实际操作：
 
 <video class="light" autoplay controls muted loop playsinline>
-  <source src="./assets/airi-demo-clustr-light.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-clustr-light.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
 <video class="dark" autoplay controls muted loop playsinline>
-  <source src="./assets/airi-demo-clustr-dark.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-demo-clustr-dark.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
 #### 电平表
 
-> UI 组件：https://airi.moeru.ai/ui/#/story/src-components-gadgets-levelmeter-story-vue
+> UI 组件：https://SAKURA.moeru.ai/ui/#/story/src-components-gadgets-levelmeter-story-vue
 
 在希望显示检测到的音频输入电平或实时系统负载时很有用：
 
-<img class="light" src="./assets/airi-ui-level-meter-light.avif" alt="电平表亮色模式" />
-<img class="dark" src="./assets/airi-ui-level-meter-dark.avif" alt="电平表暗色模式" />
+<img class="light" src="./assets/SAKURA-ui-level-meter-light.avif" alt="电平表亮色模式" />
+<img class="dark" src="./assets/SAKURA-ui-level-meter-dark.avif" alt="电平表暗色模式" />
 
 #### 时间序列图表
 
-> UI 组件：https://airi.moeru.ai/ui/#/story/src-components-gadgets-timeserieschart-story-vue
+> UI 组件：https://SAKURA.moeru.ai/ui/#/story/src-components-gadgets-timeserieschart-story-vue
 
 类似于用于变化值的电平表，但对于历史数据特别有用。
 
-<img class="light" src="./assets/airi-ui-time-series-chart-light.avif" alt="时间序列图表亮色模式" />
-<img class="dark" src="./assets/airi-ui-time-series-chart-dark.avif" alt="时间序列图表暗色模式" />
+<img class="light" src="./assets/SAKURA-ui-time-series-chart-light.avif" alt="时间序列图表亮色模式" />
+<img class="dark" src="./assets/SAKURA-ui-time-series-chart-dark.avif" alt="时间序列图表暗色模式" />
 
 我们还添加了许多更多组件...
 
-- [x] `<Progress />`（感谢 @Menci [2cb602aa](https://github.com/moeru-ai/airi/commit/2cb602aa3eac456a479b622a5ecf043831597ffe)）
-- [x] `<FieldSelect />` ([d0d782ff](https://github.com/moeru-ai/airi/commit/d0d782ff94a5a0a12819725303f687bd1a47e87c))
-- [x] `<Alert />`（感谢 [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/airi/pull/295)）
-- [x] `<ErrorContainer />`（感谢 [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/airi/pull/295)）
+- [x] `<Progress />`（感谢 @Menci [2cb602aa](https://github.com/moeru-ai/SAKURA/commit/2cb602aa3eac456a479b622a5ecf043831597ffe)）
+- [x] `<FieldSelect />` ([d0d782ff](https://github.com/moeru-ai/SAKURA/commit/d0d782ff94a5a0a12819725303f687bd1a47e87c))
+- [x] `<Alert />`（感谢 [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/SAKURA/pull/295)）
+- [x] `<ErrorContainer />`（感谢 [@typed-sigterm](https://github.com/typed-sigterm), [#295](https://github.com/moeru-ai/SAKURA/pull/295)）
 - [x] 新的侧边栏导航设计
 - [x] 消息提示器
 - [x] 有新版本时提示用户更新
@@ -319,12 +319,12 @@ VRM 模型现在通过精确的相机实现和渲染机制显示得更好。
 我们现在有了一个全新的文档站点：
 
 <video class="light" autoplay controls muted loop playsinline>
-  <source src="./assets/airi-docs-light.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-docs-light.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
 <video class="dark" autoplay controls muted loop playsinline>
-  <source src="./assets/airi-docs-dark.mp4" type="video/mp4">
+  <source src="./assets/SAKURA-docs-dark.mp4" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
@@ -336,18 +336,18 @@ VRM 模型现在通过精确的相机实现和渲染机制显示得更好。
 
 博客页面看起来也很好，更好的是，有由 [@lynzrand (Rynco Maekawa)](https://github.com/lynzrand) 设计的新封面
 
-<img class="light" src="./assets/airi-docs-blogs-light.avif" alt="博客页面亮色模式" />
-<img class="dark" src="./assets/airi-docs-blogs-dark.avif" alt="博客页面暗色模式" />
+<img class="light" src="./assets/SAKURA-docs-blogs-light.avif" alt="博客页面亮色模式" />
+<img class="dark" src="./assets/SAKURA-docs-blogs-dark.avif" alt="博客页面暗色模式" />
 
 ### 翻译工作流变更
 
 我们将所谓的 `i18n` 或本地化文件拆分到我们自己的巨大 monorepo 中的专用包中。
 
 当贡献新的本地化、添加新翻译或修复现有翻译时，
-请先导航到 https://github.com/moeru-ai/airi/tree/main/packages/i18n/src/locales。
+请先导航到 https://github.com/moeru-ai/SAKURA/tree/main/packages/i18n/src/locales。
 
-<img class="light" src="./assets/airi-packages-i18n-light.avif" alt="i18n 包结构亮色模式" />
-<img class="dark" src="./assets/airi-packages-i18n-dark.avif" alt="i18n 包结构暗色模式" />
+<img class="light" src="./assets/SAKURA-packages-i18n-light.avif" alt="i18n 包结构亮色模式" />
+<img class="dark" src="./assets/SAKURA-packages-i18n-dark.avif" alt="i18n 包结构暗色模式" />
 
 你会在这里找到不同语言的不同目录。选择所需的语言并继续。
 
@@ -487,19 +487,19 @@ TL;DR：
 现在，`postinstall` 脚本仍然是必需的，如果我们能找到一种方法
 通过依赖感知来缓存构建结果，许多冗余的构建可以被避免。
 这就是 `turborepo` 帮助我们实现更快构建的地方。
-使用 `turborepo`，构建 AIRI 所需的时间**从平均 4 分钟减少到 25 秒**。
+使用 `turborepo`，构建 SAKURA 所需的时间**从平均 4 分钟减少到 25 秒**。
 
 ### 现在支持 Nix
 
 感谢 [@Weathercold (Weathercold)](https://github.com/Weathercold)，我们现在
-有了一个 Nix flake 来构建 AIRI，这是对跨平台兼容性的一个很好的补充。
+有了一个 Nix flake 来构建 SAKURA，这是对跨平台兼容性的一个很好的补充。
 它甚至在 macOS 上也能工作。
 
 我们正在等待最终的 Pull Request 合并到 nix-pkgs 中，
 但你可以使用以下命令尝试它：
 
 ```bash
-nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/airi
+nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/SAKURA
 ```
 
 ### 统一的构建流水线
@@ -521,7 +521,7 @@ nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/airi
 所以从技术上讲，如果你遇到最新版本的任何问题，
 你总是可以尝试 `main` 分支的最新构建来查看我们是否修复了它。
 
-夜间构建可以在 https://github.com/moeru-ai/airi/actions/workflows/release-tamagotchi.yml 找到
+夜间构建可以在 https://github.com/moeru-ai/SAKURA/actions/workflows/release-tamagotchi.yml 找到
 
 ## 结束之前...
 
@@ -529,20 +529,20 @@ nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/airi
 
 > 大声喊出 [@sumimakito](https://github.com/sumimakito)，她做了这么多惊人的事情... 我甚至数不清...
 
-- [`@proj-airi/chromatic`](https://github.com/proj-airi/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
-- [`@proj-airi/unocss-preset-chromatic`](https://github.com/proj-airi/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
+- [`@proj-sakura/chromatic`](https://github.com/proj-SAKURA/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
+- [`@proj-sakura/unocss-preset-chromatic`](https://github.com/proj-SAKURA/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
 - [`@moeru-ai/jem`](https://github.com/moeru-ai/inventory/tree/main/packages/jem-validator)（由 [@LemonNekoGH](https://github.com/LemonNekoGH) 制作），统一模型目录
 - [`clustr`](https://github.com/sumimakito/clustr)（由 [@sumimakito](https://github.com/sumimakito) 制作）
-- [`@proj-airi/drizzle-orm-browser`](https://github.com/proj-airi/drizzle-orm-browser)（由我制作）
+- [`@proj-sakura/drizzle-orm-browser`](https://github.com/proj-SAKURA/drizzle-orm-browser)（由我制作）
 
 在这个版本之间诞生的副项目：
 
 - [HuggingFace Inspector](https://hf-inspector.moeru.ai/) (https://github.com/moeru-ai/hf-inspector)
-- [关于 whisper & VAD、candle、burn 和 ort 的更多 candle 示例](https://github.com/proj-airi/candle-examples)
+- [关于 whisper & VAD、candle、burn 和 ort 的更多 candle 示例](https://github.com/proj-SAKURA/candle-examples)
 - [（模型目录）Inventory 提交！](https://github.com/moeru-ai/inventory/pull/1)（由 [@LemonNekoGH](https://github.com/LemonNekoGH) 制作）
 
 我们无法在这篇 DevLog 中涵盖所有内容，有关详细信息，你总是可以跟踪和回顾
-我们的路线图上的 [Roadmap v0.7](https://github.com/moeru-ai/airi/issues/200)。
+我们的路线图上的 [Roadmap v0.7](https://github.com/moeru-ai/SAKURA/issues/200)。
 
 <div class="w-full flex flex-col items-center justify-center gap-3 py-3">
   <img src="./assets/relu-sticker-thinks.avif" alt="ReLU 贴纸思考" class="w-30!" />
@@ -550,3 +550,4 @@ nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/airi
     <span class="block font-bold">感谢你一直读到这里！</span>
   </div>
 </div>
+

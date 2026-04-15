@@ -1,6 +1,6 @@
 import type { Theme } from 'vitepress'
 
-import messages from '@proj-airi/i18n/locales'
+import messages from '@proj-sakura/i18n/locales'
 
 import { createI18n } from 'vue-i18n'
 
@@ -40,3 +40,4 @@ export default {
     app.component('ThemedVideo', ThemedVideo)
   },
 } satisfies Theme
+

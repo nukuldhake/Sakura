@@ -2,8 +2,8 @@ import type { createContext } from '@moeru/eventa/adapters/electron/main'
 import type { BrowserWindow } from 'electron'
 
 import { defineInvokeHandler } from '@moeru/eventa'
-import { bounds, startLoopGetBounds } from '@proj-airi/electron-eventa'
-import { createRendererLoop } from '@proj-airi/electron-vueuse/main'
+import { bounds, startLoopGetBounds } from '@proj-sakura/electron-eventa'
+import { createRendererLoop } from '@proj-sakura/electron-vueuse/main'
 
 import { electron } from '../../../shared/eventa'
 import { onAppBeforeQuit, onAppWindowAllClosed } from '../../libs/bootkit/lifecycle'
@@ -71,3 +71,4 @@ export function createWindowService(params: { context: ReturnType<typeof createC
     })
   })
 }
+

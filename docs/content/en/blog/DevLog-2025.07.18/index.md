@@ -3,17 +3,17 @@ title: DevLog @ 2025.07.18
 category: DevLog
 date: 2025-07-18
 excerpt: |
-  We would love to share how we plan to improve our Factorio AI agent project, `airi-factorio`, based on the Factorio Learning Environment paper.
+  We would love to share how we plan to improve our Factorio AI agent project, `SAKURA-factorio`, based on the Factorio Learning Environment paper.
 preview-cover:
   light: "@assets('./assets/factorio-belt.gif')"
   dark: "@assets('./assets/factorio-belt.gif')"
 ---
 
-Hello, I'm [@LemonNeko](https://github.com/LemonNekoGH), one of the maintainers of AIRI.
+Hello, I'm [@LemonNeko](https://github.com/LemonNekoGH), one of the maintainers of SAKURA.
 
 ## Review
 
-Half a year ago, I first tried to write an AI Agent that can play the famous automation production simulation game [Factorio](https://www.factorio.com/) called [`airi-factorio`](https://github.com/moeru-ai/airi-factorio), and I did the following things:
+Half a year ago, I first tried to write an AI Agent that can play the famous automation production simulation game [Factorio](https://www.factorio.com/) called [`SAKURA-factorio`](https://github.com/moeru-ai/SAKURA-factorio), and I did the following things:
 
 - Writing Factorio Mods in TypeScript: Using [tstl](https://github.com/TypeScriptToLua/TypeScriptToLua) to compile TypeScript code into Lua code.
 - Using RCON to interact with Factorio Mods: Using [factorio-rcon-api](https://github.com/nekomeowww/factorio-rcon-api) to communicate with Factorio, calling `/c` commands to execute functions registered by the mod. Many thanks to [@nekomeowww](https://github.com/nekomeowww).
@@ -44,7 +44,7 @@ FLE has two modes:
 
 They evaluated mainstream LLMs like Claude 3.5 Sonnet, GPT-4o, Deepseek-v3, Gemini-2, etc., but in Lab-play, even the strongest Claude 3.5 at the time only completed 7 levels.
 
-Reading this, I became curious. Their evaluation was so complex, so they must have also ensured technical maintainability. How did they achieve this? Continuing to read, I found that their implementation method was very similar to `airi-factorio`, but had many advantages compared to `airi-factorio`:
+Reading this, I became curious. Their evaluation was so complex, so they must have also ensured technical maintainability. How did they achieve this? Continuing to read, I found that their implementation method was very similar to `SAKURA-factorio`, but had many advantages compared to `SAKURA-factorio`:
 
 - Written in Python, the LLM generates Python code and executes it directly in a Python REPL, and can read results directly from standard output. Since Python has far more datasets than Lua, the generation accuracy is higher and can generate more complex code.
 - The Lua mod only contains primitive operations for execution, such as place_entity for placing entities. More complex logic is written in Python, which can reduce the possibility of bugs in the Lua mod, so we don't need to restart the game so frequently.
@@ -54,9 +54,9 @@ To better evaluate LLM capabilities, they also carefully analyzed all the requir
 
 They also posted their [system prompt](https://arxiv.org/html/2503.09617v1#A8.SS4), which specifies the environment structure, response format, best practices, how to understand game output, etc.
 
-## Back to `airi-factorio`
+## Back to `SAKURA-factorio`
 
-Compared to FLE, our implementation seems quite naive. So how should we improve `airi-factorio`?
+Compared to FLE, our implementation seems quite naive. So how should we improve `SAKURA-factorio`?
 
 I don't want to write Python, I'm familiar with TypeScript and Golang, only. Coincidentally, we made [mcp-launcher](https://github.com/moeru-ai/mcp-launcher) just a few ago, a builder suitable for all possible MCP servers. We can use it with Golang to implement an MCP server, then let the LLM call it.
 
@@ -78,8 +78,9 @@ Alright, we've basically overturned all the previous designs again. Time to star
 
 ## Conclusion
 
-Thank you for reading. If you're interested, you can read through FLE's paper and [code](https://github.com/JackHopkins/factorio-learning-environment). Maybe my understanding is incorrect; corrections are welcome! This reading might not be deep enough, but when I follow my ideas to improve `airi-factorio` next, I'll need to read repeatedly and update when there's progress.
+Thank you for reading. If you're interested, you can read through FLE's paper and [code](https://github.com/JackHopkins/factorio-learning-environment). Maybe my understanding is incorrect; corrections are welcome! This reading might not be deep enough, but when I follow my ideas to improve `SAKURA-factorio` next, I'll need to read repeatedly and update when there's progress.
 
 That's it for this DevLog. Have a great weekend!
 
 > Cover artwork by [@anrew10](https://es.pixilart.com/art/factorio-yellow-belt-132272fb3d727dd)
+

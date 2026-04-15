@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useElectronMouse, useElectronRelativeMouse, useElectronWindowBounds } from '@proj-airi/electron-vueuse'
+import { useElectronMouse, useElectronRelativeMouse, useElectronWindowBounds } from '@proj-sakura/electron-vueuse'
 
 const { x: cursorX, y: cursorY } = useElectronMouse()
 
@@ -80,3 +80,4 @@ meta:
   title: useElectronRelativeMouse
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

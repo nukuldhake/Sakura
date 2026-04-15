@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { Card } from '@proj-airi/ccc'
-import type { AiriExtension } from '@proj-airi/stage-ui/stores/modules/airi-card'
+import type { Card } from '@proj-sakura/ccc'
+import type { SAKURAExtension } from '@proj-sakura/stage-ui/stores/modules/SAKURA-card'
 
 import kebabcase from '@stdlib/string-base-kebabcase'
 
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { Button, FieldInput, FieldValues } from '@proj-airi/ui'
-import { Select } from '@proj-airi/ui/components/form'
+import { useSAKURACardStore } from '@proj-sakura/stage-ui/stores/modules/SAKURA-card'
+import { useConsciousnessStore } from '@proj-sakura/stage-ui/stores/modules/consciousness'
+import { useSpeechStore } from '@proj-sakura/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
+import { Button, FieldInput, FieldValues } from '@proj-sakura/ui'
+import { Select } from '@proj-sakura/ui/components/form'
 import { storeToRefs } from 'pinia'
 import {
   DialogContent,
@@ -34,7 +34,7 @@ const emit = defineEmits<{
 const modelValue = defineModel<boolean>()
 
 const { t } = useI18n()
-const cardStore = useAiriCardStore()
+const cardStore = useSAKURACardStore()
 const consciousnessStore = useConsciousnessStore()
 const speechStore = useSpeechStore()
 const providersStore = useProvidersStore()
@@ -243,7 +243,7 @@ function saveCard(card: Card): boolean {
     ...rawCard,
     extensions: {
       ...rawCard.extensions,
-      airi: {
+      SAKURA: {
         modules: {
           consciousness: {
             provider: selectedConsciousnessProvider.value || consciousnessProvider.value,
@@ -256,7 +256,7 @@ function saveCard(card: Card): boolean {
           },
         },
         agents: {},
-      } as AiriExtension,
+      } as SAKURAExtension,
     },
   }
 
@@ -279,14 +279,14 @@ function saveCard(card: Card): boolean {
 function initializeCard(): Card {
   // Extract existing card data if in edit mode
   const existingCard = (isEditMode.value && props.cardId) ? cardStore.getCard(props.cardId) : undefined
-  const airiExt = existingCard?.extensions?.airi as AiriExtension | undefined
+  const SAKURAExt = existingCard?.extensions?.SAKURA as SAKURAExtension | undefined
 
   // Initialize module selections with fallback logic (handles all cases: create, edit with/without extension)
-  selectedConsciousnessProvider.value = airiExt?.modules?.consciousness?.provider || consciousnessProvider.value
-  selectedConsciousnessModel.value = airiExt?.modules?.consciousness?.model || defaultConsciousnessModel.value
-  selectedSpeechProvider.value = airiExt?.modules?.speech?.provider || speechProvider.value
-  selectedSpeechModel.value = airiExt?.modules?.speech?.model || defaultSpeechModel.value
-  selectedSpeechVoiceId.value = airiExt?.modules?.speech?.voice_id || defaultSpeechVoiceId.value
+  selectedConsciousnessProvider.value = SAKURAExt?.modules?.consciousness?.provider || consciousnessProvider.value
+  selectedConsciousnessModel.value = SAKURAExt?.modules?.consciousness?.model || defaultConsciousnessModel.value
+  selectedSpeechProvider.value = SAKURAExt?.modules?.speech?.provider || speechProvider.value
+  selectedSpeechModel.value = SAKURAExt?.modules?.speech?.model || defaultSpeechModel.value
+  selectedSpeechVoiceId.value = SAKURAExt?.modules?.speech?.voice_id || defaultSpeechVoiceId.value
 
   // Return existing card data or defaults
   if (existingCard) {
@@ -550,3 +550,4 @@ function getDefaultPlaceholder(defaultValue: string | undefined): string {
   }
 }
 </style>
+

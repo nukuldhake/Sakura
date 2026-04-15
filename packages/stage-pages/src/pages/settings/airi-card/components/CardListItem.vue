@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CursorFloating } from '@proj-airi/stage-ui/components'
+import { CursorFloating } from '@proj-sakura/stage-ui/components'
 
 interface Props {
   id: string
@@ -109,3 +109,4 @@ const emit = defineEmits<{
     </div>
   </CursorFloating>
 </template>
+

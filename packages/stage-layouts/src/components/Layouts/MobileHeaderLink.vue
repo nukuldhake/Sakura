@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTheme } from '@proj-airi/ui'
+import { useTheme } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { RouterLink } from 'vue-router'
 
@@ -33,3 +33,4 @@ const { selectedOption } = storeToRefs(useBackgroundStore())
   filter: hue-rotate(calc(var(--chromatic-hue, 0) * 1deg));
 }
 </style>
+

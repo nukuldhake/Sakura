@@ -1,6 +1,6 @@
 ---
 title: 不同的版本
-description: AIRI 的不同版本以及如何获取它们
+description: SAKURA 的不同版本以及如何获取它们
 ---
 
 <script setup>
@@ -8,7 +8,7 @@ import ReleaseDownloads from '../../../../../.vitepress/components/ReleaseDownlo
 import ReleasesList from '../../../../../.vitepress/components/ReleasesList.vue'
 </script>
 
-AIRI 提供多个发布渠道以满足不同需求。无论你想要最稳定的体验还是最新的功能,我们都能满足你的需求。
+SAKURA 提供多个发布渠道以满足不同需求。无论你想要最稳定的体验还是最新的功能,我们都能满足你的需求。
 
 ## 稳定版本 & 预发布版本
 
@@ -22,7 +22,7 @@ AIRI 提供多个发布渠道以满足不同需求。无论你想要最稳定的
 
 <ReleasesList type="releases" :limit="5" />
 
-[在 GitHub 上查看所有版本 →](https://github.com/moeru-ai/airi/releases)
+[在 GitHub 上查看所有版本 →](https://github.com/moeru-ai/SAKURA/releases)
 
 ## 每夜构建版本 (Nightly Builds)
 
@@ -39,15 +39,15 @@ AIRI 提供多个发布渠道以满足不同需求。无论你想要最稳定的
 
 ### 如何获取每夜构建版本
 
-1. 访问 [每夜构建工作流](https://github.com/moeru-ai/airi/actions/workflows/release-tamagotchi.yml) 页面
+1. 访问 [每夜构建工作流](https://github.com/moeru-ai/SAKURA/actions/workflows/release-tamagotchi.yml) 页面
 2. 点击最近一次成功的运行(以绿色对勾 ✓ 标识)
 3. 向下滚动到 **Artifacts** (构建产物) 部分
 4. 下载适合你平台的构建版本:
-   - **Windows**: \`AIRI_*_x64_en-US.exe\`
-   - **macOS (Intel)**: \`AIRI_*_x64.dmg\`
-   - **macOS (Apple Silicon)**: \`AIRI_*_arm64.dmg\`
-   - **Linux (x64)**: \`airi_*_amd64.deb\` 或 \`airi-*.x86_64.rpm\`
-   - **Linux (ARM64)**: \`airi_*_arm64.deb\` 或 \`airi-*.aarch64.rpm\`
+   - **Windows**: \`SAKURA_*_x64_en-US.exe\`
+   - **macOS (Intel)**: \`SAKURA_*_x64.dmg\`
+   - **macOS (Apple Silicon)**: \`SAKURA_*_arm64.dmg\`
+   - **Linux (x64)**: \`SAKURA_*_amd64.deb\` 或 \`SAKURA-*.x86_64.rpm\`
+   - **Linux (ARM64)**: \`SAKURA_*_arm64.deb\` 或 \`SAKURA-*.aarch64.rpm\`
 
 ::: tip 提示
 每夜构建版本在每天 **UTC 时间 00:00** 自动运行。如果你在最新稳定版本中遇到问题,可以尝试最新的每夜构建版本,看看问题是否已经被修复。
@@ -57,4 +57,5 @@ AIRI 提供多个发布渠道以满足不同需求。无论你想要最稳定的
 
 <ReleasesList type="nightly-builds" :limit="5" />
 
-[查看所有每夜构建版本 →](https://github.com/moeru-ai/airi/actions/workflows/release-tamagotchi.yml)
+[查看所有每夜构建版本 →](https://github.com/moeru-ai/SAKURA/actions/workflows/release-tamagotchi.yml)
+

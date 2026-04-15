@@ -1,18 +1,18 @@
-# @proj-airi/server-shared
+# @proj-sakura/server-shared
 
-The shared type definitions for all server-side packages of Project AIRI.
+The shared type definitions for all server-side packages of Project SAKURA.
 
 ## Usage
 
 ```shell
-ni @proj-airi/server-shared -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
-pnpm i @proj-airi/server-shared -D
-yarn i @proj-airi/server-shared -D
-npm i @proj-airi/server-shared -D
+ni @proj-sakura/server-shared -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
+pnpm i @proj-sakura/server-shared -D
+yarn i @proj-sakura/server-shared -D
+npm i @proj-sakura/server-shared -D
 ```
 
 ```typescript
-import type { WebSocketEvents } from '@proj-airi/server-shared'
+import type { WebSocketEvents } from '@proj-sakura/server-shared'
 ```
 
 ## How to use the events in distributed use cases?
@@ -59,3 +59,4 @@ import type { WebSocketEvents } from '@proj-airi/server-shared'
 ## License
 
 [MIT](../../LICENSE)
+

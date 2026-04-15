@@ -29,7 +29,7 @@ const stableConfig: ReleaseCardConfig = {
   icon: 'i-lucide:package-check',
   titleKey: 'docs.versions.download-buttons.latest-stable',
   tagColorClass: 'bg-green-400/10 text-green-900 dark:bg-green-600/10 dark:text-green-400',
-  fallbackUrl: 'https://github.com/moeru-ai/airi/releases/latest',
+  fallbackUrl: 'https://github.com/moeru-ai/SAKURA/releases/latest',
   useCases: [
     'docs.versions.download-buttons.stable-use-case-1',
     'docs.versions.download-buttons.stable-use-case-2',
@@ -41,7 +41,7 @@ const prereleaseConfig: ReleaseCardConfig = {
   icon: 'i-lucide:package',
   titleKey: 'docs.versions.download-buttons.latest-prerelease',
   tagColorClass: 'bg-yellow-400/10 text-yellow-900 dark:bg-yellow-600/10 dark:text-yellow-400',
-  fallbackUrl: 'https://github.com/moeru-ai/airi/releases',
+  fallbackUrl: 'https://github.com/moeru-ai/SAKURA/releases',
   useCases: [
     'docs.versions.download-buttons.prerelease-use-case-1',
     'docs.versions.download-buttons.prerelease-use-case-2',
@@ -145,3 +145,4 @@ const prereleaseConfig: ReleaseCardConfig = {
   --at-apply: not-prose block rounded-lg px-4 py-2 text-base decoration-none transition-all duration-200 ease-in-out active:scale-95 bg-primary-400/10 text-primary-900 dark:bg-primary-600/10 dark:text-primary-400;
 }
 </style>
+

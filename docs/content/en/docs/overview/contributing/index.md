@@ -1,6 +1,6 @@
 ---
 title: Contributing
-description: Contributing to Project AIRI
+description: Contributing to Project SAKURA
 ---
 
 Hello! Thank you for your interest in contributing to this project. This guide will help you get started.
@@ -117,13 +117,13 @@ git rebase main
 
 ## Fork this project
 
-Click on the **Fork** button on the top right corner of the [moeru-ai/airi](https://github.com/moeru-ai/airi) page.
+Click on the **Fork** button on the top right corner of the [moeru-ai/SAKURA](https://github.com/moeru-ai/SAKURA) page.
 
 ## Clone
 
 ```shell
-git clone https://github.com/<your-github-username>/airi.git
-cd airi
+git clone https://github.com/<your-github-username>/SAKURA.git
+cd SAKURA
 ```
 
 ## Create your working branch
@@ -178,7 +178,7 @@ nr dev:tamagotchi
 
 :::
 
-### Stage Web (Browser version for [airi.moeru.ai](https://airi.moeru.ai))
+### Stage Web (Browser version for [SAKURA.moeru.ai](https://SAKURA.moeru.ai))
 
 ```shell
 pnpm dev
@@ -230,14 +230,14 @@ Edit the credentials in `.env.local`.
 Migrate the database
 
 ```shell
-pnpm -F @proj-airi/telegram-bot db:generate
-pnpm -F @proj-airi/telegram-bot db:push
+pnpm -F @proj-sakura/telegram-bot db:generate
+pnpm -F @proj-sakura/telegram-bot db:push
 ```
 
 Run the bot
 
 ```shell
-pnpm -F @proj-airi/telegram-bot start
+pnpm -F @proj-sakura/telegram-bot start
 ```
 
 ::: tip
@@ -245,7 +245,7 @@ pnpm -F @proj-airi/telegram-bot start
 For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 
 ```shell
-nr -F @proj-airi/telegram-bot dev
+nr -F @proj-sakura/telegram-bot dev
 ```
 
 :::
@@ -267,7 +267,7 @@ Edit the credentials in `.env.local`.
 Run the bot
 
 ```shell
-pnpm -F @proj-airi/discord-bot start
+pnpm -F @proj-sakura/discord-bot start
 ```
 
 ::: tip
@@ -275,7 +275,7 @@ pnpm -F @proj-airi/discord-bot start
 For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 
 ```shell
-nr -F @proj-airi/discord-bot dev
+nr -F @proj-sakura/discord-bot dev
 ```
 
 :::
@@ -299,7 +299,7 @@ Edit the credentials in `.env.local`.
 Run the bot
 
 ```shell
-pnpm -F @proj-airi/minecraft-bot start
+pnpm -F @proj-sakura/minecraft-bot start
 ```
 
 ::: tip
@@ -307,7 +307,7 @@ pnpm -F @proj-airi/minecraft-bot start
 For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 
 ```shell
-nr -F @proj-airi/minecraft-bot dev
+nr -F @proj-sakura/minecraft-bot dev
 ```
 
 :::
@@ -356,17 +356,18 @@ You should be able to browse the branch on your fork repository.
 If this is your first time contributing with this project, you need to add the upstream repository too:
 
 ```shell
-git remote add upstream https://github.com/moeru-ai/airi.git
+git remote add upstream https://github.com/moeru-ai/SAKURA.git
 ```
 
 :::
 
 ## Creating Pull Request
 
-Navigate to [moeru-ai/airi](https://github.com/moeru-ai/airi) page, click on the **Pull requests** tab, and click on the **New pull request** button, click on the **Compare across forks** link, and select your fork repository.
+Navigate to [moeru-ai/SAKURA](https://github.com/moeru-ai/SAKURA) page, click on the **Pull requests** tab, and click on the **New pull request** button, click on the **Compare across forks** link, and select your fork repository.
 
 Review the changes, and click on the **Create pull request** button.
 
 ## Whooo-ya! You made it!
 
 Congratulations! You made your first contribution to this project. You can now wait for the maintainers to review your pull request.
+

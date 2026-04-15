@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InputFile } from '@proj-airi/ui'
+import { InputFile } from '@proj-sakura/ui'
 import { Vibrant } from 'node-vibrant/browser'
 import { ref, watch } from 'vue'
 
@@ -68,3 +68,4 @@ meta:
   title: Vibrant
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

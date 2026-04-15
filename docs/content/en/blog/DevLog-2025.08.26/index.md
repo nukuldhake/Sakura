@@ -3,7 +3,7 @@ title: DevLog @ 2025.08.26
 category: DevLog
 date: 2025-08-26
 excerpt: |
-  Sharing some progress on the pure vision direction of `airi-factorio`, solidifying thoughts to prevent them from evaporating.
+  Sharing some progress on the pure vision direction of `SAKURA-factorio`, solidifying thoughts to prevent them from evaporating.
 preview-cover:
 # TODO
 ---
@@ -12,17 +12,17 @@ preview-cover:
 import NmsIou from './components/nms-iou.vue'
 </script>
 
-Long time no see, everyone! I'm [@LemonNeko](https://github.com/LemonNekoGH), one of the maintainers of AIRI. ~~Ah, getting tired of starting like this, just like an LLM.~~
+Long time no see, everyone! I'm [@LemonNeko](https://github.com/LemonNekoGH), one of the maintainers of SAKURA. ~~Ah, getting tired of starting like this, just like an LLM.~~
 
-In my previous [DevLog](../DevLog-2025.07.18/index.md), I mentioned briefly looking at the [Factorio Learning Environment](https://arxiv.org/abs/2503.09617) paper and briefly discussed how we plan to improve `airi-factorio`, but... what I want to share with you today is not about that, but about progress in the pure vision direction.
+In my previous [DevLog](../DevLog-2025.07.18/index.md), I mentioned briefly looking at the [Factorio Learning Environment](https://arxiv.org/abs/2503.09617) paper and briefly discussed how we plan to improve `SAKURA-factorio`, but... what I want to share with you today is not about that, but about progress in the pure vision direction.
 
 Back in June this year, [@nekomeowww](https://github.com/nekomeowww) released a nearly real-time [VLM Playground](https://huggingface.co/spaces/moeru-ai/smolvlm-realtime-webgpu-vue) HuggingFace Spaces, which felt really cool, so I decided to first try simple real-time image recognition (at the time I confused object detection with image recognition), then somehow hand it over to AI for decision-making, and finally output actions to the game in some way.
 
 First, let me show you the results:
 
-<ThemedVideo src="./assets/airi-factorio-yolo-v0-playground-vnc.mp4" controls playsinline />
+<ThemedVideo src="./assets/SAKURA-factorio-yolo-v0-playground-vnc.mp4" controls playsinline />
 
-In the video, I'm playing Factorio via VNC connection in the web page, with object detection results on the right side, almost in real-time. I've also deployed it to [HuggingFace Space](https://huggingface.co/spaces/proj-airi/factorio-yolo-v0-playground), feel free to try it out.
+In the video, I'm playing Factorio via VNC connection in the web page, with object detection results on the right side, almost in real-time. I've also deployed it to [HuggingFace Space](https://huggingface.co/spaces/proj-SAKURA/factorio-yolo-v0-playground), feel free to try it out.
 
 So, how did I achieve this?
 
@@ -75,7 +75,7 @@ But this isn't enough yet. My goal is to play in the browser and perform real-ti
 sudo apt install -y websockify novnc
 ```
 
-Great! Now the Docker image is ready. You can see the complete [Dockerfile](https://github.com/moeru-ai/airi-factorio/blob/a6bf243f14cbc0d765ff7ed13389bca33c1fdfa2/docker/Dockerfile) and [usage instructions](https://github.com/moeru-ai/airi-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground) here.
+Great! Now the Docker image is ready. You can see the complete [Dockerfile](https://github.com/moeru-ai/SAKURA-factorio/blob/a6bf243f14cbc0d765ff7ed13389bca33c1fdfa2/docker/Dockerfile) and [usage instructions](https://github.com/moeru-ai/SAKURA-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground) here.
 
 ## Training Object Detection Model
 
@@ -89,11 +89,11 @@ This is how I collected the dataset:
 2. Use [`game.take_screenshot`](https://lua-api.factorio.com/latest/classes/LuaGameScript.html#take_screenshot) to capture screenshots at various zoom levels and lighting conditions (daytime).
 3. Generate annotation data based on selection boxes and use [`helpers.write_file`](https://lua-api.factorio.com/latest/classes/LuaHelpers.html#write_file) to save to files.
 
-My collection script is [here](https://github.com/moeru-ai/airi-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/factorio-rcon-snippets-for-node/src/factorio_yolo_dataset_collector_v0.ts). It uses `typescript-to-lua` to compile TypeScript to Lua, then uses RCON to pass it to Factorio for execution.
+My collection script is [here](https://github.com/moeru-ai/SAKURA-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/factorio-rcon-snippets-for-node/src/factorio_yolo_dataset_collector_v0.ts). It uses `typescript-to-lua` to compile TypeScript to Lua, then uses RCON to pass it to Factorio for execution.
 
 In the script, I collected three types of assemblers and conveyors, 20 images for each machine, each image at 1280x1280 resolution, without UI.
 
-Oh, and to better debug my collection script, I developed a [VSCode plugin](https://github.com/moeru-ai/airi-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/vscode-factorio-rcon-evaluator/README.md) that provides a CodeLens operation to compile and execute my script with one click.
+Oh, and to better debug my collection script, I developed a [VSCode plugin](https://github.com/moeru-ai/SAKURA-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/packages/vscode-factorio-rcon-evaluator/README.md) that provides a CodeLens operation to compile and execute my script with one click.
 
 After collecting images and annotation data, we need to organize the dataset according to the [YOLO official format](https://docs.ultralytics.com/datasets/detect/), then we can upload it to [Ultralytics Hub](https://www.ultralytics.com/hub) to see the effect:
 
@@ -115,7 +115,7 @@ model.export(format="onnx")
 
 Trained at 640x640 resolution, using MPS device (on macOS, using MPS device provides better performance), trained for 100 epochs, with 5 batches per epoch, reaching optimal results around epoch 70, exported ONNX model. Training took about 8 minutes, model size is about 10MB.
 
-You can see the dataset, training code, and exported ONNX model [here](https://github.com/moeru-ai/airi-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground).
+You can see the dataset, training code, and exported ONNX model [here](https://github.com/moeru-ai/SAKURA-factorio/blob/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground).
 
 ## Performing Inference
 
@@ -177,7 +177,7 @@ function nms(boxes: Box[], iouThreshold: number): Box[] {
 }
 ```
 
-You can see the entire Playground's source code [here](https://github.com/moeru-ai/airi-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground).
+You can see the entire Playground's source code [here](https://github.com/moeru-ai/SAKURA-factorio/tree/ba46a4e47b31187dd064b06314b595b551ed3411/apps/factorio-yolo-v0-playground).
 
 You can also play with the IOU and NMS effects in the visualization component below by dragging labels to change box positions:
 
@@ -196,3 +196,4 @@ Through this practice, I discovered several issues:
 ## Conclusion
 
 This is the result of my work this month. Quite fruitful! Many thanks to [@nekomeowww](https://github.com/nekomeowww), [@dsh0416](https://github.com/dsh0416), and [makito](https://github.com/sumimakito) for their help. Next, I need to find ways to improve model performance, then somehow let AI control the game.
+

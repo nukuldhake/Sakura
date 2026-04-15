@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { IconItem, RippleGrid } from '@proj-airi/stage-ui/components'
-import { useRippleGridState } from '@proj-airi/stage-ui/composables/use-ripple-grid-state'
+import { IconItem, RippleGrid } from '@proj-sakura/stage-ui/components'
+import { useRippleGridState } from '@proj-sakura/stage-ui/composables/use-ripple-grid-state'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -78,3 +78,4 @@ meta:
     name: slide
     pageSpecificAvailable: true
 </route>
+

@@ -27,55 +27,55 @@ onMounted(async () => {
 ```
 
 Last week, our corporate designer/artist has submitted our commission for the
-basic/first version of Project AIRI logo. The feeling of the logo looks like
+basic/first version of Project SAKURA logo. The feeling of the logo looks like
 this:
 
-![](./assets/airi-logos-v1.avif)
+![](./assets/SAKURA-logos-v1.avif)
 
 ## Daytime
 
 From the perspective of designing, these were so complex and user unfriendly
 when scaled down to Home Screen app sizes. Therefore I added this version:
 
-![](./assets/airi-logo-v2.avif)
+![](./assets/SAKURA-logo-v2.avif)
 
 And edited with other variants:
 
-![](./assets/airi-logos-v2.avif)
+![](./assets/SAKURA-logos-v2.avif)
 
 All of those were only suitable for dark theme, "we need a dark theme version
 logo as well!" I thought, so I did this:
 
-![](./assets/airi-logo-v2-dark.avif)
+![](./assets/SAKURA-logo-v2-dark.avif)
 
 [@kwaa](https://github.com/kwaa) said that we can try to swap the color schemes
 for both themes:
 
-![](./assets/airi-logos-v3.avif)
+![](./assets/SAKURA-logos-v3.avif)
 
 This indeed looks better.
 
 We updated the Typography too:
 
-![](./assets/airi-logos-v4.avif)
+![](./assets/SAKURA-logos-v4.avif)
 
 And optimized the background colors:
 
-![](./assets/airi-logos-v5.avif)
+![](./assets/SAKURA-logos-v5.avif)
 
 So this is what we get finally:
 
-![](./assets/airi-logos-final.avif)
+![](./assets/SAKURA-logos-final.avif)
 
 Later on today, I was working on publishing the
-[documentation site](https://airi.build) of Project AIRI online, for me,
+[documentation site](https://SAKURA.build) of Project SAKURA online, for me,
 and other developers, artists to use it as a reference and guidelines.
 
 I did it! And the newly designed logo has been put into the
-[documentation site](https://airi.build) along with the color palette:
+[documentation site](https://SAKURA.build) along with the color palette:
 
-![](./assets/airi-build-light.avif)
-![](./assets/airi-build-dark.avif)
+![](./assets/SAKURA-build-light.avif)
+![](./assets/SAKURA-build-dark.avif)
 
 [Basic guide](../guides/),
 [contribution guidelines](../references/contributing/guide/),
@@ -94,13 +94,13 @@ here: [yui540.com](https://yui540.com)), and he/she just posted a brand new
 repository for demonstrating the fantastic transition effects he/she used.
 
 I added the related resources and website links into the
-[https://airi.build](https://airi.build) site, you can check them out.
+[https://SAKURA.build](https://SAKURA.build) site, you can check them out.
 
 ## DevStream
 
 I ported many of the animation transitions from [yui540](https://github.com/yui540)'s
 [repository](https://github.com/yui540/css-animations) to
-[https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/).
+[https://proj-SAKURA-packages-ui-transitions.netlify.app/#/](https://proj-SAKURA-packages-ui-transitions.netlify.app/#/).
 
 It worked really well:
 
@@ -108,3 +108,4 @@ It worked really well:
 
 That's all for today's DevLog, thank you to everyone that joined the DevStream
 and stayed with me until the end. I'll see you all tomorrow.
+

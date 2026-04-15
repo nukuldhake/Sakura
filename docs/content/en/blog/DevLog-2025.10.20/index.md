@@ -3,7 +3,7 @@ title: DevLog @ 2025.10.20
 category: DevLog
 date: 2025-10-20
 excerpt: |
-  Sharing the latest progress on the AIRI project, from Tauri to Electron migration, new Live2D models, and various open-source project updates.
+  Sharing the latest progress on the SAKURA project, from Tauri to Electron migration, new Live2D models, and various open-source project updates.
 preview-cover:
 # TODO
 ---
@@ -38,7 +38,7 @@ This model was honorably improved through collaboration with an artist who's wor
 
 (whispering) Maybe if we get more sponsors, I'll be willing... (x
 
-<video src="./assets/airi.mp4" alt="airi.mp4" controls></video>
+<video src="./assets/SAKURA.mp4" alt="SAKURA.mp4" controls></video>
 
 ## Three.js MMD Support
 
@@ -52,7 +52,7 @@ If you're interested too, come join us in maintaining it! [moeru-ai/three-mmd](h
 
  >"You can write prompts with [Vue](https://velin-dev.netlify.app/#/)"!
 
-Remember back in May when we shared our own prompt library? Thanks to RainbowBird hard work and donation, Velin is now officially part of Moeru AI! Almost all of AIRI's prompts are powered by Velin—but no worries about cross-platform capabilities, Velin works great in Node.js environments too!
+Remember back in May when we shared our own prompt library? Thanks to RainbowBird hard work and donation, Velin is now officially part of Moeru AI! Almost all of SAKURA's prompts are powered by Velin—but no worries about cross-platform capabilities, Velin works great in Node.js environments too!
 
 <img src="./assets/velin.png" alt="velin.png" />
 
@@ -66,7 +66,7 @@ All these local inferences can only run in Web Workers / worker_threads, which c
 
 ## Project Development Status
 
-Now both Moeru AI and Project AIRI have grown into massive organizations, with over 50 original repositories covering machine learning, data processing, frontend, backend, and more—using TypeScript/Python/Rust/Go and other languages.
+Now both Moeru AI and Project SAKURA have grown into massive organizations, with over 50 original repositories covering machine learning, data processing, frontend, backend, and more—using TypeScript/Python/Rust/Go and other languages.
 
 Total followers across all have exceeded 800 people. This was unimaginable when we first started a year ago—truly, thank you all so much for your support!
 
@@ -75,9 +75,9 @@ Total followers across all have exceeded 800 people. This was unimaginable when 
 Moeru AI
 </div>
 
-<img src="./assets/project-airi.png" alt="project-airi.png" />
+<img src="./assets/project-SAKURA.png" alt="project-SAKURA.png" />
 <div style="text-align: center; font-size: 0.875rem; color: #666; margin-top: 0.5rem;">
-Project AIRI
+Project SAKURA
 </div>
 
 ## Pure Rust TTS Implementation
@@ -95,3 +95,4 @@ Basically 1:1 recreated the Python model architecture in Rust, hoping to build i
 That's all for today's "one more thing"—hope you enjoyed this long thread, one after another!
 
 We'll continue updating tomorrow, bringing you tons more goodies, introducing our explorations in VLA/VLM gaming, how we're approaching it, and what results we're seeing.
+

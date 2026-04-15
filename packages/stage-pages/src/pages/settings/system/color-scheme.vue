@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ColorPalette, Section } from '@proj-airi/stage-ui/components'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { ColorHueRange } from '@proj-airi/ui'
+import { ColorPalette, Section } from '@proj-sakura/stage-ui/components'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
+import { ColorHueRange } from '@proj-sakura/ui'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -232,3 +232,4 @@ meta:
   stageTransition:
     name: slide
 </route>
+

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { DisplayModel } from '../../../../stores/display-models'
 
-import { Button } from '@proj-airi/ui'
+import { Button } from '@proj-sakura/ui'
 import { useFileDialog } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { DropdownMenuContent, DropdownMenuItem, DropdownMenuPortal, DropdownMenuRoot, DropdownMenuTrigger, EditableArea, EditableEditTrigger, EditableInput, EditablePreview, EditableRoot, EditableSubmitTrigger } from 'reka-ui'
@@ -235,3 +235,4 @@ vrmDialog.onChange(handleAddVRMModel)
     </Button>
   </div>
 </template>
+

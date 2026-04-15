@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DoubleCheckButton } from '@proj-airi/ui'
+import { DoubleCheckButton } from '@proj-sakura/ui'
 import { ref } from 'vue'
 
 const actionLog = ref('Waiting for action...')
@@ -72,3 +72,4 @@ function note(message: string) {
     </Variant>
   </Story>
 </template>
+

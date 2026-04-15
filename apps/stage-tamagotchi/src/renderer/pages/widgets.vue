@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { WidgetSnapshot } from '../../shared/eventa'
 
-import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
+import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-sakura/electron-vueuse'
 import { computed, defineAsyncComponent, defineComponent, h, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -237,3 +237,4 @@ function handleClose() {
 meta:
   layout: stage
 </route>
+

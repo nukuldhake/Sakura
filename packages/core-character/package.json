@@ -1,18 +1,18 @@
 {
-  "name": "@proj-airi/core-character",
+  "name": "@proj-sakura/core-character",
   "type": "module",
   "version": "0.8.5-beta.3",
   "private": true,
-  "description": "Core character pipeline orchestration for AIRI (segmentation, emotion, delay, optional TTS)",
+  "description": "Core character pipeline orchestration for SAKURA (segmentation, emotion, delay, optional TTS)",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
-    "email": "airi@moeru.ai",
+    "name": "Moeru AI Project SAKURA Team",
+    "email": "SAKURA@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/moeru-ai/SAKURA.git",
     "directory": "packages/core-character"
   },
   "exports": {
@@ -34,8 +34,10 @@
   },
   "dependencies": {
     "@moeru/std": "catalog:",
-    "@proj-airi/stream-kit": "workspace:^",
+    "@proj-sakura/stream-kit": "workspace:^",
     "clustr": "^1.0.2"
   },
   "devDependencies": {}
 }
+
+

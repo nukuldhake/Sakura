@@ -1,27 +1,27 @@
 <script setup lang="ts">
 import type { ChatProvider } from '@xsai-ext/providers/utils'
 
-import workletUrl from '@proj-airi/stage-ui/workers/vad/process.worklet?worker&url'
+import workletUrl from '@proj-sakura/stage-ui/workers/vad/process.worklet?worker&url'
 
-import { electron } from '@proj-airi/electron-eventa'
+import { electron } from '@proj-sakura/electron-eventa'
 import {
   useElectronEventaInvoke,
   useElectronMouseAroundWindowBorder,
   useElectronMouseInElement,
   useElectronMouseInWindow,
   useElectronRelativeMouse,
-} from '@proj-airi/electron-vueuse'
-import { useThreeSceneIsTransparentAtPoint } from '@proj-airi/stage-ui-three'
-import { WidgetStage } from '@proj-airi/stage-ui/components/scenes'
-import { useAudioRecorder } from '@proj-airi/stage-ui/composables/audio/audio-recorder'
-import { useCanvasPixelIsTransparentAtPoint } from '@proj-airi/stage-ui/composables/canvas-alpha'
-import { useVAD } from '@proj-airi/stage-ui/stores/ai/models/vad'
-import { useChatOrchestratorStore } from '@proj-airi/stage-ui/stores/chat'
-import { useLive2d } from '@proj-airi/stage-ui/stores/live2d'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useHearingSpeechInputPipeline } from '@proj-airi/stage-ui/stores/modules/hearing'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { useSettings, useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
+} from '@proj-sakura/electron-vueuse'
+import { useThreeSceneIsTransparentAtPoint } from '@proj-sakura/stage-ui-three'
+import { WidgetStage } from '@proj-sakura/stage-ui/components/scenes'
+import { useAudioRecorder } from '@proj-sakura/stage-ui/composables/audio/audio-recorder'
+import { useCanvasPixelIsTransparentAtPoint } from '@proj-sakura/stage-ui/composables/canvas-alpha'
+import { useVAD } from '@proj-sakura/stage-ui/stores/ai/models/vad'
+import { useChatOrchestratorStore } from '@proj-sakura/stage-ui/stores/chat'
+import { useLive2d } from '@proj-sakura/stage-ui/stores/live2d'
+import { useConsciousnessStore } from '@proj-sakura/stage-ui/stores/modules/consciousness'
+import { useHearingSpeechInputPipeline } from '@proj-sakura/stage-ui/stores/modules/hearing'
+import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
+import { useSettings, useSettingsAudioDevice } from '@proj-sakura/stage-ui/stores/settings'
 import { refDebounced, useBroadcastChannel } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, onUnmounted, ref, toRef, watch } from 'vue'
@@ -161,7 +161,7 @@ let stopOnStopRecord: (() => void) | undefined
 type CaptionChannelEvent
   = | { type: 'caption-speaker', text: string }
     | { type: 'caption-assistant', text: string }
-const { post: postCaption } = useBroadcastChannel<CaptionChannelEvent, CaptionChannelEvent>({ name: 'airi-caption-overlay' })
+const { post: postCaption } = useBroadcastChannel<CaptionChannelEvent, CaptionChannelEvent>({ name: 'SAKURA-caption-overlay' })
 
 async function handleSpeechStart() {
   if (shouldUseStreamInput.value) {
@@ -455,3 +455,4 @@ watch([stream, () => vadLoaded.value], async ([s, loaded]) => {
 meta:
   layout: stage
 </route>
+

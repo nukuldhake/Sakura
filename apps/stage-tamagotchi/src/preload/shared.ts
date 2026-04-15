@@ -1,4 +1,4 @@
-import type { ElectronWindow } from '@proj-airi/stage-shared'
+import type { ElectronWindow } from '@proj-sakura/stage-shared'
 
 import { contextIsolated, platform } from 'node:process'
 
@@ -47,3 +47,4 @@ export function exposeWithCustomAPI<CustomAPI>(customAPI: CustomAPI) {
     (window as ElectronWindow<CustomAPI>).api = customAPI
   }
 }
+

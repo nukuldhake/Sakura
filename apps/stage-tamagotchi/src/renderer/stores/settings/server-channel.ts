@@ -1,6 +1,6 @@
 import type { ElectronServerChannelTlsConfig } from '../../../shared/eventa'
 
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
+import { useElectronEventaInvoke } from '@proj-sakura/electron-vueuse'
 import { useAsyncState, useLocalStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { watch } from 'vue'
@@ -28,3 +28,4 @@ export const useServerChannelSettingsStore = defineStore('tamagotchi-server-chan
     websocketTlsConfig,
   }
 })
+

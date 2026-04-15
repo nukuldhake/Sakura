@@ -1,9 +1,9 @@
 ---
 title: 使用条款
-description: Project AIRI 的使用条款
+description: Project SAKURA 的使用条款
 ---
 
-这些条款与条件适用于由 Project AIRI 团队（以下简称“服务提供商”）创建的移动设备应用程序 AIRI（也称为 Project AIRI 应用程序，以下简称“应用程序”）。该应用程序作为开源服务及部分付费商业服务提供。
+这些条款与条件适用于由 Project SAKURA 团队（以下简称“服务提供商”）创建的移动设备应用程序 SAKURA（也称为 Project SAKURA 应用程序，以下简称“应用程序”）。该应用程序作为开源服务及部分付费商业服务提供。
 
 下载或使用应用程序，即表示您自动同意以下条款。强烈建议您在使用应用程序之前仔细阅读并理解这些条款。
 
@@ -36,8 +36,9 @@ description: Project AIRI 的使用条款
 
 ## 联系我们
 
-如果您对条款与条件有任何疑问或建议，请随时通过 airi@moeru.ai 联系服务提供商。
+如果您对条款与条件有任何疑问或建议，请随时通过 SAKURA@moeru.ai 联系服务提供商。
 
 * * *
 
 本条款与条件页面由 [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/) 生成
+

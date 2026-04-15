@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from '@proj-airi/ui'
+import { Button } from '@proj-sakura/ui'
 import { inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -46,3 +46,4 @@ function handleNotNow() {
     </div>
   </div>
 </template>
+

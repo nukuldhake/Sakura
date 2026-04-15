@@ -2,11 +2,11 @@
 import type {
   PluginHostSessionSummary,
   PluginManifestSummary,
-} from '@proj-airi/stage-ui/stores/devtools/plugin-host-debug'
+} from '@proj-sakura/stage-ui/stores/devtools/plugin-host-debug'
 
-import { Section } from '@proj-airi/stage-ui/components'
-import { usePluginHostInspectorStore } from '@proj-airi/stage-ui/stores/devtools/plugin-host-debug'
-import { Button, Callout, Input } from '@proj-airi/ui'
+import { Section } from '@proj-sakura/stage-ui/components'
+import { usePluginHostInspectorStore } from '@proj-sakura/stage-ui/stores/devtools/plugin-host-debug'
+import { Button, Callout, Input } from '@proj-sakura/ui'
 import { computed, onMounted, ref } from 'vue'
 import { toast } from 'vue-sonner'
 
@@ -411,3 +411,4 @@ meta:
   title: Plugin Host Debug
   subtitleKey: tamagotchi.settings.devtools.title
 </route>
+

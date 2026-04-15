@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { defineInvokeHandler } from '@moeru/eventa'
-import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { themeColorFromValue, useThemeColor } from '@proj-airi/stage-layouts/composables/theme-color'
-import { ToasterRoot } from '@proj-airi/stage-ui/components'
-import { useSharedAnalyticsStore } from '@proj-airi/stage-ui/stores/analytics'
-import { useCharacterOrchestratorStore } from '@proj-airi/stage-ui/stores/character'
-import { useChatSessionStore } from '@proj-airi/stage-ui/stores/chat/session-store'
-import { usePluginHostInspectorStore } from '@proj-airi/stage-ui/stores/devtools/plugin-host-debug'
-import { useDisplayModelsStore } from '@proj-airi/stage-ui/stores/display-models'
-import { useContextBridgeStore } from '@proj-airi/stage-ui/stores/mods/api/context-bridge'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { useOnboardingStore } from '@proj-airi/stage-ui/stores/onboarding'
-import { usePerfTracerBridgeStore } from '@proj-airi/stage-ui/stores/perf-tracer-bridge'
-import { listProvidersForPluginHost, shouldPublishPluginHostCapabilities } from '@proj-airi/stage-ui/stores/plugin-host-capabilities'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { useTheme } from '@proj-airi/ui'
+import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-sakura/electron-vueuse'
+import { themeColorFromValue, useThemeColor } from '@proj-sakura/stage-layouts/composables/theme-color'
+import { ToasterRoot } from '@proj-sakura/stage-ui/components'
+import { useSharedAnalyticsStore } from '@proj-sakura/stage-ui/stores/analytics'
+import { useCharacterOrchestratorStore } from '@proj-sakura/stage-ui/stores/character'
+import { useChatSessionStore } from '@proj-sakura/stage-ui/stores/chat/session-store'
+import { usePluginHostInspectorStore } from '@proj-sakura/stage-ui/stores/devtools/plugin-host-debug'
+import { useDisplayModelsStore } from '@proj-sakura/stage-ui/stores/display-models'
+import { useContextBridgeStore } from '@proj-sakura/stage-ui/stores/mods/api/context-bridge'
+import { useSAKURACardStore } from '@proj-sakura/stage-ui/stores/modules/SAKURA-card'
+import { useSpeechStore } from '@proj-sakura/stage-ui/stores/modules/speech'
+import { useOnboardingStore } from '@proj-sakura/stage-ui/stores/onboarding'
+import { usePerfTracerBridgeStore } from '@proj-sakura/stage-ui/stores/perf-tracer-bridge'
+import { listProvidersForPluginHost, shouldPublishPluginHostCapabilities } from '@proj-sakura/stage-ui/stores/plugin-host-capabilities'
+import { useSettings } from '@proj-sakura/stage-ui/stores/settings'
+import { useTheme } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUnmounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -50,7 +50,7 @@ const serverChannelSettingsStore = useServerChannelSettingsStore()
 const onboardingStore = useOnboardingStore()
 const router = useRouter()
 const route = useRoute()
-const cardStore = useAiriCardStore()
+const cardStore = useSAKURACardStore()
 const chatSessionStore = useChatSessionStore()
 const characterOrchestratorStore = useCharacterOrchestratorStore()
 const speechStore = useSpeechStore()
@@ -163,3 +163,4 @@ onUnmounted(() => contextBridgeStore.dispose())
   animation: hue-anim 10s linear infinite;
 }
 </style>
+
