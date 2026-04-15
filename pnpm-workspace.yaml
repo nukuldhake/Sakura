@@ -32,8 +32,8 @@ catalog:
   '@moeru/std': 0.1.0-beta.14
   '@nekopaw/tempora': 0.4.0-alpha.1
   '@pinia/testing': ^1.0.3
-  '@proj-airi/iconify-meteocons': ^0.1.4
-  '@proj-airi/unplugin-fetch': ^0.2.2
+  '@proj-sakura/iconify-meteocons': ^0.1.4
+  '@proj-sakura/unplugin-fetch': ^0.2.2
   '@shopify/draggable': ^1.2.1
   '@types/audioworklet': ^0.0.96
   '@types/hast': ^3.0.4
