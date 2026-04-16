@@ -62,6 +62,9 @@ export const useHearingStore = defineStore('hearing-store', () => {
 
   // Computed properties
   const supportsModelListing = computed(() => {
+    if (!activeTranscriptionProvider.value)
+      return false
+
     return providersStore.getProviderMetadata(activeTranscriptionProvider.value)?.capabilities.listModels !== undefined
   })
 

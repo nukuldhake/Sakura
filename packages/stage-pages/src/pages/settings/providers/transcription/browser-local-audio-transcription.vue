@@ -5,7 +5,6 @@ import type { TranscriptionProviderWithExtraOptions } from '@xsai-ext/providers/
 import {
   Alert,
   ProviderAdvancedSettings,
-  ProviderApiKeyInput,
   ProviderBaseUrlInput,
   ProviderBasicSettings,
   ProviderSettingsContainer,
@@ -121,6 +120,7 @@ const shouldExpandAdvanced = computed(() => {
 // Valid transcription models (OpenAI doesn't provide an API to list these)
 const VALID_TRANSCRIPTION_MODELS = [
   'whisper-1',
+  'large-v3-turbo',
   'gpt-4o-transcribe',
   'gpt-4o-mini-transcribe',
   'gpt-4o-mini-transcribe-2025-12-15',
@@ -155,8 +155,8 @@ onMounted(async () => {
   // Validate and reset model if it's invalid (e.g., a chat model)
   const currentModel = model.value
   if (currentModel && !isValidTranscriptionModel(currentModel)) {
-    console.warn(`Invalid transcription model "${currentModel}" detected. Resetting to default "whisper-1".`)
-    model.value = 'whisper-1'
+    console.warn(`Invalid transcription model "${currentModel}" detected. Resetting to default "large-v3-turbo".`)
+    model.value = 'large-v3-turbo'
   }
   // Load models if API key and base URL are configured
   if (apiKey.value && baseUrl.value) {
@@ -192,12 +192,6 @@ watch(model, () => {
           :description="t('settings.pages.providers.common.section.basic.description')"
           :on-reset="handleResetSettings"
         >
-          <ProviderApiKeyInput
-            v-if="false"
-            v-model="apiKey"
-            :provider-name="providerMetadata?.localizedName"
-            placeholder="Not required"
-          />
           <!-- Model selection: Use dropdown if models are available, otherwise use text input -->
           <FieldSelect
             v-if="providerModels.length > 0"
@@ -261,6 +255,7 @@ watch(model, () => {
           <TranscriptionPlayground
             :generate-transcription="handleGenerateTranscription"
             :api-key-configured="apiKeyConfigured"
+            :disable-api-key-input="true"
           />
         </div>
       </div>
@@ -274,4 +269,3 @@ meta:
   stageTransition:
     name: slide
 </route>
-

@@ -36,9 +36,11 @@ async function loadModel(quantization: string, device: string) {
       if (typeof (ttsModel as any).dispose === 'function') {
         (ttsModel as any).dispose()
       }
-    } catch (e) {
+    }
+    catch (e) {
       console.warn('[Kokoro Worker] Failed to dispose previous model', e)
-    } finally {
+    }
+    finally {
       ttsModel = null
     }
   }
@@ -71,34 +73,48 @@ async function loadModel(quantization: string, device: string) {
 
 async function generate(request: GenerateRequest) {
   const { text, voice } = request
+  console.log(`[Kokoro Worker] Starting generation for: "${text.slice(0, 50)}${text.length > 50 ? '...' : ''}" with voice: ${voice}`)
 
-  if (!ttsModel) {
+  try {
+    if (!ttsModel) {
+      throw new Error('Kokoro TTS generation failed: No model loaded.')
+    }
+
+    // Generate audio from text
+    const startTime = performance.now()
+    const result = await ttsModel.generate(text, {
+      voice,
+    })
+    const endTime = performance.now()
+    console.log(`[Kokoro Worker] Generation completed in ${(endTime - startTime).toFixed(2)}ms`)
+
+    const blob = await result.toBlob()
+    const buffer: ArrayBuffer = await blob.arrayBuffer()
+
+    console.log(`[Kokoro Worker] Audio produced: ${buffer.byteLength} bytes`)
+
+    if (buffer.byteLength < 1000) {
+      console.warn('[Kokoro Worker] Generated audio buffer is suspiciously small. This might be silence.')
+    }
+
+    // Send the audio buffer back to the main thread
+    const successMessage: SuccessMessage = {
+      type: 'result',
+      status: 'success',
+      buffer,
+    }
+    const transferList: ArrayBuffer[] = [buffer]
+    ;(globalThis as any).postMessage(successMessage, transferList)
+  }
+  catch (error) {
+    console.error('[Kokoro Worker] Generation error:', error)
     const errorMessage: ErrorMessage = {
       type: 'result',
       status: 'error',
-      message: 'Kokoro TTS generation failed: No model loaded.',
+      message: error instanceof Error ? error.message : 'Kokoro TTS generation failed: An unknown error occurred.',
     }
     globalThis.postMessage(errorMessage)
-    return
   }
-
-  // Generate audio from text
-  const result = await ttsModel.generate(text, {
-    voice,
-  })
-
-  const blob = await result.toBlob()
-  const buffer: ArrayBuffer = await blob.arrayBuffer()
-
-  // Send the audio buffer back to the main thread
-  // Use transferable to avoid copying the buffer
-  const successMessage: SuccessMessage = {
-    type: 'result',
-    status: 'success',
-    buffer,
-  }
-  const transferList: ArrayBuffer[] = [buffer]
-  ;(globalThis as any).postMessage(successMessage, transferList)
 }
 
 // Listen for messages from the main thread

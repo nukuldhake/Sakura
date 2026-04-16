@@ -9,7 +9,7 @@ import {
 import { useProviderValidation } from '@proj-sakura/stage-ui/composables/use-provider-validation'
 import { useSpeechStore } from '@proj-sakura/stage-ui/stores/modules/speech'
 import { useProvidersStore } from '@proj-sakura/stage-ui/stores/providers'
-import { FieldInput, FieldRange } from '@proj-sakura/ui'
+import { FieldRange, FieldSelect } from '@proj-sakura/ui'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -25,7 +25,7 @@ const defaultVoiceSettings = {
 
 // Get provider metadata
 const providerId = 'browser-local-audio-speech'
-const defaultModel = 'tts-1'
+const defaultModel = 'fp16-webgpu'
 
 // Initialize speed from provider config or default
 const speed = ref<number>(
@@ -148,6 +148,21 @@ watch(voice, () => {
   providers.value[providerId].voice = voice.value
 })
 
+// Get available models for the dropdown
+const modelOptions = computed(() => {
+  const hasWebGPU = typeof navigator !== 'undefined' && !!navigator.gpu
+  // Filter models based on WebGPU availability, just like listModels does
+  return [
+    { label: 'FP32 (WebGPU)', value: 'fp32-webgpu' },
+    { label: 'FP16 (WebGPU)', value: 'fp16-webgpu' },
+    { label: 'FP32 (WASM)', value: 'fp32' },
+    { label: 'FP16 (WASM)', value: 'fp16' },
+    { label: 'Q8 (WASM)', value: 'q8' },
+    { label: 'Q4 (WASM)', value: 'q4' },
+    { label: 'Q4F16 (WASM)', value: 'q4f16' },
+  ].filter(m => hasWebGPU || !m.value.includes('webgpu'))
+})
+
 // Use the composable to get validation logic and state
 const {
   isValidating,
@@ -166,12 +181,12 @@ const {
   >
     <!-- Voice settings specific to OpenAI Compatible -->
     <template #voice-settings>
-      <!-- Model input -->
-      <FieldInput
+      <!-- Model selection -->
+      <FieldSelect
         v-model="model"
         label="Model"
-        description="Enter the TTS model to use for speech generation"
-        placeholder="tts-1"
+        description="Select the TTS model quantization and platform"
+        :options="modelOptions"
       />
       <!-- Speed control - common to most providers -->
       <FieldRange
@@ -189,6 +204,7 @@ const {
         v-model:voice="voice as any"
         :generate-speech="handleGenerateSpeech"
         :api-key-configured="apiKeyConfigured"
+        :disable-api-key-input="true"
         default-text="Hello! This is a test of the OpenAI Compatible Speech."
       />
     </template>
@@ -229,4 +245,3 @@ meta:
   stageTransition:
     name: slide
 </route>
-

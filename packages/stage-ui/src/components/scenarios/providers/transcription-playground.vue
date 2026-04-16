@@ -16,6 +16,7 @@ const props = defineProps<{
   generateTranscription: (input: File) => Promise<HearingTranscriptionResult>
   // Current state
   apiKeyConfigured?: boolean
+  disableApiKeyInput?: boolean
 }>()
 
 const { t } = useI18n()
@@ -248,4 +249,3 @@ onUnmounted(() => {
     </div>
   </div>
 </template>
-

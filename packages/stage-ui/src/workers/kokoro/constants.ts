@@ -96,7 +96,7 @@ export function kokoroModelsToModelInfo(hasWebGPU: boolean, t?: (key: string) =>
     .map(model => ({
       id: model.id,
       name: model.name,
-      provider: 'kokoro-local',
+      provider: 'browser-local-audio-speech',
       description: t ? t(model.descriptionKey) : model.descriptionKey,
     }))
 }

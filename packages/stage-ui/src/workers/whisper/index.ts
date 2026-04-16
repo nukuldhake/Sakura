@@ -1,30 +1,21 @@
 /**
- * Kokoro TTS Worker Manager
- * Manages communication with the Kokoro TTS worker thread
+ * Whisper Transcription Worker Manager
+ * Manages communication with the Whisper worker thread
  */
 
-import type { LoadedMessage, VoiceKey, Voices, WorkerRequest, WorkerResponse } from './types'
+import type { WorkerRequest, WorkerResponse } from './types'
 
-import { getDefaultKokoroModel, KOKORO_MODELS } from './constants'
-
-const LOAD_MODEL_TIMEOUT = 120000
-const GENERATE_TIMEOUT = 120000
+const LOAD_MODEL_TIMEOUT = 300000 // 5 minutes (models can be large)
+const GENERATE_TIMEOUT = 120000 // 2 minutes
 
 /**
  * An async mutex that ensures only one callback runs at a time.
- * Waiters queue up and are processed in FIFO order.
  */
 class AsyncMutex {
   private locked = false
   private waiters: { resolve: () => void, reject: (error: Error) => void }[] = []
-
-  // Incremented on reset() to invalidate stale lock holders
   private generation = 0
 
-  /**
-   * Executes the callback with exclusive access to the mutex.
-   * If the mutex is locked, waits in queue until it's our turn.
-   */
   async run<T>(callback: () => Promise<T> | T): Promise<T> {
     const myGeneration = this.generation
 
@@ -54,17 +45,11 @@ class AsyncMutex {
     }
   }
 
-  /**
-   * Cancels all waiting tasks and releases the lock.
-   * Atomic thanks to JavaScript's Run-To-Completion semantics.
-   */
   reset(error: Error = new Error('Mutex reset')): void {
     this.generation++
     this.locked = false
-
     const waitersToReject = this.waiters
     this.waiters = []
-
     for (const waiter of waitersToReject) {
       waiter.reject(error)
     }
@@ -118,15 +103,15 @@ function waitForEvent<T extends Event>(
   })
 }
 
-export class KokoroWorkerManager {
+export class WhisperWorkerManager {
   private worker: Worker | null = null
   private asyncMutex: AsyncMutex
   private workerLifecycleAsyncMutex: AsyncMutex
-  private voices: Voices | null = null
 
   private restartAttempts = 0
   private readonly maxRestartAttempts = 3
   private readonly restartDelayMs = 1000
+  private isModelLoaded = false
 
   constructor() {
     this.workerLifecycleAsyncMutex = new AsyncMutex()
@@ -135,7 +120,6 @@ export class KokoroWorkerManager {
 
   public async start(): Promise<void> {
     await this.workerLifecycleAsyncMutex.run(async () => {
-      // Only initialize if not already running
       if (!this.worker) {
         this.initializeWorker()
       }
@@ -151,89 +135,65 @@ export class KokoroWorkerManager {
   }
 
   private handleWorkerError(event: ErrorEvent | Error): void {
-    const error = event instanceof Error ? event : new Error(event.message ?? 'An unknown worker error occurred')
-
-    // Reject all pending operations
+    const error = event instanceof Error ? event : new Error(event.message ?? 'An unknown Whisper worker error occurred')
     this.asyncMutex.reset(error)
-
-    // Clean up current worker
     this.terminate()
-
-    // Attempt restart with backoff
     this.scheduleRestart()
   }
 
   private scheduleRestart(): void {
     if (this.restartAttempts >= this.maxRestartAttempts) {
-      console.error(
-        `[KokoroWorker] Max restart attempts (${this.maxRestartAttempts}) reached. Giving up.`,
-      )
+      console.error(`[WhisperWorker] Max restart attempts (${this.maxRestartAttempts}) reached.`)
       return
     }
 
     this.restartAttempts++
-    const delay = this.restartDelayMs * this.restartAttempts // Linear backoff
-
-    console.warn(
-      `[KokoroWorker] Restarting worker in ${delay}ms (attempt ${this.restartAttempts}/${this.maxRestartAttempts})`,
-    )
+    const delay = this.restartDelayMs * this.restartAttempts
 
     setTimeout(() => {
       this.start().catch((err) => {
-        console.error('[KokoroWorker] Failed to restart worker:', err)
+        console.error('[WhisperWorker] Failed to restart worker:', err)
       })
     }, delay)
   }
 
-  // Call this after successful operations to reset the counter
   private onSuccessfulOperation(): void {
     this.restartAttempts = 0
   }
 
-  async loadModel(quantization: string, device: string, options?: { onProgress?: (progress: any) => void }): Promise<Voices> {
-    // Lazy-start the worker if not already initialized
+  async loadModel(options?: { onProgress?: (progress: any) => void }): Promise<void> {
     await this.start()
     return await this.asyncMutex.run(async () => {
-      const voicePromise = waitForEvent<MessageEvent<WorkerResponse>>(
+      const readyPromise = waitForEvent<MessageEvent<WorkerResponse>>(
         this.worker!,
         'message',
         {
-          predicate: event => event.data.type === 'loaded',
+          predicate: event => event.data.status === 'ready',
           timeout: LOAD_MODEL_TIMEOUT,
           callback: (event) => {
-            if (event.data.type === 'progress' && options?.onProgress) {
-              options.onProgress(event.data.progress)
+            if ((event.data.status === 'progress' || event.data.status === 'initiate') && options?.onProgress) {
+              options.onProgress(event.data)
             }
           },
         },
       )
-      const message: WorkerRequest = {
-        type: 'load',
-        data: { quantization, device },
-      }
+      const message: WorkerRequest = { type: 'load' }
       this.worker!.postMessage(message)
-      const event = await voicePromise
-      const loadedData = event.data as LoadedMessage
-      this.voices = loadedData.voices
+      await readyPromise
+      this.isModelLoaded = true
       this.onSuccessfulOperation()
-      return this.voices
     }).catch((error) => {
       this.handleWorkerError(error)
       return Promise.reject(error)
     })
   }
 
-  async generate(text: string, voice: VoiceKey): Promise<ArrayBuffer> {
+  async generate(audio: string, language: string): Promise<string[]> {
     await this.start()
 
-    // Auto-load default model if not loaded
-    if (!this.voices) {
-      const hasWebGPU = typeof navigator !== 'undefined' && !!navigator.gpu
-      const defaultModelId = getDefaultKokoroModel(hasWebGPU)
-      const modelDef = KOKORO_MODELS.find(m => m.id === defaultModelId)
-      if (modelDef) {
-        await this.loadModel(modelDef.quantization, modelDef.platform)
-      }
+    // Auto-load model if not loaded
+    if (!this.isModelLoaded) {
+      await this.loadModel()
     }
 
     return await this.asyncMutex.run(async () => {
@@ -245,40 +205,22 @@ export class KokoroWorkerManager {
         this.worker,
         'message',
         {
-          predicate: event => event.data.type === 'result',
+          predicate: event => event.data.status === 'complete',
           timeout: GENERATE_TIMEOUT,
         },
       )
       const message: WorkerRequest = {
         type: 'generate',
-        data: { text, voice },
+        data: { audio, language },
       }
       this.worker.postMessage(message)
       const event = await resultPromise
-      const response = event.data
-
-      if ('status' in response) {
-        switch (response.status) {
-          case 'success':
-            this.onSuccessfulOperation()
-            return response.buffer
-          case 'error':
-            throw new Error(response.message)
-        }
-      }
-
-      throw new Error('Unexpected response from worker')
+      this.onSuccessfulOperation()
+      return (event.data as any).output
     }).catch((error) => {
       this.handleWorkerError(error)
       return Promise.reject(error)
     })
-  }
-
-  getVoices(): Voices {
-    if (!this.voices) {
-      throw new Error('Model not loaded. Call loadModel() first.')
-    }
-    return this.voices
   }
 
   private terminate(): void {
@@ -286,17 +228,16 @@ export class KokoroWorkerManager {
       this.worker.terminate()
       this.worker = null
     }
-    this.voices = null
   }
 }
 
-let globalWorkerManager: KokoroWorkerManager | null = null
+let globalWorkerManager: WhisperWorkerManager | null = null
 const globalWorkerManagerGetterLock: AsyncMutex = new AsyncMutex()
 
-export async function getKokoroWorker(): Promise<KokoroWorkerManager> {
+export async function getWhisperWorker(): Promise<WhisperWorkerManager> {
   return globalWorkerManagerGetterLock.run(async () => {
     if (!globalWorkerManager) {
-      globalWorkerManager = new KokoroWorkerManager()
+      globalWorkerManager = new WhisperWorkerManager()
       await globalWorkerManager.start()
     }
     return globalWorkerManager

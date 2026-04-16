@@ -1,3 +1,7 @@
+/**
+ * Type definitions for Whisper Worker messages
+ */
+
 export interface EventLoading {
   status: 'loading'
   data: string
@@ -7,7 +11,6 @@ export interface EventInitiate {
   status: 'initiate'
   name: string
   file: string
-  // Not used
   progress?: number
   loaded?: number
   total?: number
@@ -17,7 +20,6 @@ export interface EventDownload {
   status: 'download'
   name: string
   file: string
-  // Not used
   progress?: number
   loaded?: number
   total?: number
@@ -36,10 +38,6 @@ export interface EventDone {
   status: 'done'
   name: string
   file: string
-  // Not used
-  progress?: number
-  loaded?: number
-  total?: number
 }
 
 export interface EventReady {
@@ -53,7 +51,7 @@ export interface EventStart {
 export interface EventUpdate {
   status: 'update'
   tps: number
-  output: string
+  output: any // ModelOutput | Tensor
   numTokens: number
 }
 
@@ -62,13 +60,27 @@ export interface EventComplete {
   output: string[]
 }
 
-export type MessageEvents = EventLoading | EventInitiate | EventDownload | EventProgress | EventDone | EventReady | EventStart | EventUpdate | EventComplete
-export type ProgressMessageEvents = EventInitiate | EventProgress | EventDone
+export type WorkerResponse
+  = | EventLoading
+    | EventInitiate
+    | EventDownload
+    | EventProgress
+    | EventDone
+    | EventReady
+    | EventStart
+    | EventUpdate
+    | EventComplete
 
-export interface MessageGenerate {
+export interface LoadMessage {
+  type: 'load'
+}
+
+export interface GenerateMessage {
   type: 'generate'
   data: {
-    audio: string
+    audio: string // base64
     language: string
   }
 }
+
+export type WorkerRequest = LoadMessage | GenerateMessage

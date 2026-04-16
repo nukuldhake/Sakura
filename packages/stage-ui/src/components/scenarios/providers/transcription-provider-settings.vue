@@ -75,13 +75,17 @@ function handleResetTranscriptionSettings() {
   >
     <div flex="~ col md:row gap-6">
       <ProviderSettingsContainer class="w-full md:w-[40%]">
-        <!-- Basic settings section -->
         <ProviderBasicSettings
           :title="t('settings.pages.providers.common.section.basic.title')"
           :description="t('settings.pages.providers.common.section.basic.description')"
           :on-reset="handleResetTranscriptionSettings"
         >
-          <ProviderApiKeyInput v-model="apiKey" :provider-name="providerMetadata?.localizedName" :placeholder="props.placeholder || 'API Key'" />
+          <ProviderApiKeyInput
+            v-if="!providerMetadata?.disableApiKeyInput"
+            v-model="apiKey"
+            :provider-name="providerMetadata?.localizedName"
+            :placeholder="props.placeholder || 'API Key'"
+          />
           <!-- Slot for provider-specific basic settings -->
           <slot name="basic-settings" />
         </ProviderBasicSettings>
@@ -89,6 +93,7 @@ function handleResetTranscriptionSettings() {
         <!-- Advanced settings section -->
         <ProviderAdvancedSettings :title="t('settings.pages.providers.common.section.advanced.title')">
           <ProviderBaseUrlInput
+            v-if="!providerMetadata?.disableBaseUrlInput"
             v-model="baseUrl"
             :placeholder="providerMetadata?.defaultOptions?.().baseUrl as string || ''" required
           />

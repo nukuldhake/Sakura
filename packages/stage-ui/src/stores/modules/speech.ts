@@ -45,6 +45,9 @@ export const useSpeechStore = defineStore('speech', () => {
 
   // Computed properties
   const supportsModelListing = computed(() => {
+    if (!activeSpeechProvider.value)
+      return false
+
     return providersStore.getProviderMetadata(activeSpeechProvider.value)?.capabilities.listModels !== undefined
   })
 
@@ -118,7 +121,7 @@ export const useSpeechStore = defineStore('speech', () => {
   watch(activeSpeechProvider, async (newProvider) => {
     if (newProvider) {
       // If switching to Kokoro and no model is selected, set default model
-      if (newProvider === 'kokoro-local' && !activeSpeechModel.value) {
+      if (newProvider === 'browser-local-audio-speech' && !activeSpeechModel.value) {
         const hasWebGPU = typeof navigator !== 'undefined' && !!navigator.gpu
         activeSpeechModel.value = getDefaultKokoroModel(hasWebGPU)
       }
@@ -131,9 +134,14 @@ export const useSpeechStore = defineStore('speech', () => {
   })
 
   async function initialize() {
+    // Migrate legacy Kokoro ID if present in localStorage
+    if (activeSpeechProvider.value === 'kokoro-local') {
+      activeSpeechProvider.value = 'browser-local-audio-speech'
+    }
+
     // If no speech provider is configured, default to Kokoro TTS
     if (!activeSpeechProvider.value) {
-      activeSpeechProvider.value = 'kokoro-local'
+      activeSpeechProvider.value = 'browser-local-audio-speech'
     }
 
     const voices = await loadVoicesForProvider(activeSpeechProvider.value)

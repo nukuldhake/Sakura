@@ -314,6 +314,11 @@ pages:
               description: Enable to input raw SSML instead of plain text
               label: Use Custom SSML
       title: Speech
+    vision:
+      title: Vision
+      description: Use computer vision to see the world
+    categories:
+      essential: Essential
     title: Modules
   providers:
     explained:
